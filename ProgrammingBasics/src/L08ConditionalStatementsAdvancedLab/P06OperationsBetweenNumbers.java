@@ -41,7 +41,7 @@ public class P06OperationsBetweenNumbers {
         if (operation.equalsIgnoreCase("+")
                 || operation.equalsIgnoreCase("-")
                 || operation.equalsIgnoreCase("*")) {
-            System.out.printf(" %d %s %d = %.0f - %s", number1, operation, number2, result, (result % 2 == 0) ? "even" : "odd");
+            System.out.printf("%d %s %d = %.0f - %s", number1, operation, number2, result, (result % 2 == 0) ? "even" : "odd");
         }
     }
 }
