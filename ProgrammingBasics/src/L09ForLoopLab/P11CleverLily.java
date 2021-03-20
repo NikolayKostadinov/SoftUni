@@ -8,25 +8,26 @@ public class P11CleverLily {
 
         int age = Integer.parseInt(scan.nextLine());
         double washingMachinePrice = Double.parseDouble(scan.nextLine());
-        double toyPrice = Double.parseDouble(scan.nextLine());
-        double toysSum = 0;
-        int birthdaySum = 0;
+        int toyPrice = Integer.parseInt(scan.nextLine());
+
+        int toysMoney = 0;
+        double savedSum = 0;
 
         int present = 10;
         for (int i = 1; i <= age ; i++) {
             if( i % 2 == 0) {
-                birthdaySum += (present - 1.00);
+                savedSum += (present - 1);
                 present+=10;
             } else {
-              toysSum += toyPrice;
+              toysMoney += toyPrice;
             }
         }
 
-        double sum = birthdaySum + toysSum;
+        savedSum += toysMoney;
 
-        double difference = Math.abs(washingMachinePrice - sum);
+        double difference = Math.abs(washingMachinePrice - savedSum);
 
-        if(washingMachinePrice < sum) {
+        if(washingMachinePrice <= savedSum) {
             System.out.printf("Yes! %.2f", difference);
         } else {
             System.out.printf("No! %.2f", difference);
