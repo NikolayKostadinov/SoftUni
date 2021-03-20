@@ -2,12 +2,13 @@ package L06ConditionalStatementsLab;
 
 import java.util.Scanner;
 
+import static java.lang.System.in;
+
 public class P02BonusScore {
     public static void main(String[] args) {
         //TODO: Get input
-        Scanner scan = new Scanner(System.in);
+        Scanner scan = new Scanner(in);
         int points = Integer.parseInt(scan.nextLine());
-
         //TODO: Calculate Score
         double bonusScores = 0;
         if (points <= 100) {

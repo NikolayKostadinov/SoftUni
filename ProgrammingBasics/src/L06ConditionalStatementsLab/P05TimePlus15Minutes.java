@@ -1,3 +1,5 @@
+package L06ConditionalStatementsLab;
+
 import java.util.Scanner;
 
 public class P05TimePlus15Minutes {

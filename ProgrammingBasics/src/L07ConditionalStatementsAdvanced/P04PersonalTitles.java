@@ -7,14 +7,17 @@ public class P04PersonalTitles {
         Scanner scan = new Scanner(System.in);
 
         double age = Double.parseDouble(scan.nextLine());
-        String sex = scan.nextLine();
+        String gender = scan.nextLine();
 
         String title = "";
 
-        if (sex.equalsIgnoreCase("m")) {
-            title = (age >= 16) ? "Mr." : "Master";
-        } else {
-            title = (age >= 16) ? "Ms." : "Miss";
+        switch (gender){
+            case "m":
+                title = (age >= 16) ? "Mr." : "Master";
+                break;
+            case "f":
+                title = (age >= 16) ? "Ms." : "Miss";
+                break;
         }
 
         System.out.println(title);
