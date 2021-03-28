@@ -5,17 +5,15 @@ import java.util.Scanner;
 public class P05Coins {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        double tip = Double.parseDouble(scan.nextLine());
+        double tip = Math.round(Double.parseDouble(scan.nextLine()) * 100);
         double reminder = tip;
-        double[] val = {1,0.5,0.2,0.1,0.05, 0.02, 0.01};
+        double[] val = {200,100,50,20,10,5, 2, 1};
         int valIx = 0;
         int count = 0;
-        double difference = 0;
         while (reminder != 0){
-            difference = Math.round((reminder - val[valIx]) * 100) / 100;
-            if ( difference >= 0){
+            if (  reminder - val[valIx] >= 0){
                 count++;
-                reminder = difference;
+                reminder -= val[valIx];
             } else {
                 valIx++;
             }
