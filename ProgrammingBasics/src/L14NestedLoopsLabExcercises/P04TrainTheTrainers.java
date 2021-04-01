@@ -2,7 +2,7 @@ package L14NestedLoopsLabExcercises;
 
 import java.util.Scanner;
 
-public interface P04TrainTheTrainers {
+public class P04TrainTheTrainers {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         int juryCount = Integer.parseInt(scan.nextLine());
