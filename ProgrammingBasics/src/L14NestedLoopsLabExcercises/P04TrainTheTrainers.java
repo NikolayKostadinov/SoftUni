@@ -17,7 +17,7 @@ public class P04TrainTheTrainers {
             }
             averagePresentationGrade /= juryCount;
             sumGrade += averagePresentationGrade;
-            System.out.printf("%s - %.2f\n", presentationName, averagePresentationGrade);
+            System.out.printf("%s - %.2f.\n", presentationName, averagePresentationGrade);
             presentationName = scan.nextLine();
         }
         System.out.printf("Student's final assessment is %.2f.", sumGrade / presentationCounter);
