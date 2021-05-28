@@ -1,4 +1,4 @@
-package L01BasicSyntaxConditionalStatementsAndLoopsExcercise;
+package L02BasicSyntaxConditionalStatementsAndLoopsExcercise;
 
 import java.util.Scanner;
 
