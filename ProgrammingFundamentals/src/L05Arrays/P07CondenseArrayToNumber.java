@@ -1,4 +1,4 @@
-package L04Arrays;
+package L05Arrays;
 
 import java.util.Arrays;
 import java.util.Scanner;
