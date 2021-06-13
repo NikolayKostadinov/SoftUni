@@ -1,6 +1,5 @@
-package L0704Methods;
+package L07Methods;
 
-import java.lang.reflect.WildcardType;
 import java.util.Scanner;
 
 public class P06CalculateRectangleArea {

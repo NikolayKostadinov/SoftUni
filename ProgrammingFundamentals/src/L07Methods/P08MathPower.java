@@ -1,7 +1,6 @@
-package L0704Methods;
+package L07Methods;
 
 import java.math.BigDecimal;
-import java.math.BigInteger;
 import java.util.Scanner;
 
 public class P08MathPower {

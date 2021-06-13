@@ -1,4 +1,4 @@
-package L0704Methods;
+package L07Methods;
 
 import java.util.Scanner;
 

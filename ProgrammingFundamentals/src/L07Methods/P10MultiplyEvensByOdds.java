@@ -1,6 +1,5 @@
-package L0704Methods;
+package L07Methods;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class P10MultiplyEvensByOdds {

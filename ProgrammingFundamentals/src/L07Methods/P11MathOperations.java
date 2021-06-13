@@ -1,8 +1,5 @@
-package L0704Methods;
+package L07Methods;
 
-import org.w3c.dom.ls.LSOutput;
-
-import javax.crypto.spec.PSource;
 import java.util.Scanner;
 
 public class P11MathOperations {
