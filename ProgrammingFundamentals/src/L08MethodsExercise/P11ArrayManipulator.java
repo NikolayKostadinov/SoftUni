@@ -47,19 +47,21 @@ public class P11ArrayManipulator {
             return;
         }
 
-        StringBuilder sb = new StringBuilder(count * 2 + 2);
+        int [] arrResult = new int[count]; // result buffer
+        int index = -1;
 
         for (int i = 0; i < array.length; i++) {
             if (("even".equals(token) && array[i] % 2 == 0)
                     || ("odd".equals(token) && array[i] % 2 != 0)) {
-                sb.append(array[i]);
-                sb.append(", ");
+                index++;
+                if (index >= count - 1) break;
+                arrResult[index] = array[i];
             }
         }
-        if (sb.length() > 0)
-            sb.delete(sb.length() - 2, sb.length());
 
-        System.out.printf("[%s]\n", sb);
+        arrResult = Arrays.copyOf(array, index+1);
+
+        System.out.println( Arrays.toString(arrResult));
     }
 
     private static void lastElements(int[] array, int count, String token) {
@@ -70,21 +72,21 @@ public class P11ArrayManipulator {
             return;
         }
 
-        int ix = -1;
+        int [] arrResult = new int[count]; // result buffer
+        int index = -1;
+
         for (int i = array.length - 1; i >= 0; i--) {
             if (("even".equals(token) && array[i] % 2 == 0)
                     || ("odd".equals(token) && array[i] % 2 != 0)) {
-                ix++;
-                if (ix >= count) break;
-                sb.append(array[i]);
-                sb.append(", ");
+                index++;
+                if (index >= count - 1) break;
+                arrResult[index] = array[i];
             }
         }
 
-        if (sb.length() > 0)
-            sb.delete(sb.length() - 2, sb.length());
+        arrResult = Arrays.copyOf(array, index+1);
 
-        System.out.printf("[%s]\n", sb);
+        System.out.println( Arrays.toString(arrResult));
 
     }
 
