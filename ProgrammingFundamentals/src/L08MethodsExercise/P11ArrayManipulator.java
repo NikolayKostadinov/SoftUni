@@ -3,6 +3,7 @@ package L08MethodsExercise;
 import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.Scanner;
+import java.util.concurrent.LinkedBlockingDeque;
 
 public class P11ArrayManipulator {
     public static void main(String[] args) {
@@ -42,21 +43,19 @@ public class P11ArrayManipulator {
             return;
         }
 
-        int [] arrResult = new int[count]; // result buffer
-        int index = -1;
+        int[] resultArr = new int[count];
+        int index = 0;
 
         for (int i = 0; i < array.length; i++) {
             if (("even".equals(token) && array[i] % 2 == 0)
                     || ("odd".equals(token) && array[i] % 2 != 0)) {
-                index++;
-                if (index >= count-1) break;
-                arrResult[index] = array[i];
+                resultArr[index++] = array[i];
+                if (index >= count) break;
             }
         }
+        resultArr = Arrays.copyOf(resultArr, index);
 
-        arrResult = Arrays.copyOf(array, index+1);
-
-        System.out.println( Arrays.toString(arrResult));
+        System.out.println(Arrays.toString(resultArr));
     }
 
 //    private static void firstElements(int[] array, int count, String token) {
@@ -84,29 +83,25 @@ public class P11ArrayManipulator {
 //    }
 
     private static void lastElements(int[] array, int count, String token) {
-        StringBuilder sb = new StringBuilder(count * 2 + 2);
-
         if (count > array.length) {
             System.out.println("Invalid count");
             return;
         }
 
-        int ix = -1;
+        int[] resultArr = new int[count];
+        int index = 0;
+
         for (int i = array.length - 1; i >= 0; i--) {
             if (("even".equals(token) && array[i] % 2 == 0)
                     || ("odd".equals(token) && array[i] % 2 != 0)) {
-                ix++;
-                if (ix >= count) break;
-                sb.append(array[i]);
-                sb.append(", ");
+                resultArr[index++] = array[i];
+                if (index >= count) break;
             }
         }
 
-        if( sb.length() > 0 )
-            sb.delete( sb.length() - 2,  sb.length());
+        resultArr = Arrays.copyOf(resultArr, index);
 
-        System.out.printf("[%s]\n", sb);
-
+        System.out.println(Arrays.toString(resultArr));
     }
 
     private static void minElement(int[] array, String token) {
@@ -114,7 +109,6 @@ public class P11ArrayManipulator {
         int minElementValue = Integer.MAX_VALUE;
 
         for (int i = 0; i < array.length; i++) {
-
             if ((("even".equals(token) && array[i] % 2 == 0) || ("odd".equals(token) && array[i] % 2 != 0))
                     && array[i] <= minElementValue) {
                 minElementIndex = i;
