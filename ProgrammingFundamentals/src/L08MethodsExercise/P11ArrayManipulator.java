@@ -14,12 +14,7 @@ public class P11ArrayManipulator {
             String[] tokens = command.split(" ");
             switch (tokens[0]) {
                 case "exchange":
-                    int index = Integer.parseInt(tokens[1]);
-                    if (0 <= index && index < array.length) {
-                        array = exchangeArray(array, index);
-                    } else {
-                        System.out.println("Invalid index");
-                    }
+                    array = exchangeArray(array, Integer.parseInt(tokens[1]));
                     break;
                 case "max":
                     maxElement(array, tokens[1]);
@@ -54,7 +49,7 @@ public class P11ArrayManipulator {
             if (("even".equals(token) && array[i] % 2 == 0)
                     || ("odd".equals(token) && array[i] % 2 != 0)) {
                 index++;
-                if (index >= count - 1) break;
+                if (index >= count-1) break;
                 arrResult[index] = array[i];
             }
         }
@@ -64,6 +59,30 @@ public class P11ArrayManipulator {
         System.out.println( Arrays.toString(arrResult));
     }
 
+//    private static void firstElements(int[] array, int count, String token) {
+//        if (count > array.length) {
+//            System.out.println("Invalid count");
+//            return;
+//        }
+//
+//        StringBuilder sb = new StringBuilder(count * 2 + 2);
+//
+//        int ix = -1;
+//        for (int i = 0; i < array.length; i++) {
+//            if (("even".equals(token) && array[i] % 2 == 0)
+//                    || ("odd".equals(token) && array[i] % 2 != 0)) {
+//                ix++;
+//                if (ix >= count) break;
+//                sb.append(array[i]);
+//                sb.append(", ");
+//            }
+//        }
+//        if( sb.length() > 0 )
+//            sb.delete( sb.length() - 2,  sb.length());
+//
+//        System.out.printf("[%s]\n", sb);
+//    }
+
     private static void lastElements(int[] array, int count, String token) {
         StringBuilder sb = new StringBuilder(count * 2 + 2);
 
@@ -72,21 +91,21 @@ public class P11ArrayManipulator {
             return;
         }
 
-        int [] arrResult = new int[count]; // result buffer
-        int index = -1;
-
+        int ix = -1;
         for (int i = array.length - 1; i >= 0; i--) {
             if (("even".equals(token) && array[i] % 2 == 0)
                     || ("odd".equals(token) && array[i] % 2 != 0)) {
-                index++;
-                if (index >= count - 1) break;
-                arrResult[index] = array[i];
+                ix++;
+                if (ix >= count) break;
+                sb.append(array[i]);
+                sb.append(", ");
             }
         }
 
-        arrResult = Arrays.copyOf(array, index+1);
+        if( sb.length() > 0 )
+            sb.delete( sb.length() - 2,  sb.length());
 
-        System.out.println( Arrays.toString(arrResult));
+        System.out.printf("[%s]\n", sb);
 
     }
 
@@ -131,6 +150,11 @@ public class P11ArrayManipulator {
     }
 
     private static int[] exchangeArray(int[] array, int index) {
+        if (0 > index || index >= array.length) {
+            System.out.println("Invalid index");
+            return array;
+        }
+
         int[] result = new int[array.length];
         int ix = 0;
         for (int i = index + 1; i < array.length; i++) {
