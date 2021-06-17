@@ -1,9 +1,7 @@
 package L08MethodsExercise;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.Scanner;
-import java.util.concurrent.LinkedBlockingDeque;
 
 public class P11ArrayManipulator {
     public static void main(String[] args) {
@@ -53,34 +51,18 @@ public class P11ArrayManipulator {
                 if (index >= count) break;
             }
         }
-        resultArr = Arrays.copyOf(resultArr, index);
+        resultArr = copyOfArray(resultArr, index);
 
         System.out.println(Arrays.toString(resultArr));
     }
 
-//    private static void firstElements(int[] array, int count, String token) {
-//        if (count > array.length) {
-//            System.out.println("Invalid count");
-//            return;
-//        }
-//
-//        StringBuilder sb = new StringBuilder(count * 2 + 2);
-//
-//        int ix = -1;
-//        for (int i = 0; i < array.length; i++) {
-//            if (("even".equals(token) && array[i] % 2 == 0)
-//                    || ("odd".equals(token) && array[i] % 2 != 0)) {
-//                ix++;
-//                if (ix >= count) break;
-//                sb.append(array[i]);
-//                sb.append(", ");
-//            }
-//        }
-//        if( sb.length() > 0 )
-//            sb.delete( sb.length() - 2,  sb.length());
-//
-//        System.out.printf("[%s]\n", sb);
-//    }
+    private static int[] copyOfArray(int[] array, int count) {
+        int[] copy = new int[count];
+        for (int i = 0; i < count; i++) {
+            copy[i]=array[i];
+        }
+        return copy;
+    }
 
     private static void lastElements(int[] array, int count, String token) {
         if (count > array.length) {
@@ -99,9 +81,18 @@ public class P11ArrayManipulator {
             }
         }
 
-        resultArr = Arrays.copyOf(resultArr, index);
+        resultArr = reverseCopyOfArray(resultArr, index);
 
         System.out.println(Arrays.toString(resultArr));
+    }
+
+    private static int[] reverseCopyOfArray(int[] array, int count) {
+        int[] copy = new int[count];
+
+        for (int i = 0; i < count; i++) {
+            copy[count-i-1]=array[i];
+        }
+        return copy;
     }
 
     private static void minElement(int[] array, String token) {
