@@ -10,11 +10,15 @@ public class P07NxNMatrix {
     }
 
     private static void printMatrix(int number) {
+        StringBuilder matrix = new StringBuilder(number*2*number);
         for (int i = 0; i < number; i++) {
             for (int j = 0; j < number; j++) {
-                System.out.printf("%d ",number);
+                matrix.append(number);
+                matrix.append(" ");
             }
-            System.out.println();
+            matrix.append("\n");
         }
+
+        System.out.println(matrix);
     }
 }
