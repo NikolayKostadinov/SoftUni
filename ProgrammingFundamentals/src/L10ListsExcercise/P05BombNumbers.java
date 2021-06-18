@@ -12,8 +12,22 @@ public class P05BombNumbers {
                 .map(Integer::parseInt)
                 .collect(Collectors.toList());
 
+        int[] bomb = Arrays.stream(scan.nextLine().split(" ")).mapToInt(Integer::parseInt).toArray();
+
+        int index = sequence.indexOf(Integer.valueOf(bomb[0]));
+        while (index != -1){
+            int startIndex = index - bomb[1];
+            if (startIndex<0) startIndex = 0;
+            int endIndex = index + bomb[1];
+            if (endIndex > sequence.size() - 1) endIndex = sequence.size() - 1;
+            for (int i = startIndex; i <= endIndex; i++) {
+                sequence.remove(startIndex);
+            }
+
+            index = sequence.indexOf(Integer.valueOf(bomb[0]));
+        }
         System.out.println(sequence.stream()
-                .map(x->x.intValue())
+                .mapToInt(x->x.intValue())
                 .sum());
     }
 }
