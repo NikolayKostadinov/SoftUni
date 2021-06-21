@@ -13,68 +13,79 @@ public class P10SoftUniCoursePlanning {
                 .split(", "))
                 .collect(Collectors.toList());
 
-        String command = scan.nextLine();
+        String input = scan.nextLine();
 
-        while (!"course start".equals(command)) {
-            String[] tokens = command.split(":");
-            switch (tokens[0]) {
+        while (!"course start".equals(input)) {
+            String[] tokens = input.split(":");
+            String command = tokens[0];
+            String course1 = tokens[1];
+            switch (command) {
                 case "Add":
-                    if (!courses.contains(tokens[1])) courses.add(tokens[1]);
+                    if (!courses.contains(course1)) courses.add(course1);
                     break;
                 case "Insert":
-                    if (!courses.contains(tokens[1])) courses.add(Integer.parseInt(tokens[2]), tokens[1]);
+                    if (!courses.contains(course1)) {
+                        int index = Integer.parseInt(tokens[2]);
+                        courses.add(index, course1);
+                    }
+                    ;
                     break;
                 case "Remove":
-                    if (courses.contains(tokens[1])) {
-                        courses.remove(tokens[1]);
-                        if (courses.contains(tokens[1] + "-Exercise")) {
-                            courses.remove(tokens[1] + "-Exercise");
+                    String courseExercise1 = course1 + "-Exercise";
+                    if (courses.contains(course1)) {
+                        courses.remove(course1);
+                        if (courses.contains(courseExercise1)) {
+                            courses.remove(courseExercise1);
                         }
                     }
                     break;
                 case "Swap":
-                    if (courses.contains(tokens[1]) && courses.contains(tokens[2])) {
-                        swapCourses(courses, tokens[1], tokens[2]);
+                    String course2 = tokens[2];
+                    courseExercise1 = course1 + "-Exercise";
+                    String courseExercise2 = course2 + "-Exercise";
+
+                    int index1 = courses.indexOf(course1);
+                    int index2 = courses.indexOf(course2);
+
+                    if (index1 >= 0 && index2 >= 0) {
+                        courses.set(index1, course2);
+                        courses.set(index2, course1);
                     }
+
+                    if (courses.contains(courseExercise1)){
+                        courses.remove(courses.indexOf(courseExercise1));
+                        courses.add(index2+1, courseExercise1);
+                    }
+
+                    if (courses.contains(courseExercise2)){
+                        courses.remove(courses.indexOf(courseExercise2));
+                        courses.add(index1+1, courseExercise2);
+                    }
+
                     break;
                 case "Exercise":
-                    if (courses.contains(tokens[1])) {
-                        if (!courses.contains(tokens[1] + "-Exercise")) {
-                            int index1 = courses.indexOf(tokens[1]);
-                            courses.set(index1, courses.get(index1) + "-Exercise");
+                    courseExercise1 = course1 + "-Exercise";
+                    index1 = courses.indexOf(course1);
+                    if (index1 >= 0) {
+                        if (!courses.contains(courseExercise1)) {
+                            if (index1 == courses.size() - 1)
+                            {
+                                courses.add(courseExercise1);
+                            } else {
+                                courses.add(index1+1, courseExercise1);
+                            }
                         }
                     } else {
-                        courses.add(tokens[1]);
-                        courses.add(tokens[1] + "-Exercise");
+                        courses.add(course1);
+                        courses.add(courseExercise1);
                     }
                     break;
             }
-            command = scan.nextLine();
+            input = scan.nextLine();
         }
 
         for (int i = 0; i < courses.size(); i++) {
-            System.out.printf("%d.%s\n", i+1, courses.get(i));
-
+            System.out.printf("%d.%s\n", i + 1, courses.get(i));
         }
-    }
-
-    private static void swapCourses(List<String> courses, String course1, String course2) {
-        int index1 = courses.indexOf(course1);
-        int index2 = courses.indexOf(course2);
-        String buff = courses.get(index1);
-        courses.set(index1, courses.get(index2));
-        courses.set(index2, buff);
-        if (index1 + 1 < courses.size() && courses.get(index1+1).equals(course1 + "-Exercise")){
-            buff = courses.get(index1+1);
-            courses.remove(index1+1);
-            courses.add(index2+1, buff);
-        }
-
-        if (index2 + 1 < courses.size() && courses.get(index2+1).equals(course2 + "-Exercise")){
-            buff = courses.get(index2+1);
-            courses.remove(index2+1);
-            courses.add(index1+1, buff);
-        }
-
     }
 }
