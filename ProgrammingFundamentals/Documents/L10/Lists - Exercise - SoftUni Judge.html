@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<!-- saved from url=(0054)https://judge.softuni.bg/Contests/Compete/Index/1297#6 -->
+<html class="k-webkit k-webkit91"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lists - Exercise - SoftUni Judge</title>
+    <meta name="description" content="Online system for programming competitions">
+    <link href="./Lists - Exercise - SoftUni Judge_files/bootstrap" rel="stylesheet">
+<link href="./Lists - Exercise - SoftUni Judge_files/kendo" rel="stylesheet">
+<link href="./Lists - Exercise - SoftUni Judge_files/styles" rel="stylesheet">
+
+    
+    <link href="./Lists - Exercise - SoftUni Judge_files/codemirror" rel="stylesheet">
+<link href="./Lists - Exercise - SoftUni Judge_files/submission-page" rel="stylesheet">
+
+
+    <script async="" src="./Lists - Exercise - SoftUni Judge_files/analytics.js.download"></script><script src="./Lists - Exercise - SoftUni Judge_files/jquery"></script>
+<script src="./Lists - Exercise - SoftUni Judge_files/kendo(1)"></script>
+<script src="./Lists - Exercise - SoftUni Judge_files/global"></script>
+
+<script src="chrome-extension://mooikfkahbdckldjjndioackbalphokd/assets/prompt.js"></script></head>
+<body>
+    <!-- Google Analytics -->
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-11309924-11', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+    <!-- Header -->
+    <div class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="https://judge.softuni.bg/" class="navbar-brand">SoftUni Judge</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="https://judge.softuni.bg/Contests" class="dropdown-toggle" data-toggle="dropdown">
+                            Contests
+                            <strong class="caret"></strong>
+                        </a>
+                        <ul class="dropdown-menu">
+                                <li><a href="https://judge.softuni.bg/Contests/#!/List/ByCategory/15/Programming-Basics">Programming Basics</a></li>
+                                <li><a href="https://judge.softuni.bg/Contests/#!/List/ByCategory/286/Quality-Assurance">Quality Assurance</a></li>
+                                <li><a href="https://judge.softuni.bg/Contests/#!/List/ByCategory/40/Fundamentals">Fundamentals</a></li>
+                                <li><a href="https://judge.softuni.bg/Contests/#!/List/ByCategory/20/CSharp-Development">C# Development</a></li>
+                                <li><a href="https://judge.softuni.bg/Contests/#!/List/ByCategory/24/Java-Development">Java Development</a></li>
+                                <li><a href="https://judge.softuni.bg/Contests/#!/List/ByCategory/34/JavaScript-Development">JavaScript Development</a></li>
+                                <li><a href="https://judge.softuni.bg/Contests/#!/List/ByCategory/195/Python-Development">Python Development</a></li>
+                                <li><a href="https://judge.softuni.bg/Contests/#!/List/ByCategory/35/PHP-Development">PHP Development</a></li>
+                                <li><a href="https://judge.softuni.bg/Contests/#!/List/ByCategory/75/Front-End-Development">Front-End Development</a></li>
+                                <li><a href="https://judge.softuni.bg/Contests/#!/List/ByCategory/164/Mini-Courses">Mini Courses</a></li>
+                                <li><a href="https://judge.softuni.bg/Contests/#!/List/ByCategory/36/Open-Courses">Open Courses</a></li>
+                                <li><a href="https://judge.softuni.bg/Contests/#!/List/ByCategory/233/Free-Courses">Free Courses</a></li>
+                                <li><a href="https://judge.softuni.bg/Contests/#!/List/ByCategory/95/PB-Books">PB - Books</a></li>
+                                <li><a href="https://judge.softuni.bg/Contests/#!/List/ByCategory/142/SoftUni-Svetlina">SoftUni Svetlina</a></li>
+                                <li><a href="https://judge.softuni.bg/Contests/#!/List/ByCategory/14/Softuniada">Softuniada</a></li>
+                                <li><a href="https://judge.softuni.bg/Contests/#!/List/ByCategory/55/Others">Others</a></li>
+                                <li><a href="https://judge.softuni.bg/Contests/#!/List/ByCategory/292/School">School</a></li>
+                            <li class="divider"></li>
+                            <li><a href="https://judge.softuni.bg/Contests">All</a></li>
+                        </ul>
+                    </li>
+                        <li><a href="https://judge.softuni.bg/Feedback">Feedback</a></li>
+
+                </ul>
+                
+
+<form action="https://judge.softuni.bg/Account/LogOff" class="navbar-right login-form" id="logoutForm" method="post"><input name="__RequestVerificationToken" type="hidden" value="TEN9oWP9Y84pKubbudkugKyyQh46w_mjpInHMPPO-LQHD1Ng8PPz_pttjuNOISLFwt9yVfm-lvRoRZKI2ITxnNvz0PnYP22v8UqLe4UNbKXs6_6SPzXyv-z_dBUVNqa_gEULrg2">        <ul class="nav navbar-nav navbar-right">
+            <li class="logged-user-wrap ">
+
+                <a class="text-primary" href="https://judge.softuni.bg/Users/Profile" title="Settings">Hello, manhattan!</a>
+            </li>
+            <li><a href="javascript:document.getElementById(&#39;logoutForm&#39;).submit()">Log out</a></li>
+        </ul>
+</form>
+
+                <div class="col-md-3 col-sm-6 navbar-left hidden-md search-form ">
+                    <form class="navbar-form" role="search" action="https://judge.softuni.bg/Search/Results">
+                        <div class="input-group">
+                            <input type="text" class="form-control search-box" placeholder="Search" name="searchTerm" id="searchTerm">
+                            <div class="input-group-btn">
+                                <button class="btn btn-default btn-search" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-sm-1 hidden-lg hidden-sm hidden-xs btn navbar-left">
+                    <a href="https://judge.softuni.bg/Search/" class="btn btn-default btn-search"><i class="glyphicon glyphicon-search"></i></a>
+                </div>
+                <div class="language-switch  logged" data-cookie="language">
+                    <a id="en" class="btn-link language-btn selected-language-btn" data-default="">EN</a>
+                    <a id="bg" class="btn-link language-btn">BG</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page content -->
+    <div class="container main-container">
+
+        
+
+
+
+
+<ol class="breadcrumb">
+    <li><a href="https://judge.softuni.bg/">Home</a></li>
+    <li><a href="https://judge.softuni.bg/Contests">Contests</a></li>
+    <li><a href="https://judge.softuni.bg/Contests#!/List/ByCategory/145/Java-Fundamentals">Java-Fundamentals</a></li>
+    <li class="active">Lists - Exercise</li>
+</ol>
+
+<h1>
+    <a href="https://judge.softuni.bg/Contests/1297/Lists-Exercise">Lists - Exercise</a>
+</h1>
+
+
+
+<div class="row">
+    <div class="col-md-8">
+        <h2>Submit a solution</h2>
+    </div>
+    <div class="col-md-4 text-right" id="countdown-timer-container"><div id="countdown-timer" style="display: block;">Remaining time: <span id="hours-remaining">1351</span> h, <span id="minutes-remaining">33</span> m and <span id="seconds-remaining">57</span> s</div>
+        <div class="clearfix"></div>
+        <div class="pull-right"><a href="https://judge.softuni.bg/Contests/Compete/Results/Simple/1297">Results</a></div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="k-tabstrip-wrapper" style=""><div class="k-widget k-tabstrip k-header" id="SubmissionsTabStrip" data-role="tabstrip" tabindex="0" role="tablist" aria-activedescendant="SubmissionsTabStrip_ts_active"><ul class="k-reset k-tabstrip-items"><li class="k-item k-state-default k-first" role="tab" aria-controls="SubmissionsTabStrip-1"><a class="k-link">01.	Train</a></li><li class="k-item k-state-default" role="tab" aria-controls="SubmissionsTabStrip-2"><a class="k-link">02.	Change List</a></li><li class="k-item k-state-default" role="tab" aria-controls="SubmissionsTabStrip-3"><a class="k-link">03.	House Party</a></li><li class="k-item k-state-default" role="tab" aria-controls="SubmissionsTabStrip-4" style=""><span class="k-loading k-progress k-complete" style=""></span><a class="k-link">04.	List Operations</a></li><li class="k-item k-state-default" role="tab" aria-controls="SubmissionsTabStrip-5" style=""><span class="k-loading k-progress k-complete" style=""></span><a class="k-link">05.	Bomb Numbers</a></li><li class="k-item k-state-default" role="tab" aria-controls="SubmissionsTabStrip-6" style=""><span class="k-loading k-progress k-complete" style=""></span><a class="k-link">06.	Cards Game</a></li><li class="k-item k-state-default k-tab-on-top k-state-active" role="tab" aria-controls="SubmissionsTabStrip-7" aria-selected="true" style=""><span class="k-loading k-progress k-complete" style=""></span><a class="k-link">07. Append Arrays</a></li><li class="k-item k-state-default excluded-from-homework-tab" role="tab" aria-controls="SubmissionsTabStrip-8"><a class="k-link">08. Anonymous Threat</a><span class="right-buffer" style="color: rgb(184, 135, 0);">✶</span></li><li class="k-item k-state-default excluded-from-homework-tab" role="tab" aria-controls="SubmissionsTabStrip-9"><a class="k-link">09. Pokemon Don't Go</a><span class="right-buffer" style="color: rgb(184, 135, 0);">✶</span></li><li class="k-item k-state-default excluded-from-homework-tab k-last" role="tab" aria-controls="SubmissionsTabStrip-10"><a class="k-link">10. SoftUni Course Planning</a><span class="right-buffer" style="color: rgb(184, 135, 0);">✶</span></li></ul><div class="k-content" id="SubmissionsTabStrip-1" role="tabpanel" aria-hidden="true" aria-expanded="false"></div><div class="k-content" id="SubmissionsTabStrip-2" role="tabpanel" aria-hidden="true" aria-expanded="false"></div><div class="k-content" id="SubmissionsTabStrip-3" role="tabpanel" aria-hidden="true" aria-expanded="false"></div><div class="k-content" id="SubmissionsTabStrip-4" role="tabpanel" aria-expanded="false" aria-hidden="true" style="height: auto; overflow: visible; opacity: 0; display: none;">
+
+
+
+<h2>
+    04.	List Operations
+    <span class="excluded-from-homework-disclaimer-message"></span>
+</h2>
+
+<div class="row">
+    <div class="col-md-12">
+        <div id="notify-container-8191">
+        </div>
+    </div>
+</div>
+
+
+
+<div class="row">
+    <div class="col-lg-8">
+        <div class="materials">
+
+        </div>
+        <div class="submision">
+<form action="https://judge.softuni.bg/Contests/Compete/Submit/1297" data-ajax="true" data-ajax-begin="validateSubmit.content" data-ajax-failure="messageNotifier.notifyFailure" data-ajax-success="messageNotifier.notifySuccess" id="problem_8191" method="post" enctype="multipart/form-data" encoding="multipart/form-data"><input name="__RequestVerificationToken" type="hidden" value="sPd7jUdI9zKOVJWR590khRbPLuAPwlx1NL8yIVorU6WBFn4pVNGOuJLW_6wk_MxU1tuF8ELU07pM5nMsNqKZjLdUA8XAely5QKYOZRQm83cHSh55eoRzQgSskjtRbU71Jng8Iw2"><input data-val="true" data-val-number="The field ProblemId must be a number." data-val-required="The ProblemId field is required." id="ProblemId" name="ProblemId" type="hidden" value="8191">                <div id="submisionDataFields">
+                    <div id="SourceCodeInputFields_8191">
+                        <textarea class="code-for-problem" id="code-problem-8191" name="Content" style="display: none;"></textarea><div class="CodeMirror cm-s-the-matrix CodeMirror-wrap"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 27px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;" tabindex="0"></textarea></div><div class="CodeMirror-vscrollbar" cm-not-content="true" style="bottom: 0px;"><div style="min-width: 1px; height: 0px;"></div></div><div class="CodeMirror-hscrollbar" cm-not-content="true"><div style="height: 100%; min-height: 1px; width: 0px;"></div></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 23px; margin-bottom: -17px; border-right-width: 13px; min-height: 26px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><span><span>​</span>x</span><div class="CodeMirror-linenumber CodeMirror-gutter-elt"><div>72</div></div><div class="CodeMirror-linenumber CodeMirror-gutter-elt"><div>1</div></div></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-cursors" style="visibility: hidden;"><div class="CodeMirror-cursor" style="left: 4px; top: 0px; height: 18px;">&nbsp;</div></div><div class="CodeMirror-code" role="presentation" style=""><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -23px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 13px;">1</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div></div></div></div></div></div><div style="position: absolute; height: 13px; width: 1px; border-bottom: 0px solid transparent; top: 26px;"></div><div class="CodeMirror-gutters" style="height: 39px; left: 0px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 21px;"></div></div></div></div>
+                    </div>
+                    <div id="FileUploadInputFields_8191" style="display: none;">
+                        <div class="k-widget k-upload k-header k-upload-sync k-upload-empty"><div class="k-button k-upload-button"><input id="file-problem-8191" name="File" type="file" data-role="upload" autocomplete="off"><span>Select files...</span></div></div><script>
+	jQuery(function(){jQuery("#file-problem-8191").kendoUpload({"multiple":false});});
+</script>
+                        <div id="FileUploadAllowedFileExtensions_8191"></div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="pull-left submit-container">
+                        <strong>Allowed working time:</strong> 0.100 sec.
+                        <br>
+                        <strong>Allowed memory:</strong> 16.00 MB
+                        <br>
+                            <strong>Size limit:</strong> 16.00 KB
+                            <br>
+
+                        <strong>Checker:</strong> Trim <span class="glyphicon glyphicon-question-sign" id="checkers-tooltip" data-role="tooltip"></span>
+                    </div>
+                    <div class="submit-container pull-right">
+                        <script>
+                            function onSubmissionTypeChange() {
+                                var index = this.selectedIndex;
+                                var dataItem = this.dataItem(index);
+                                var form = $("#problem_8191");
+                                var fileUpload = $("#FileUploadInputFields_8191");
+                                var codeArea = $("#SourceCodeInputFields_8191");
+
+                                function submitHandler() {
+                                    var size = parseFloat("16") * 1024;
+                                    var extensions = dataItem.AllowedFileExtensions.split(',');
+                                    return validateSubmit.binary(form.find('input[type=file][name=File]')[0], size, extensions);
+                                }
+
+                                var oldFormAction = form.attr("action");
+                                var newFormAction;
+                                if (dataItem.AllowBinaryFilesUpload) {
+                                    newFormAction = oldFormAction.replace("/Submit/", "/SubmitBinaryFile/");
+
+                                    if (oldFormAction !== newFormAction) {
+                                        tabStripManager.tabSelected();
+                                        var returnProblem = getSelectedIndexFromHashtag();
+                                        newFormAction += ("?returnProblem=" + returnProblem);
+                                    }
+
+                                    form.attr("action", newFormAction)
+                                        .attr("data-ajax", "false")
+                                        .unbind("submit")
+                                        .bind("submit", submitHandler);
+
+                                    fileUpload.show();
+                                    codeArea.hide();
+
+                                    $("#FileUploadAllowedFileExtensions_8191")
+                                        .html("<b>Allowed file extensions:</b> " + dataItem.AllowedFileExtensions);
+                                } else {
+                                    newFormAction = oldFormAction.replace("/SubmitBinaryFile/", "/Submit/");
+
+                                    if (oldFormAction !== newFormAction) {
+                                        newFormAction = newFormAction.substr(0, newFormAction.lastIndexOf("?"));
+                                    }
+
+                                    form.attr("action", newFormAction)
+                                        .attr("data-ajax", "true")
+                                        .unbind("submit");
+
+                                    fileUpload.hide();
+                                    codeArea.show();
+                                }
+                            }
+                        </script>
+                        <span class="k-widget k-dropdown k-header" unselectable="on" role="listbox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-owns="dropdown_8191_listbox" aria-disabled="false" aria-readonly="false" aria-busy="false" aria-activedescendant="dropdown_8191_option_selected" style=""><span unselectable="on" class="k-dropdown-wrap k-state-default"><span unselectable="on" class="k-input">Java code</span><span unselectable="on" class="k-select"><span unselectable="on" class="k-icon k-i-arrow-s">select</span></span></span><input id="dropdown_8191" name="SubmissionTypeId" type="text" data-role="dropdownlist" style="display: none;"></span><script>
+	jQuery(function(){jQuery("#dropdown_8191").kendoDropDownList({"change":onSubmissionTypeChange,"dataBound":onSubmissionTypeChange,"open":Ojs.KendoControls.DropDownList.alignDropDownToInput,"dataSource":{"transport":{"prefix":"","read":{"url":"/Contests/Compete/GetAllowedSubmissionTypes/8191"}},"schema":{"errors":"Errors"}},"dataTextField":"Text","dataValueField":"Value"});});
+</script>
+                        <input type="submit" value="Submit" class="k-button submision-submit-button">
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+</form>        </div>
+    </div>
+
+
+
+        <div class="col-lg-4 problem-result-container visible-lg">
+            <div class="k-widget k-grid problem_submit_grid" id="ContestResults_8191" data-role="grid"><div class="k-toolbar k-grid-toolbar k-grid-top">Problem results</div><table class="table table-striped table-bordered" role="grid"><colgroup><col style="width:100px"><col style="width:80px"></colgroup><thead class="k-grid-header" role="rowgroup"><tr role="row"><th class="k-header" data-field="ParticipantName" data-title="Participant" scope="col" data-index="0"><span class="k-link">Participant</span></th><th class="k-header" data-field="Result" data-title="Result" scope="col" data-index="1"><span class="k-link">Result</span></th></tr></thead><tbody role="rowgroup"><tr><td><a href="https://judge.softuni.bg/Users/Martina200731" target="_blank">Martina200731</a></td><td>100 / 100</td></tr><tr><td><a href="https://judge.softuni.bg/Users/Galinagg" target="_blank">Galinagg</a></td><td>100 / 100</td></tr><tr><td><a href="https://judge.softuni.bg/Users/i.bosev" target="_blank">i.bosev</a></td><td>100 / 100</td></tr><tr><td><a href="https://judge.softuni.bg/Users/Ivan_Jul_Atanasov" target="_blank">Ivan_Jul_Atanasov</a></td><td>100 / 100</td></tr><tr><td><a href="https://judge.softuni.bg/Users/IvaPet" target="_blank">IvaPet</a></td><td>100 / 100</td></tr><tr><td><a href="https://judge.softuni.bg/Users/Danielstoyanov00" target="_blank">Danielstoyanov00</a></td><td>100 / 100</td></tr><tr><td><a href="https://judge.softuni.bg/Users/I.p.simeonoff" target="_blank">I.p.simeonoff</a></td><td>100 / 100</td></tr><tr><td><a href="https://judge.softuni.bg/Users/TihomirDimitrov88" target="_blank">TihomirDimitrov88</a></td><td>100 / 100</td></tr></tbody></table><div class="k-pager-wrap k-grid-pager k-widget" data-role="pager"><a class="k-link k-pager-nav k-state-disabled k-pager-first" data-page="1" href="https://judge.softuni.bg/Contests/Compete/Index/1297#" title="Go to the first page" tabindex="-1"><span class="k-icon k-i-seek-w">seek-w</span></a><a class="k-link k-pager-nav k-state-disabled" data-page="1" href="https://judge.softuni.bg/Contests/Compete/Index/1297#" title="Go to the previous page" tabindex="-1"><span class="k-icon k-i-arrow-w">arrow-w</span></a><ul class="k-pager-numbers k-reset"><li><span class="k-state-selected">1</span></li><li><a tabindex="-1" href="https://judge.softuni.bg/Contests/Compete/Index/1297#" class="k-link" data-page="2">2</a></li><li><a tabindex="-1" href="https://judge.softuni.bg/Contests/Compete/Index/1297#" class="k-link" data-page="3">3</a></li><li><a tabindex="-1" href="https://judge.softuni.bg/Contests/Compete/Index/1297#" class="k-link" data-page="4">4</a></li><li><a tabindex="-1" href="https://judge.softuni.bg/Contests/Compete/Index/1297#" class="k-link" data-page="5" title="More pages">...</a></li></ul><a class="k-link k-pager-nav" data-page="2" href="https://judge.softuni.bg/Contests/Compete/Index/1297#" title="Go to the next page" tabindex="-1"><span class="k-icon k-i-arrow-e">arrow-e</span></a><a class="k-link k-pager-nav k-pager-last" data-page="5" href="https://judge.softuni.bg/Contests/Compete/Index/1297#" title="Go to the last page" tabindex="-1"><span class="k-icon k-i-seek-e">seek-e</span></a><a class="k-pager-refresh k-link" href="https://judge.softuni.bg/Contests/Compete/Results/ByProblem/8191?_=1624016112730" title="Refresh"><span class="k-icon k-i-refresh">Refresh</span></a></div></div><script>
+	jQuery(function(){jQuery("#ContestResults_8191").kendoGrid({"columns":[{"title":"Participant","width":"100px","field":"ParticipantName","filterable":{},"encoded":true},{"title":"Result","width":"80px","field":"Result","filterable":{},"encoded":true}],"pageable":{"info":false,"refresh":true,"buttonCount":4},"scrollable":false,"toolbar":{},"dataSource":{"transport":{"prefix":"","read":{"url":"/Contests/Compete/Results/ByProblem/8191"}},"pageSize":8,"page":1,"total":0,"serverPaging":true,"serverSorting":true,"serverFiltering":true,"serverGrouping":true,"serverAggregates":true,"type":"aspnetmvc-ajax","sort":[{"field":"Result","dir":"desc"}],"filter":[],"schema":{"data":"Data","total":"Total","errors":"Errors","model":{"fields":{"SubmissionId":{"type":"number","defaultValue":null},"ParticipantName":{"type":"string"},"Result":{"type":"number"},"MaximumPoints":{"type":"number"},"ProblemId":{"type":"number"}}}}},"rowTemplate":"#= ParticipantName === \u0027manhattan\u0027 ? \"\u003ctr class=\u0027success\u0027\u003e\" : \"\u003ctr\u003e\"#\u003ctd\u003e\u003ca href=\u0027/Users/#:ParticipantName#\u0027 target=\u0027_blank\u0027\u003e#:ParticipantName#\u003c/a\u003e\u003c/td\u003e\u003ctd\u003e#:Result# / #:MaximumPoints#\u003c/td\u003e\u003c/tr\u003e"});});
+</script>
+        </div>
+</div>
+
+
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="k-widget k-grid problem_submit_grid" id="Submissions_8191" data-role="grid"><div class="k-toolbar k-grid-toolbar k-grid-top" style="border-width: 1px 0px;">Submissions</div><div class="k-pager-wrap k-grid-pager pagerTop k-widget" data-role="pager" style="border-width: 0px 0px 1px;"><a href="https://judge.softuni.bg/Contests/Compete/Index/1297#" title="Go to the first page" class="k-link k-pager-nav k-pager-first k-state-disabled" data-page="1" tabindex="-1"><span class="k-icon k-i-seek-w">Go to the first page</span></a><a href="https://judge.softuni.bg/Contests/Compete/Index/1297#" title="Go to the previous page" class="k-link k-pager-nav  k-state-disabled" data-page="1" tabindex="-1"><span class="k-icon k-i-arrow-w">Go to the previous page</span></a><ul class="k-pager-numbers k-reset"><li><span class="k-state-selected">1</span></li></ul><a href="https://judge.softuni.bg/Contests/Compete/Index/1297#" title="Go to the next page" class="k-link k-pager-nav  k-state-disabled" data-page="1" tabindex="-1"><span class="k-icon k-i-arrow-e">Go to the next page</span></a><a href="https://judge.softuni.bg/Contests/Compete/Index/1297#" title="Go to the last page" class="k-link k-pager-nav k-pager-last k-state-disabled" data-page="1" tabindex="-1"><span class="k-icon k-i-seek-e">Go to the last page</span></a><a href="https://judge.softuni.bg/Contests/Compete/Index/1297#" class="k-pager-refresh k-link" title="Refresh"><span class="k-icon k-i-refresh">Refresh</span></a></div><table role="grid"><colgroup><col><col><col style="width:300px"></colgroup><thead class="k-grid-header" role="rowgroup"><tr role="row"><th class="k-header" data-field="SubmissionPoints" data-title="Points" scope="col" data-index="0"><span class="k-link">Points</span></th><th class="k-header" scope="col" data-index="1"><span class="k-link">Time and memory used</span></th><th class="k-header" data-field="SubmissionDate" data-title="Submission date" scope="col" data-index="2"><span class="k-link">Submission date</span></th></tr></thead><tbody role="rowgroup"><tr data-uid="0248c2eb-0882-48d3-921c-f7e1315fd0bc" role="row"><td role="gridcell"><span class="glyphicon glyphicon-ok text-success" title="Правилен отговор"></span><span class="glyphicon glyphicon-ok text-success" title="Правилен отговор"></span><span class="glyphicon glyphicon-ok text-success" title="Правилен отговор"></span><span class="glyphicon glyphicon-ok text-success" title="Правилен отговор"></span><span class="glyphicon glyphicon-ok text-success" title="Правилен отговор"></span><span class="glyphicon glyphicon-ok text-success" title="Правилен отговор"></span><span class="glyphicon glyphicon-ok text-success" title="Правилен отговор"></span><span class="glyphicon glyphicon-ok text-success" title="Правилен отговор"></span><span class="glyphicon glyphicon-ok text-success" title="Правилен отговор"></span><span class="glyphicon glyphicon-ok text-success" title="Правилен отговор"></span><span class="glyphicon glyphicon-ok text-success" title="Правилен отговор"></span><span class="glyphicon glyphicon-ok text-success" title="Правилен отговор"></span> 100 / 100</td><td role="gridcell">Memory: 0.00 MB <br>Time: 0.048 s</td><td role="gridcell">15:07:39 18.06.2021 <a href="https://judge.softuni.bg/Contests/Submissions/View/21591678" target="_blank" class="view-submission-button btn btn-default pull-right">Details</a></td></tr></tbody></table><div class="k-pager-wrap k-grid-pager k-widget" data-role="pager"><a class="k-link k-pager-nav k-state-disabled k-pager-first" data-page="1" href="https://judge.softuni.bg/Contests/Compete/Index/1297#" title="Go to the first page" tabindex="-1"><span class="k-icon k-i-seek-w">seek-w</span></a><a class="k-link k-pager-nav k-state-disabled" data-page="1" href="https://judge.softuni.bg/Contests/Compete/Index/1297#" title="Go to the previous page" tabindex="-1"><span class="k-icon k-i-arrow-w">arrow-w</span></a><ul class="k-pager-numbers k-reset"><li><span class="k-state-selected">1</span></li></ul><a class="k-link k-pager-nav k-state-disabled" data-page="1" href="https://judge.softuni.bg/Contests/Compete/Index/1297#" title="Go to the next page" tabindex="-1"><span class="k-icon k-i-arrow-e">arrow-e</span></a><a class="k-link k-pager-nav k-state-disabled k-pager-last" data-page="1" href="https://judge.softuni.bg/Contests/Compete/Index/1297#" title="Go to the last page" tabindex="-1"><span class="k-icon k-i-seek-e">seek-e</span></a><a class="k-pager-refresh k-link" href="https://judge.softuni.bg/Contests/Compete/ReadSubmissionResults/8191?_=1624016112730" title="Refresh"><span class="k-icon k-i-refresh">Refresh</span></a></div></div><script>
+	jQuery(function(){jQuery("#Submissions_8191").kendoGrid({"dataBound":cloneSubmissionsGridPager,"columns":[{"title":"Points","template":"#= IsCalculated ? IsCompiledSuccessfully ? displayTestRuns(TestRuns).concat( SubmissionPoints.toString().concat(\u0027 / \u0027).concat(MaximumPoints)) : \u0027Compile time error\u0027:\u0027Not processed yet\u0027#","field":"SubmissionPoints","filterable":{},"encoded":true},{"title":"Time and memory used","template":"#= IsCalculated \u0026\u0026 IsCompiledSuccessfully ? displayMaximumValues(MaximumMemoryUsed, MaximumTimeUsed, \u0027Memory\u0027,\u0027Time\u0027) : \u0027---\u0027 #"},{"title":"Submission date","width":"300px","template":"#= kendo.format(\u0027{0:HH:mm:ss dd.MM.yyyy}\u0027, SubmissionDate) # \u003ca href=\u0027/Contests/Submissions/View/#=SubmissionId#\u0027 target=\u0027_blank\u0027 class=\u0027view-submission-button btn btn-default pull-right\u0027\u003eDetails\u003c/div\u003e","field":"SubmissionDate","filterable":{},"encoded":true}],"pageable":{"info":false,"refresh":true,"buttonCount":10},"scrollable":false,"toolbar":{},"dataSource":{"transport":{"prefix":"","read":{"url":"/Contests/Compete/ReadSubmissionResults/8191"}},"pageSize":10,"page":1,"total":0,"serverPaging":true,"serverSorting":true,"serverFiltering":true,"serverGrouping":true,"serverAggregates":true,"type":"aspnetmvc-ajax","sort":[{"field":"SubmissionDate","dir":"desc"}],"filter":[],"schema":{"data":"Data","total":"Total","errors":"Errors","model":{"fields":{"SubmissionId":{"type":"number"},"ProblemId":{"type":"number","defaultValue":null},"IsOfficial":{"type":"boolean"},"MaximumPoints":{"type":"number"},"TestRuns":{"type":"object"},"SubmissionDate":{"type":"date"},"IsCalculated":{"type":"boolean"},"MaximumMemoryUsed":{"editable":false,"type":"number","defaultValue":null},"MaximumTimeUsed":{"editable":false,"type":"number","defaultValue":null},"SubmissionPoints":{"type":"number","defaultValue":null},"IsCompiledSuccessfully":{"type":"boolean"}}}}}});});
+</script>
+        </div>
+    </div>
+
+<script>
+	jQuery(function(){jQuery("#checkers-tooltip").kendoTooltip({"position":"top","width":500,"content":"Trims the user output and compares it with the expected output."});});
+</script>
+<script type="text/x-kendo-template" id="checkers-template">
+    <ul style="list-style-type: none">
+        <li>
+            <strong>Checker types:</strong>
+        </li>
+        <li>
+            <strong>Exact</strong>  - the system compares the sent code result with the expected output symbol by symbol
+        </li>
+        <li>
+            <strong>Trim</strong> - the system trims the whitespace before and after the sent code result and then compares symbol by symbol with the expected output
+        </li>
+        <li>
+            <strong>Sort</strong> - the system sorts all lines in the sent code result and then compares symbol by symbol with the expected output
+        </li>
+        <li>
+            <strong>Case-insensitive</strong> - the system does not make difference between small and capital letters when comparing the sent code result with the expected output symbol by symbol
+        </li>
+        <li>
+            <strong>Precision N</strong> - only for tasks with end result decimal number - the system compares only the first N digits after the decimal point
+        </li>
+    </ul>
+</script>
+</div><div class="k-content" id="SubmissionsTabStrip-5" role="tabpanel" aria-expanded="false" aria-hidden="true" style="height: auto; overflow: visible; opacity: 0; display: none;">
+
+
+
+<h2>
+    05.	Bomb Numbers
+    <span class="excluded-from-homework-disclaimer-message"></span>
+</h2>
+
+<div class="row">
+    <div class="col-md-12">
+        <div id="notify-container-8192">
+        </div>
+    </div>
+</div>
+
+
+
+<div class="row">
+    <div class="col-lg-8">
+        <div class="materials">
+
+        </div>
+        <div class="submision">
+<form action="https://judge.softuni.bg/Contests/Compete/Submit/1297" data-ajax="true" data-ajax-begin="validateSubmit.content" data-ajax-failure="messageNotifier.notifyFailure" data-ajax-success="messageNotifier.notifySuccess" id="problem_8192" method="post" enctype="multipart/form-data" encoding="multipart/form-data"><input name="__RequestVerificationToken" type="hidden" value="ntzbB7fjANZnroazc-2NJeVOEOeSva5u-XXucGS0-6dxc-AnIL0xUasnporuABZcQqqE5oq28QZ8wfEKBDLBhSb0uW9rz_srs_afytPrA0zadqdDHF0XA6Kz9WTRMbDy1Mj1sw2"><input data-val="true" data-val-number="The field ProblemId must be a number." data-val-required="The ProblemId field is required." id="ProblemId" name="ProblemId" type="hidden" value="8192">                <div id="submisionDataFields">
+                    <div id="SourceCodeInputFields_8192">
+                        <textarea class="code-for-problem" id="code-problem-8192" name="Content" style="display: none;"></textarea><div class="CodeMirror cm-s-the-matrix CodeMirror-wrap"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 4px; left: 27px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;" tabindex="0"></textarea></div><div class="CodeMirror-vscrollbar" cm-not-content="true"><div style="min-width: 1px; height: 0px;"></div></div><div class="CodeMirror-hscrollbar" cm-not-content="true"><div style="height: 100%; min-height: 1px; width: 0px;"></div></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 23px; margin-bottom: -17px; border-right-width: 13px; min-height: 26px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre><div class="CodeMirror-linenumber CodeMirror-gutter-elt"><div>1</div></div></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-cursors"><div class="CodeMirror-cursor" style="left: 4px; top: 0px; height: 18px;">&nbsp;</div></div><div class="CodeMirror-code" role="presentation"><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -23px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 13px;">1</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div></div></div></div></div></div><div style="position: absolute; height: 13px; width: 1px; border-bottom: 0px solid transparent; top: 26px;"></div><div class="CodeMirror-gutters" style="height: 39px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 21px;"></div></div></div></div>
+                    </div>
+                    <div id="FileUploadInputFields_8192" style="display: none;">
+                        <div class="k-widget k-upload k-header k-upload-sync k-upload-empty"><div class="k-button k-upload-button"><input id="file-problem-8192" name="File" type="file" data-role="upload" autocomplete="off"><span>Select files...</span></div></div><script>
+	jQuery(function(){jQuery("#file-problem-8192").kendoUpload({"multiple":false});});
+</script>
+                        <div id="FileUploadAllowedFileExtensions_8192"></div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="pull-left submit-container">
+                        <strong>Allowed working time:</strong> 0.100 sec.
+                        <br>
+                        <strong>Allowed memory:</strong> 16.00 MB
+                        <br>
+                            <strong>Size limit:</strong> 16.00 KB
+                            <br>
+
+                        <strong>Checker:</strong> Trim <span class="glyphicon glyphicon-question-sign" id="checkers-tooltip"></span>
+                    </div>
+                    <div class="submit-container pull-right">
+                        <script>
+                            function onSubmissionTypeChange() {
+                                var index = this.selectedIndex;
+                                var dataItem = this.dataItem(index);
+                                var form = $("#problem_8192");
+                                var fileUpload = $("#FileUploadInputFields_8192");
+                                var codeArea = $("#SourceCodeInputFields_8192");
+
+                                function submitHandler() {
+                                    var size = parseFloat("16") * 1024;
+                                    var extensions = dataItem.AllowedFileExtensions.split(',');
+                                    return validateSubmit.binary(form.find('input[type=file][name=File]')[0], size, extensions);
+                                }
+
+                                var oldFormAction = form.attr("action");
+                                var newFormAction;
+                                if (dataItem.AllowBinaryFilesUpload) {
+                                    newFormAction = oldFormAction.replace("/Submit/", "/SubmitBinaryFile/");
+
+                                    if (oldFormAction !== newFormAction) {
+                                        tabStripManager.tabSelected();
+                                        var returnProblem = getSelectedIndexFromHashtag();
+                                        newFormAction += ("?returnProblem=" + returnProblem);
+                                    }
+
+                                    form.attr("action", newFormAction)
+                                        .attr("data-ajax", "false")
+                                        .unbind("submit")
+                                        .bind("submit", submitHandler);
+
+                                    fileUpload.show();
+                                    codeArea.hide();
+
+                                    $("#FileUploadAllowedFileExtensions_8192")
+                                        .html("<b>Allowed file extensions:</b> " + dataItem.AllowedFileExtensions);
+                                } else {
+                                    newFormAction = oldFormAction.replace("/SubmitBinaryFile/", "/Submit/");
+
+                                    if (oldFormAction !== newFormAction) {
+                                        newFormAction = newFormAction.substr(0, newFormAction.lastIndexOf("?"));
+                                    }
+
+                                    form.attr("action", newFormAction)
+                                        .attr("data-ajax", "true")
+                                        .unbind("submit");
+
+                                    fileUpload.hide();
+                                    codeArea.show();
+                                }
+                            }
+                        </script>
+                        <span class="k-widget k-dropdown k-header" unselectable="on" role="listbox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-owns="dropdown_8192_listbox" aria-disabled="false" aria-readonly="false" aria-busy="false" aria-activedescendant="dropdown_8192_option_selected" style=""><span unselectable="on" class="k-dropdown-wrap k-state-default"><span unselectable="on" class="k-input">Java code</span><span unselectable="on" class="k-select"><span unselectable="on" class="k-icon k-i-arrow-s">select</span></span></span><input id="dropdown_8192" name="SubmissionTypeId" type="text" data-role="dropdownlist" style="display: none;"></span><script>
+	jQuery(function(){jQuery("#dropdown_8192").kendoDropDownList({"change":onSubmissionTypeChange,"dataBound":onSubmissionTypeChange,"open":Ojs.KendoControls.DropDownList.alignDropDownToInput,"dataSource":{"transport":{"prefix":"","read":{"url":"/Contests/Compete/GetAllowedSubmissionTypes/8192"}},"schema":{"errors":"Errors"}},"dataTextField":"Text","dataValueField":"Value"});});
+</script>
+                        <input type="submit" value="Submit" class="k-button submision-submit-button">
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+</form>        </div>
+    </div>
+
+
+
+        <div class="col-lg-4 problem-result-container visible-lg">
+            <div class="k-widget k-grid problem_submit_grid" id="ContestResults_8192" data-role="grid"><div class="k-toolbar k-grid-toolbar k-grid-top">Problem results</div><table class="table table-striped table-bordered" role="grid"><colgroup><col style="width:100px"><col style="width:80px"></colgroup><thead class="k-grid-header" role="rowgroup"><tr role="row"><th class="k-header" data-field="ParticipantName" data-title="Participant" scope="col" data-index="0"><span class="k-link">Participant</span></th><th class="k-header" data-field="Result" data-title="Result" scope="col" data-index="1"><span class="k-link">Result</span></th></tr></thead><tbody role="rowgroup"><tr><td><a href="https://judge.softuni.bg/Users/Galinagg" target="_blank">Galinagg</a></td><td>100 / 100</td></tr><tr><td><a href="https://judge.softuni.bg/Users/Ivan_Jul_Atanasov" target="_blank">Ivan_Jul_Atanasov</a></td><td>100 / 100</td></tr><tr><td><a href="https://judge.softuni.bg/Users/i.bosev" target="_blank">i.bosev</a></td><td>100 / 100</td></tr><tr><td><a href="https://judge.softuni.bg/Users/IvaPet" target="_blank">IvaPet</a></td><td>100 / 100</td></tr><tr><td><a href="https://judge.softuni.bg/Users/Danielstoyanov00" target="_blank">Danielstoyanov00</a></td><td>100 / 100</td></tr><tr><td><a href="https://judge.softuni.bg/Users/Martina200731" target="_blank">Martina200731</a></td><td>100 / 100</td></tr><tr><td><a href="https://judge.softuni.bg/Users/I.p.simeonoff" target="_blank">I.p.simeonoff</a></td><td>100 / 100</td></tr><tr><td><a href="https://judge.softuni.bg/Users/MartinBozhinov" target="_blank">MartinBozhinov</a></td><td>100 / 100</td></tr></tbody></table><div class="k-pager-wrap k-grid-pager k-widget" data-role="pager"><a class="k-link k-pager-nav k-state-disabled k-pager-first" data-page="1" href="https://judge.softuni.bg/Contests/Compete/Index/1297#" title="Go to the first page" tabindex="-1"><span class="k-icon k-i-seek-w">seek-w</span></a><a class="k-link k-pager-nav k-state-disabled" data-page="1" href="https://judge.softuni.bg/Contests/Compete/Index/1297#" title="Go to the previous page" tabindex="-1"><span class="k-icon k-i-arrow-w">arrow-w</span></a><ul class="k-pager-numbers k-reset"><li><span class="k-state-selected">1</span></li><li><a tabindex="-1" href="https://judge.softuni.bg/Contests/Compete/Index/1297#" class="k-link" data-page="2">2</a></li><li><a tabindex="-1" href="https://judge.softuni.bg/Contests/Compete/Index/1297#" class="k-link" data-page="3">3</a></li><li><a tabindex="-1" href="https://judge.softuni.bg/Contests/Compete/Index/1297#" class="k-link" data-page="4">4</a></li></ul><a class="k-link k-pager-nav" data-page="2" href="https://judge.softuni.bg/Contests/Compete/Index/1297#" title="Go to the next page" tabindex="-1"><span class="k-icon k-i-arrow-e">arrow-e</span></a><a class="k-link k-pager-nav k-pager-last" data-page="4" href="https://judge.softuni.bg/Contests/Compete/Index/1297#" title="Go to the last page" tabindex="-1"><span class="k-icon k-i-seek-e">seek-e</span></a><a class="k-pager-refresh k-link" href="https://judge.softuni.bg/Contests/Compete/Results/ByProblem/8192?_=1624016112731" title="Refresh"><span class="k-icon k-i-refresh">Refresh</span></a></div></div><script>
+	jQuery(function(){jQuery("#ContestResults_8192").kendoGrid({"columns":[{"title":"Participant","width":"100px","field":"ParticipantName","filterable":{},"encoded":true},{"title":"Result","width":"80px","field":"Result","filterable":{},"encoded":true}],"pageable":{"info":false,"refresh":true,"buttonCount":4},"scrollable":false,"toolbar":{},"dataSource":{"transport":{"prefix":"","read":{"url":"/Contests/Compete/Results/ByProblem/8192"}},"pageSize":8,"page":1,"total":0,"serverPaging":true,"serverSorting":true,"serverFiltering":true,"serverGrouping":true,"serverAggregates":true,"type":"aspnetmvc-ajax","sort":[{"field":"Result","dir":"desc"}],"filter":[],"schema":{"data":"Data","total":"Total","errors":"Errors","model":{"fields":{"SubmissionId":{"type":"number","defaultValue":null},"ParticipantName":{"type":"string"},"Result":{"type":"number"},"MaximumPoints":{"type":"number"},"ProblemId":{"type":"number"}}}}},"rowTemplate":"#= ParticipantName === \u0027manhattan\u0027 ? \"\u003ctr class=\u0027success\u0027\u003e\" : \"\u003ctr\u003e\"#\u003ctd\u003e\u003ca href=\u0027/Users/#:ParticipantName#\u0027 target=\u0027_blank\u0027\u003e#:ParticipantName#\u003c/a\u003e\u003c/td\u003e\u003ctd\u003e#:Result# / #:MaximumPoints#\u003c/td\u003e\u003c/tr\u003e"});});
+</script>
+        </div>
+</div>
+
+
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="k-widget k-grid problem_submit_grid" id="Submissions_8192" data-role="grid"><div class="k-toolbar k-grid-toolbar k-grid-top">Submissions</div><table role="grid"><colgroup><col><col><col style="width:300px"></colgroup><thead class="k-grid-header" role="rowgroup"><tr role="row"><th class="k-header" data-field="SubmissionPoints" data-title="Points" scope="col" data-index="0"><span class="k-link">Points</span></th><th class="k-header" scope="col" data-index="1"><span class="k-link">Time and memory used</span></th><th class="k-header" data-field="SubmissionDate" data-title="Submission date" scope="col" data-index="2"><span class="k-link">Submission date</span></th></tr></thead><tbody role="rowgroup"></tbody></table><div class="k-pager-wrap k-grid-pager k-widget" data-role="pager"><a class="k-link k-pager-nav k-state-disabled k-pager-first" data-page="1" href="https://judge.softuni.bg/Contests/Compete/Index/1297#" title="Go to the first page" tabindex="-1"><span class="k-icon k-i-seek-w">seek-w</span></a><a class="k-link k-pager-nav k-state-disabled" data-page="1" href="https://judge.softuni.bg/Contests/Compete/Index/1297#" title="Go to the previous page" tabindex="-1"><span class="k-icon k-i-arrow-w">arrow-w</span></a><ul class="k-pager-numbers k-reset"><li><span class="k-state-selected">0</span></li></ul><a class="k-link k-pager-nav k-state-disabled" data-page="0" href="https://judge.softuni.bg/Contests/Compete/Index/1297#" title="Go to the next page" tabindex="-1"><span class="k-icon k-i-arrow-e">arrow-e</span></a><a class="k-link k-pager-nav k-state-disabled k-pager-last" data-page="0" href="https://judge.softuni.bg/Contests/Compete/Index/1297#" title="Go to the last page" tabindex="-1"><span class="k-icon k-i-seek-e">seek-e</span></a><a class="k-pager-refresh k-link" href="https://judge.softuni.bg/Contests/Compete/ReadSubmissionResults/8192?_=1624016112731" title="Refresh"><span class="k-icon k-i-refresh">Refresh</span></a></div></div><script>
+	jQuery(function(){jQuery("#Submissions_8192").kendoGrid({"dataBound":cloneSubmissionsGridPager,"columns":[{"title":"Points","template":"#= IsCalculated ? IsCompiledSuccessfully ? displayTestRuns(TestRuns).concat( SubmissionPoints.toString().concat(\u0027 / \u0027).concat(MaximumPoints)) : \u0027Compile time error\u0027:\u0027Not processed yet\u0027#","field":"SubmissionPoints","filterable":{},"encoded":true},{"title":"Time and memory used","template":"#= IsCalculated \u0026\u0026 IsCompiledSuccessfully ? displayMaximumValues(MaximumMemoryUsed, MaximumTimeUsed, \u0027Memory\u0027,\u0027Time\u0027) : \u0027---\u0027 #"},{"title":"Submission date","width":"300px","template":"#= kendo.format(\u0027{0:HH:mm:ss dd.MM.yyyy}\u0027, SubmissionDate) # \u003ca href=\u0027/Contests/Submissions/View/#=SubmissionId#\u0027 target=\u0027_blank\u0027 class=\u0027view-submission-button btn btn-default pull-right\u0027\u003eDetails\u003c/div\u003e","field":"SubmissionDate","filterable":{},"encoded":true}],"pageable":{"info":false,"refresh":true,"buttonCount":10},"scrollable":false,"toolbar":{},"dataSource":{"transport":{"prefix":"","read":{"url":"/Contests/Compete/ReadSubmissionResults/8192"}},"pageSize":10,"page":1,"total":0,"serverPaging":true,"serverSorting":true,"serverFiltering":true,"serverGrouping":true,"serverAggregates":true,"type":"aspnetmvc-ajax","sort":[{"field":"SubmissionDate","dir":"desc"}],"filter":[],"schema":{"data":"Data","total":"Total","errors":"Errors","model":{"fields":{"SubmissionId":{"type":"number"},"ProblemId":{"type":"number","defaultValue":null},"IsOfficial":{"type":"boolean"},"MaximumPoints":{"type":"number"},"TestRuns":{"type":"object"},"SubmissionDate":{"type":"date"},"IsCalculated":{"type":"boolean"},"MaximumMemoryUsed":{"editable":false,"type":"number","defaultValue":null},"MaximumTimeUsed":{"editable":false,"type":"number","defaultValue":null},"SubmissionPoints":{"type":"number","defaultValue":null},"IsCompiledSuccessfully":{"type":"boolean"}}}}}});});
+</script>
+        </div>
+    </div>
+
+<script>
+	jQuery(function(){jQuery("#checkers-tooltip").kendoTooltip({"position":"top","width":500,"content":"Trims the user output and compares it with the expected output."});});
+</script>
+<script type="text/x-kendo-template" id="checkers-template">
+    <ul style="list-style-type: none">
+        <li>
+            <strong>Checker types:</strong>
+        </li>
+        <li>
+            <strong>Exact</strong>  - the system compares the sent code result with the expected output symbol by symbol
+        </li>
+        <li>
+            <strong>Trim</strong> - the system trims the whitespace before and after the sent code result and then compares symbol by symbol with the expected output
+        </li>
+        <li>
+            <strong>Sort</strong> - the system sorts all lines in the sent code result and then compares symbol by symbol with the expected output
+        </li>
+        <li>
+            <strong>Case-insensitive</strong> - the system does not make difference between small and capital letters when comparing the sent code result with the expected output symbol by symbol
+        </li>
+        <li>
+            <strong>Precision N</strong> - only for tasks with end result decimal number - the system compares only the first N digits after the decimal point
+        </li>
+    </ul>
+</script>
+</div><div class="k-content" id="SubmissionsTabStrip-6" role="tabpanel" aria-expanded="false" aria-hidden="true" style="height: auto; overflow: visible; opacity: 0; display: none;">
+
+
+
+<h2>
+    06.	Cards Game
+    <span class="excluded-from-homework-disclaimer-message"></span>
+</h2>
+
+<div class="row">
+    <div class="col-md-12">
+        <div id="notify-container-8193">
+        </div>
+    </div>
+</div>
+
+
+
+<div class="row">
+    <div class="col-lg-8">
+        <div class="materials">
+
+        </div>
+        <div class="submision">
+<form action="https://judge.softuni.bg/Contests/Compete/Submit/1297" data-ajax="true" data-ajax-begin="validateSubmit.content" data-ajax-failure="messageNotifier.notifyFailure" data-ajax-success="messageNotifier.notifySuccess" id="problem_8193" method="post" enctype="multipart/form-data" encoding="multipart/form-data"><input name="__RequestVerificationToken" type="hidden" value="3bzLqfesUl2a-Qo_FOeIDoQJFUTp3hscZbAGsGU8sXr2mdTssEthlUx-gAlyDyLbD-QOLytc95mpB87RMAdR1PULoo2H6wC5DG_p17nEqsSHCvMm4__AJTBz-Onj1hNTw6S8NQ2"><input data-val="true" data-val-number="The field ProblemId must be a number." data-val-required="The ProblemId field is required." id="ProblemId" name="ProblemId" type="hidden" value="8193">                <div id="submisionDataFields">
+                    <div id="SourceCodeInputFields_8193">
+                        <textarea class="code-for-problem" id="code-problem-8193" name="Content" style="display: none;"></textarea><div class="CodeMirror cm-s-the-matrix CodeMirror-wrap"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 4px; left: 27px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;" tabindex="0"></textarea></div><div class="CodeMirror-vscrollbar" cm-not-content="true"><div style="min-width: 1px; height: 0px;"></div></div><div class="CodeMirror-hscrollbar" cm-not-content="true"><div style="height: 100%; min-height: 1px; width: 0px;"></div></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 23px; margin-bottom: -17px; border-right-width: 13px; min-height: 26px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre><div class="CodeMirror-linenumber CodeMirror-gutter-elt"><div>1</div></div></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-cursors"><div class="CodeMirror-cursor" style="left: 4px; top: 0px; height: 18px;">&nbsp;</div></div><div class="CodeMirror-code" role="presentation"><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -23px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 13px;">1</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div></div></div></div></div></div><div style="position: absolute; height: 13px; width: 1px; border-bottom: 0px solid transparent; top: 26px;"></div><div class="CodeMirror-gutters" style="height: 39px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 21px;"></div></div></div></div>
+                    </div>
+                    <div id="FileUploadInputFields_8193" style="display: none;">
+                        <div class="k-widget k-upload k-header k-upload-sync k-upload-empty"><div class="k-button k-upload-button"><input id="file-problem-8193" name="File" type="file" data-role="upload" autocomplete="off"><span>Select files...</span></div></div><script>
+	jQuery(function(){jQuery("#file-problem-8193").kendoUpload({"multiple":false});});
+</script>
+                        <div id="FileUploadAllowedFileExtensions_8193"></div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="pull-left submit-container">
+                        <strong>Allowed working time:</strong> 0.100 sec.
+                        <br>
+                        <strong>Allowed memory:</strong> 16.00 MB
+                        <br>
+                            <strong>Size limit:</strong> 16.00 KB
+                            <br>
+
+                        <strong>Checker:</strong> Trim <span class="glyphicon glyphicon-question-sign" id="checkers-tooltip"></span>
+                    </div>
+                    <div class="submit-container pull-right">
+                        <script>
+                            function onSubmissionTypeChange() {
+                                var index = this.selectedIndex;
+                                var dataItem = this.dataItem(index);
+                                var form = $("#problem_8193");
+                                var fileUpload = $("#FileUploadInputFields_8193");
+                                var codeArea = $("#SourceCodeInputFields_8193");
+
+                                function submitHandler() {
+                                    var size = parseFloat("16") * 1024;
+                                    var extensions = dataItem.AllowedFileExtensions.split(',');
+                                    return validateSubmit.binary(form.find('input[type=file][name=File]')[0], size, extensions);
+                                }
+
+                                var oldFormAction = form.attr("action");
+                                var newFormAction;
+                                if (dataItem.AllowBinaryFilesUpload) {
+                                    newFormAction = oldFormAction.replace("/Submit/", "/SubmitBinaryFile/");
+
+                                    if (oldFormAction !== newFormAction) {
+                                        tabStripManager.tabSelected();
+                                        var returnProblem = getSelectedIndexFromHashtag();
+                                        newFormAction += ("?returnProblem=" + returnProblem);
+                                    }
+
+                                    form.attr("action", newFormAction)
+                                        .attr("data-ajax", "false")
+                                        .unbind("submit")
+                                        .bind("submit", submitHandler);
+
+                                    fileUpload.show();
+                                    codeArea.hide();
+
+                                    $("#FileUploadAllowedFileExtensions_8193")
+                                        .html("<b>Allowed file extensions:</b> " + dataItem.AllowedFileExtensions);
+                                } else {
+                                    newFormAction = oldFormAction.replace("/SubmitBinaryFile/", "/Submit/");
+
+                                    if (oldFormAction !== newFormAction) {
+                                        newFormAction = newFormAction.substr(0, newFormAction.lastIndexOf("?"));
+                                    }
+
+                                    form.attr("action", newFormAction)
+                                        .attr("data-ajax", "true")
+                                        .unbind("submit");
+
+                                    fileUpload.hide();
+                                    codeArea.show();
+                                }
+                            }
+                        </script>
+                        <span class="k-widget k-dropdown k-header" unselectable="on" role="listbox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-owns="dropdown_8193_listbox" aria-disabled="false" aria-readonly="false" aria-busy="false" aria-activedescendant="dropdown_8193_option_selected" style=""><span unselectable="on" class="k-dropdown-wrap k-state-default"><span unselectable="on" class="k-input">Java code</span><span unselectable="on" class="k-select"><span unselectable="on" class="k-icon k-i-arrow-s">select</span></span></span><input id="dropdown_8193" name="SubmissionTypeId" type="text" data-role="dropdownlist" style="display: none;"></span><script>
+	jQuery(function(){jQuery("#dropdown_8193").kendoDropDownList({"change":onSubmissionTypeChange,"dataBound":onSubmissionTypeChange,"open":Ojs.KendoControls.DropDownList.alignDropDownToInput,"dataSource":{"transport":{"prefix":"","read":{"url":"/Contests/Compete/GetAllowedSubmissionTypes/8193"}},"schema":{"errors":"Errors"}},"dataTextField":"Text","dataValueField":"Value"});});
+</script>
+                        <input type="submit" value="Submit" class="k-button submision-submit-button">
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+</form>        </div>
+    </div>
+
+
+
+        <div class="col-lg-4 problem-result-container visible-lg">
+            <div class="k-widget k-grid problem_submit_grid" id="ContestResults_8193" data-role="grid"><div class="k-toolbar k-grid-toolbar k-grid-top">Problem results</div><table class="table table-striped table-bordered" role="grid"><colgroup><col style="width:100px"><col style="width:80px"></colgroup><thead class="k-grid-header" role="rowgroup"><tr role="row"><th class="k-header" data-field="ParticipantName" data-title="Participant" scope="col" data-index="0"><span class="k-link">Participant</span></th><th class="k-header" data-field="Result" data-title="Result" scope="col" data-index="1"><span class="k-link">Result</span></th></tr></thead><tbody role="rowgroup"><tr><td><a href="https://judge.softuni.bg/Users/Galinagg" target="_blank">Galinagg</a></td><td>100 / 100</td></tr><tr><td><a href="https://judge.softuni.bg/Users/Ivan_Jul_Atanasov" target="_blank">Ivan_Jul_Atanasov</a></td><td>100 / 100</td></tr><tr><td><a href="https://judge.softuni.bg/Users/i.bosev" target="_blank">i.bosev</a></td><td>100 / 100</td></tr><tr><td><a href="https://judge.softuni.bg/Users/y.radev" target="_blank">y.radev</a></td><td>100 / 100</td></tr><tr><td><a href="https://judge.softuni.bg/Users/Danielstoyanov00" target="_blank">Danielstoyanov00</a></td><td>100 / 100</td></tr><tr><td><a href="https://judge.softuni.bg/Users/IvaPet" target="_blank">IvaPet</a></td><td>100 / 100</td></tr><tr><td><a href="https://judge.softuni.bg/Users/D.Ilchev" target="_blank">D.Ilchev</a></td><td>100 / 100</td></tr><tr><td><a href="https://judge.softuni.bg/Users/sasobig12" target="_blank">sasobig12</a></td><td>100 / 100</td></tr></tbody></table><div class="k-pager-wrap k-grid-pager k-widget" data-role="pager"><a class="k-link k-pager-nav k-state-disabled k-pager-first" data-page="1" href="https://judge.softuni.bg/Contests/Compete/Index/1297#" title="Go to the first page" tabindex="-1"><span class="k-icon k-i-seek-w">seek-w</span></a><a class="k-link k-pager-nav k-state-disabled" data-page="1" href="https://judge.softuni.bg/Contests/Compete/Index/1297#" title="Go to the previous page" tabindex="-1"><span class="k-icon k-i-arrow-w">arrow-w</span></a><ul class="k-pager-numbers k-reset"><li><span class="k-state-selected">1</span></li><li><a tabindex="-1" href="https://judge.softuni.bg/Contests/Compete/Index/1297#" class="k-link" data-page="2">2</a></li><li><a tabindex="-1" href="https://judge.softuni.bg/Contests/Compete/Index/1297#" class="k-link" data-page="3">3</a></li><li><a tabindex="-1" href="https://judge.softuni.bg/Contests/Compete/Index/1297#" class="k-link" data-page="4">4</a></li></ul><a class="k-link k-pager-nav" data-page="2" href="https://judge.softuni.bg/Contests/Compete/Index/1297#" title="Go to the next page" tabindex="-1"><span class="k-icon k-i-arrow-e">arrow-e</span></a><a class="k-link k-pager-nav k-pager-last" data-page="4" href="https://judge.softuni.bg/Contests/Compete/Index/1297#" title="Go to the last page" tabindex="-1"><span class="k-icon k-i-seek-e">seek-e</span></a><a class="k-pager-refresh k-link" href="https://judge.softuni.bg/Contests/Compete/Results/ByProblem/8193?_=1624016112732" title="Refresh"><span class="k-icon k-i-refresh">Refresh</span></a></div></div><script>
+	jQuery(function(){jQuery("#ContestResults_8193").kendoGrid({"columns":[{"title":"Participant","width":"100px","field":"ParticipantName","filterable":{},"encoded":true},{"title":"Result","width":"80px","field":"Result","filterable":{},"encoded":true}],"pageable":{"info":false,"refresh":true,"buttonCount":4},"scrollable":false,"toolbar":{},"dataSource":{"transport":{"prefix":"","read":{"url":"/Contests/Compete/Results/ByProblem/8193"}},"pageSize":8,"page":1,"total":0,"serverPaging":true,"serverSorting":true,"serverFiltering":true,"serverGrouping":true,"serverAggregates":true,"type":"aspnetmvc-ajax","sort":[{"field":"Result","dir":"desc"}],"filter":[],"schema":{"data":"Data","total":"Total","errors":"Errors","model":{"fields":{"SubmissionId":{"type":"number","defaultValue":null},"ParticipantName":{"type":"string"},"Result":{"type":"number"},"MaximumPoints":{"type":"number"},"ProblemId":{"type":"number"}}}}},"rowTemplate":"#= ParticipantName === \u0027manhattan\u0027 ? \"\u003ctr class=\u0027success\u0027\u003e\" : \"\u003ctr\u003e\"#\u003ctd\u003e\u003ca href=\u0027/Users/#:ParticipantName#\u0027 target=\u0027_blank\u0027\u003e#:ParticipantName#\u003c/a\u003e\u003c/td\u003e\u003ctd\u003e#:Result# / #:MaximumPoints#\u003c/td\u003e\u003c/tr\u003e"});});
+</script>
+        </div>
+</div>
+
+
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="k-widget k-grid problem_submit_grid" id="Submissions_8193" data-role="grid"><div class="k-toolbar k-grid-toolbar k-grid-top" style="border-width: 1px 0px;">Submissions</div><div class="k-pager-wrap k-grid-pager pagerTop k-widget" data-role="pager" style="border-width: 0px 0px 1px;"><a href="https://judge.softuni.bg/Contests/Compete/Index/1297#" title="Go to the first page" class="k-link k-pager-nav k-pager-first k-state-disabled" data-page="1" tabindex="-1"><span class="k-icon k-i-seek-w">Go to the first page</span></a><a href="https://judge.softuni.bg/Contests/Compete/Index/1297#" title="Go to the previous page" class="k-link k-pager-nav  k-state-disabled" data-page="1" tabindex="-1"><span class="k-icon k-i-arrow-w">Go to the previous page</span></a><ul class="k-pager-numbers k-reset"><li><span class="k-state-selected">1</span></li></ul><a href="https://judge.softuni.bg/Contests/Compete/Index/1297#" title="Go to the next page" class="k-link k-pager-nav  k-state-disabled" data-page="1" tabindex="-1"><span class="k-icon k-i-arrow-e">Go to the next page</span></a><a href="https://judge.softuni.bg/Contests/Compete/Index/1297#" title="Go to the last page" class="k-link k-pager-nav k-pager-last k-state-disabled" data-page="1" tabindex="-1"><span class="k-icon k-i-seek-e">Go to the last page</span></a><a href="https://judge.softuni.bg/Contests/Compete/Index/1297#" class="k-pager-refresh k-link" title="Refresh"><span class="k-icon k-i-refresh">Refresh</span></a></div><table role="grid"><colgroup><col><col><col style="width:300px"></colgroup><thead class="k-grid-header" role="rowgroup"><tr role="row"><th class="k-header" data-field="SubmissionPoints" data-title="Points" scope="col" data-index="0"><span class="k-link">Points</span></th><th class="k-header" scope="col" data-index="1"><span class="k-link">Time and memory used</span></th><th class="k-header" data-field="SubmissionDate" data-title="Submission date" scope="col" data-index="2"><span class="k-link">Submission date</span></th></tr></thead><tbody role="rowgroup"><tr data-uid="42664e4e-a65a-461a-a7b1-965c6a919f48" role="row"><td role="gridcell"><span class="glyphicon glyphicon-ok text-success" title="Правилен отговор"></span><span class="glyphicon glyphicon-ok text-success" title="Правилен отговор"></span><span class="glyphicon glyphicon-ok text-success" title="Правилен отговор"></span><span class="glyphicon glyphicon-ok text-success" title="Правилен отговор"></span> 100 / 100</td><td role="gridcell">Memory: 0.00 MB <br>Time: 0.059 s</td><td role="gridcell">16:03:57 18.06.2021 <a href="https://judge.softuni.bg/Contests/Submissions/View/21593193" target="_blank" class="view-submission-button btn btn-default pull-right">Details</a></td></tr></tbody></table><div class="k-pager-wrap k-grid-pager k-widget" data-role="pager"><a class="k-link k-pager-nav k-state-disabled k-pager-first" data-page="1" href="https://judge.softuni.bg/Contests/Compete/Index/1297#" title="Go to the first page" tabindex="-1"><span class="k-icon k-i-seek-w">seek-w</span></a><a class="k-link k-pager-nav k-state-disabled" data-page="1" href="https://judge.softuni.bg/Contests/Compete/Index/1297#" title="Go to the previous page" tabindex="-1"><span class="k-icon k-i-arrow-w">arrow-w</span></a><ul class="k-pager-numbers k-reset"><li><span class="k-state-selected">1</span></li></ul><a class="k-link k-pager-nav k-state-disabled" data-page="1" href="https://judge.softuni.bg/Contests/Compete/Index/1297#" title="Go to the next page" tabindex="-1"><span class="k-icon k-i-arrow-e">arrow-e</span></a><a class="k-link k-pager-nav k-state-disabled k-pager-last" data-page="1" href="https://judge.softuni.bg/Contests/Compete/Index/1297#" title="Go to the last page" tabindex="-1"><span class="k-icon k-i-seek-e">seek-e</span></a><a class="k-pager-refresh k-link" href="https://judge.softuni.bg/Contests/Compete/ReadSubmissionResults/8193?_=1624016112732" title="Refresh"><span class="k-icon k-i-refresh">Refresh</span></a></div></div><script>
+	jQuery(function(){jQuery("#Submissions_8193").kendoGrid({"dataBound":cloneSubmissionsGridPager,"columns":[{"title":"Points","template":"#= IsCalculated ? IsCompiledSuccessfully ? displayTestRuns(TestRuns).concat( SubmissionPoints.toString().concat(\u0027 / \u0027).concat(MaximumPoints)) : \u0027Compile time error\u0027:\u0027Not processed yet\u0027#","field":"SubmissionPoints","filterable":{},"encoded":true},{"title":"Time and memory used","template":"#= IsCalculated \u0026\u0026 IsCompiledSuccessfully ? displayMaximumValues(MaximumMemoryUsed, MaximumTimeUsed, \u0027Memory\u0027,\u0027Time\u0027) : \u0027---\u0027 #"},{"title":"Submission date","width":"300px","template":"#= kendo.format(\u0027{0:HH:mm:ss dd.MM.yyyy}\u0027, SubmissionDate) # \u003ca href=\u0027/Contests/Submissions/View/#=SubmissionId#\u0027 target=\u0027_blank\u0027 class=\u0027view-submission-button btn btn-default pull-right\u0027\u003eDetails\u003c/div\u003e","field":"SubmissionDate","filterable":{},"encoded":true}],"pageable":{"info":false,"refresh":true,"buttonCount":10},"scrollable":false,"toolbar":{},"dataSource":{"transport":{"prefix":"","read":{"url":"/Contests/Compete/ReadSubmissionResults/8193"}},"pageSize":10,"page":1,"total":0,"serverPaging":true,"serverSorting":true,"serverFiltering":true,"serverGrouping":true,"serverAggregates":true,"type":"aspnetmvc-ajax","sort":[{"field":"SubmissionDate","dir":"desc"}],"filter":[],"schema":{"data":"Data","total":"Total","errors":"Errors","model":{"fields":{"SubmissionId":{"type":"number"},"ProblemId":{"type":"number","defaultValue":null},"IsOfficial":{"type":"boolean"},"MaximumPoints":{"type":"number"},"TestRuns":{"type":"object"},"SubmissionDate":{"type":"date"},"IsCalculated":{"type":"boolean"},"MaximumMemoryUsed":{"editable":false,"type":"number","defaultValue":null},"MaximumTimeUsed":{"editable":false,"type":"number","defaultValue":null},"SubmissionPoints":{"type":"number","defaultValue":null},"IsCompiledSuccessfully":{"type":"boolean"}}}}}});});
+</script>
+        </div>
+    </div>
+
+<script>
+	jQuery(function(){jQuery("#checkers-tooltip").kendoTooltip({"position":"top","width":500,"content":"Trims the user output and compares it with the expected output."});});
+</script>
+<script type="text/x-kendo-template" id="checkers-template">
+    <ul style="list-style-type: none">
+        <li>
+            <strong>Checker types:</strong>
+        </li>
+        <li>
+            <strong>Exact</strong>  - the system compares the sent code result with the expected output symbol by symbol
+        </li>
+        <li>
+            <strong>Trim</strong> - the system trims the whitespace before and after the sent code result and then compares symbol by symbol with the expected output
+        </li>
+        <li>
+            <strong>Sort</strong> - the system sorts all lines in the sent code result and then compares symbol by symbol with the expected output
+        </li>
+        <li>
+            <strong>Case-insensitive</strong> - the system does not make difference between small and capital letters when comparing the sent code result with the expected output symbol by symbol
+        </li>
+        <li>
+            <strong>Precision N</strong> - only for tasks with end result decimal number - the system compares only the first N digits after the decimal point
+        </li>
+    </ul>
+</script>
+</div><div class="k-content k-state-active" id="SubmissionsTabStrip-7" role="tabpanel" aria-expanded="true" style="height: auto; overflow: visible; opacity: 1; display: block;">
+
+
+
+<h2>
+    07. Append Arrays
+    <span class="excluded-from-homework-disclaimer-message"></span>
+</h2>
+
+<div class="row">
+    <div class="col-md-12">
+        <div id="notify-container-8198">
+        </div>
+    </div>
+</div>
+
+
+
+<div class="row">
+    <div class="col-lg-8">
+        <div class="materials">
+
+        </div>
+        <div class="submision">
+<form action="https://judge.softuni.bg/Contests/Compete/Submit/1297" data-ajax="true" data-ajax-begin="validateSubmit.content" data-ajax-failure="messageNotifier.notifyFailure" data-ajax-success="messageNotifier.notifySuccess" id="problem_8198" method="post" enctype="multipart/form-data" encoding="multipart/form-data"><input name="__RequestVerificationToken" type="hidden" value="BcNurVQTJ_cgcBYXAQNmo3yXalNKj3nbLzzO29gEIQ9UcFZIwBcTeRx1lVbH4AewvGZZBKUGV2EbObzPdJW67qnDaiL_TgUBsCjaoIaYuR51aFbz5lSWnSO7ddSV0IbC12pdwA2"><input data-val="true" data-val-number="The field ProblemId must be a number." data-val-required="The ProblemId field is required." id="ProblemId" name="ProblemId" type="hidden" value="8198">                <div id="submisionDataFields">
+                    <div id="SourceCodeInputFields_8198">
+                        <textarea class="code-for-problem" id="code-problem-8198" name="Content" style="display: none;"></textarea><div class="CodeMirror cm-s-the-matrix CodeMirror-wrap"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 27px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;" tabindex="0"></textarea></div><div class="CodeMirror-vscrollbar" cm-not-content="true" style="bottom: 0px;"><div style="min-width: 1px; height: 0px;"></div></div><div class="CodeMirror-hscrollbar" cm-not-content="true"><div style="height: 100%; min-height: 1px; width: 0px;"></div></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 23px; margin-bottom: -17px; border-right-width: 13px; min-height: 26px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre><div class="CodeMirror-linenumber CodeMirror-gutter-elt"><div>1</div></div><div class="CodeMirror-linenumber CodeMirror-gutter-elt"><div>21</div></div><div class="CodeMirror-linenumber CodeMirror-gutter-elt"><div>1</div></div><div class="CodeMirror-linenumber CodeMirror-gutter-elt"><div>21</div></div><div class="CodeMirror-linenumber CodeMirror-gutter-elt"><div>1</div></div><div class="CodeMirror-linenumber CodeMirror-gutter-elt"><div>23</div></div><div class="CodeMirror-linenumber CodeMirror-gutter-elt"><div>1</div></div></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-cursors" style=""><div class="CodeMirror-cursor" style="left: 4px; top: 0px; height: 18px;">&nbsp;</div></div><div class="CodeMirror-code" role="presentation" style=""><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -23px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 13px;">1</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div></div></div></div></div></div><div style="position: absolute; height: 13px; width: 1px; border-bottom: 0px solid transparent; top: 26px;"></div><div class="CodeMirror-gutters" style="height: 39px; left: 0px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 21px;"></div></div></div></div>
+                    </div>
+                    <div id="FileUploadInputFields_8198" style="display: none;">
+                        <div class="k-widget k-upload k-header k-upload-sync k-upload-empty"><div class="k-button k-upload-button"><input id="file-problem-8198" name="File" type="file" data-role="upload" autocomplete="off"><span>Select files...</span></div></div><script>
+	jQuery(function(){jQuery("#file-problem-8198").kendoUpload({"multiple":false});});
+</script>
+                        <div id="FileUploadAllowedFileExtensions_8198"></div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="pull-left submit-container">
+                        <strong>Allowed working time:</strong> 0.100 sec.
+                        <br>
+                        <strong>Allowed memory:</strong> 16.00 MB
+                        <br>
+                            <strong>Size limit:</strong> 16.00 KB
+                            <br>
+
+                        <strong>Checker:</strong> Trim <span class="glyphicon glyphicon-question-sign" id="checkers-tooltip"></span>
+                    </div>
+                    <div class="submit-container pull-right">
+                        <script>
+                            function onSubmissionTypeChange() {
+                                var index = this.selectedIndex;
+                                var dataItem = this.dataItem(index);
+                                var form = $("#problem_8198");
+                                var fileUpload = $("#FileUploadInputFields_8198");
+                                var codeArea = $("#SourceCodeInputFields_8198");
+
+                                function submitHandler() {
+                                    var size = parseFloat("16") * 1024;
+                                    var extensions = dataItem.AllowedFileExtensions.split(',');
+                                    return validateSubmit.binary(form.find('input[type=file][name=File]')[0], size, extensions);
+                                }
+
+                                var oldFormAction = form.attr("action");
+                                var newFormAction;
+                                if (dataItem.AllowBinaryFilesUpload) {
+                                    newFormAction = oldFormAction.replace("/Submit/", "/SubmitBinaryFile/");
+
+                                    if (oldFormAction !== newFormAction) {
+                                        tabStripManager.tabSelected();
+                                        var returnProblem = getSelectedIndexFromHashtag();
+                                        newFormAction += ("?returnProblem=" + returnProblem);
+                                    }
+
+                                    form.attr("action", newFormAction)
+                                        .attr("data-ajax", "false")
+                                        .unbind("submit")
+                                        .bind("submit", submitHandler);
+
+                                    fileUpload.show();
+                                    codeArea.hide();
+
+                                    $("#FileUploadAllowedFileExtensions_8198")
+                                        .html("<b>Allowed file extensions:</b> " + dataItem.AllowedFileExtensions);
+                                } else {
+                                    newFormAction = oldFormAction.replace("/SubmitBinaryFile/", "/Submit/");
+
+                                    if (oldFormAction !== newFormAction) {
+                                        newFormAction = newFormAction.substr(0, newFormAction.lastIndexOf("?"));
+                                    }
+
+                                    form.attr("action", newFormAction)
+                                        .attr("data-ajax", "true")
+                                        .unbind("submit");
+
+                                    fileUpload.hide();
+                                    codeArea.show();
+                                }
+                            }
+                        </script>
+                        <span class="k-widget k-dropdown k-header" unselectable="on" role="listbox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-owns="dropdown_8198_listbox" aria-disabled="false" aria-readonly="false" aria-busy="false" aria-activedescendant="dropdown_8198_option_selected" style=""><span unselectable="on" class="k-dropdown-wrap k-state-default"><span unselectable="on" class="k-input">Java code</span><span unselectable="on" class="k-select"><span unselectable="on" class="k-icon k-i-arrow-s">select</span></span></span><input id="dropdown_8198" name="SubmissionTypeId" type="text" data-role="dropdownlist" style="display: none;"></span><script>
+	jQuery(function(){jQuery("#dropdown_8198").kendoDropDownList({"change":onSubmissionTypeChange,"dataBound":onSubmissionTypeChange,"open":Ojs.KendoControls.DropDownList.alignDropDownToInput,"dataSource":{"transport":{"prefix":"","read":{"url":"/Contests/Compete/GetAllowedSubmissionTypes/8198"}},"schema":{"errors":"Errors"}},"dataTextField":"Text","dataValueField":"Value"});});
+</script>
+                        <input type="submit" value="Submit" class="k-button submision-submit-button">
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+</form>        </div>
+    </div>
+
+
+
+        <div class="col-lg-4 problem-result-container visible-lg">
+            <div class="k-widget k-grid problem_submit_grid" id="ContestResults_8198" data-role="grid"><div class="k-toolbar k-grid-toolbar k-grid-top">Problem results</div><table class="table table-striped table-bordered" role="grid"><colgroup><col style="width:100px"><col style="width:80px"></colgroup><thead class="k-grid-header" role="rowgroup"><tr role="row"><th class="k-header" data-field="ParticipantName" data-title="Participant" scope="col" data-index="0"><span class="k-link">Participant</span></th><th class="k-header" data-field="Result" data-title="Result" scope="col" data-index="1"><span class="k-link">Result</span></th></tr></thead><tbody role="rowgroup"><tr><td><a href="https://judge.softuni.bg/Users/Galinagg" target="_blank">Galinagg</a></td><td>100 / 100</td></tr><tr><td><a href="https://judge.softuni.bg/Users/Ivan_Jul_Atanasov" target="_blank">Ivan_Jul_Atanasov</a></td><td>100 / 100</td></tr><tr><td><a href="https://judge.softuni.bg/Users/i.bosev" target="_blank">i.bosev</a></td><td>100 / 100</td></tr><tr><td><a href="https://judge.softuni.bg/Users/Danielstoyanov00" target="_blank">Danielstoyanov00</a></td><td>100 / 100</td></tr><tr><td><a href="https://judge.softuni.bg/Users/IvaPet" target="_blank">IvaPet</a></td><td>100 / 100</td></tr><tr><td><a href="https://judge.softuni.bg/Users/MartinBozhinov" target="_blank">MartinBozhinov</a></td><td>100 / 100</td></tr><tr><td><a href="https://judge.softuni.bg/Users/The_Lord" target="_blank">The_Lord</a></td><td>100 / 100</td></tr><tr><td><a href="https://judge.softuni.bg/Users/georgi_rs" target="_blank">georgi_rs</a></td><td>100 / 100</td></tr></tbody></table><div class="k-pager-wrap k-grid-pager k-widget" data-role="pager"><a class="k-link k-pager-nav k-state-disabled k-pager-first" data-page="1" href="https://judge.softuni.bg/Contests/Compete/Index/1297#" title="Go to the first page" tabindex="-1"><span class="k-icon k-i-seek-w">seek-w</span></a><a class="k-link k-pager-nav k-state-disabled" data-page="1" href="https://judge.softuni.bg/Contests/Compete/Index/1297#" title="Go to the previous page" tabindex="-1"><span class="k-icon k-i-arrow-w">arrow-w</span></a><ul class="k-pager-numbers k-reset"><li><span class="k-state-selected">1</span></li><li><a tabindex="-1" href="https://judge.softuni.bg/Contests/Compete/Index/1297#" class="k-link" data-page="2">2</a></li><li><a tabindex="-1" href="https://judge.softuni.bg/Contests/Compete/Index/1297#" class="k-link" data-page="3">3</a></li><li><a tabindex="-1" href="https://judge.softuni.bg/Contests/Compete/Index/1297#" class="k-link" data-page="4">4</a></li></ul><a class="k-link k-pager-nav" data-page="2" href="https://judge.softuni.bg/Contests/Compete/Index/1297#" title="Go to the next page" tabindex="-1"><span class="k-icon k-i-arrow-e">arrow-e</span></a><a class="k-link k-pager-nav k-pager-last" data-page="4" href="https://judge.softuni.bg/Contests/Compete/Index/1297#" title="Go to the last page" tabindex="-1"><span class="k-icon k-i-seek-e">seek-e</span></a><a class="k-pager-refresh k-link" href="https://judge.softuni.bg/Contests/Compete/Results/ByProblem/8198?_=1624016112733" title="Refresh"><span class="k-icon k-i-refresh">Refresh</span></a></div></div><script>
+	jQuery(function(){jQuery("#ContestResults_8198").kendoGrid({"columns":[{"title":"Participant","width":"100px","field":"ParticipantName","filterable":{},"encoded":true},{"title":"Result","width":"80px","field":"Result","filterable":{},"encoded":true}],"pageable":{"info":false,"refresh":true,"buttonCount":4},"scrollable":false,"toolbar":{},"dataSource":{"transport":{"prefix":"","read":{"url":"/Contests/Compete/Results/ByProblem/8198"}},"pageSize":8,"page":1,"total":0,"serverPaging":true,"serverSorting":true,"serverFiltering":true,"serverGrouping":true,"serverAggregates":true,"type":"aspnetmvc-ajax","sort":[{"field":"Result","dir":"desc"}],"filter":[],"schema":{"data":"Data","total":"Total","errors":"Errors","model":{"fields":{"SubmissionId":{"type":"number","defaultValue":null},"ParticipantName":{"type":"string"},"Result":{"type":"number"},"MaximumPoints":{"type":"number"},"ProblemId":{"type":"number"}}}}},"rowTemplate":"#= ParticipantName === \u0027manhattan\u0027 ? \"\u003ctr class=\u0027success\u0027\u003e\" : \"\u003ctr\u003e\"#\u003ctd\u003e\u003ca href=\u0027/Users/#:ParticipantName#\u0027 target=\u0027_blank\u0027\u003e#:ParticipantName#\u003c/a\u003e\u003c/td\u003e\u003ctd\u003e#:Result# / #:MaximumPoints#\u003c/td\u003e\u003c/tr\u003e"});});
+</script>
+        </div>
+</div>
+
+
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="k-widget k-grid problem_submit_grid" id="Submissions_8198" data-role="grid"><div class="k-toolbar k-grid-toolbar k-grid-top" style="border-width: 1px 0px;">Submissions</div><div class="k-pager-wrap k-grid-pager pagerTop k-widget" data-role="pager" style="border-width: 0px 0px 1px;"><a href="https://judge.softuni.bg/Contests/Compete/Index/1297#" title="Go to the first page" class="k-link k-pager-nav k-pager-first k-state-disabled" data-page="1" tabindex="-1"><span class="k-icon k-i-seek-w">Go to the first page</span></a><a href="https://judge.softuni.bg/Contests/Compete/Index/1297#" title="Go to the previous page" class="k-link k-pager-nav  k-state-disabled" data-page="1" tabindex="-1"><span class="k-icon k-i-arrow-w">Go to the previous page</span></a><ul class="k-pager-numbers k-reset"><li><span class="k-state-selected">1</span></li></ul><a href="https://judge.softuni.bg/Contests/Compete/Index/1297#" title="Go to the next page" class="k-link k-pager-nav  k-state-disabled" data-page="1" tabindex="-1"><span class="k-icon k-i-arrow-e">Go to the next page</span></a><a href="https://judge.softuni.bg/Contests/Compete/Index/1297#" title="Go to the last page" class="k-link k-pager-nav k-pager-last k-state-disabled" data-page="1" tabindex="-1"><span class="k-icon k-i-seek-e">Go to the last page</span></a><a href="https://judge.softuni.bg/Contests/Compete/Index/1297#" class="k-pager-refresh k-link" title="Refresh"><span class="k-icon k-i-refresh">Refresh</span></a></div><table role="grid"><colgroup><col><col><col style="width:300px"></colgroup><thead class="k-grid-header" role="rowgroup"><tr role="row"><th class="k-header" data-field="SubmissionPoints" data-title="Points" scope="col" data-index="0"><span class="k-link">Points</span></th><th class="k-header" scope="col" data-index="1"><span class="k-link">Time and memory used</span></th><th class="k-header" data-field="SubmissionDate" data-title="Submission date" scope="col" data-index="2"><span class="k-link">Submission date</span></th></tr></thead><tbody role="rowgroup"><tr data-uid="8131f35d-519f-4aab-8e85-de853fe48270" role="row"><td role="gridcell"><span class="glyphicon glyphicon-ok text-success" title="Правилен отговор"></span><span class="glyphicon glyphicon-ok text-success" title="Правилен отговор"></span><span class="glyphicon glyphicon-ok text-success" title="Правилен отговор"></span><span class="glyphicon glyphicon-ok text-success" title="Правилен отговор"></span> 100 / 100</td><td role="gridcell">Memory: 1.13 MB <br>Time: 0.080 s</td><td role="gridcell">16:24:11 18.06.2021 <a href="https://judge.softuni.bg/Contests/Submissions/View/21593698" target="_blank" class="view-submission-button btn btn-default pull-right">Details</a></td></tr><tr class="k-alt" data-uid="7cd73c77-4de9-40d2-a8e3-9e27ffda5190" role="row"><td role="gridcell"><span class="glyphicon glyphicon-ok text-success" title="Правилен отговор"></span><span class="glyphicon glyphicon-ok text-success" title="Правилен отговор"></span><span class="glyphicon glyphicon-ok text-success" title="Правилен отговор"></span><span class="glyphicon glyphicon-asterisk text-danger" title="Грешка при изпълнение"></span> 75 / 100</td><td role="gridcell">Memory: 0.00 MB <br>Time: 0.050 s</td><td role="gridcell">16:22:56 18.06.2021 <a href="https://judge.softuni.bg/Contests/Submissions/View/21593675" target="_blank" class="view-submission-button btn btn-default pull-right">Details</a></td></tr><tr data-uid="c2149a7e-0ddf-494c-9712-927815ed2780" role="row"><td role="gridcell"><span class="glyphicon glyphicon-remove text-danger" title="Грешен отговор"></span><span class="glyphicon glyphicon-remove text-danger" title="Грешен отговор"></span><span class="glyphicon glyphicon-remove text-danger" title="Грешен отговор"></span><span class="glyphicon glyphicon-asterisk text-danger" title="Грешка при изпълнение"></span> 0 / 100</td><td role="gridcell">Memory: 0.00 MB <br>Time: 0.046 s</td><td role="gridcell">16:21:53 18.06.2021 <a href="https://judge.softuni.bg/Contests/Submissions/View/21593646" target="_blank" class="view-submission-button btn btn-default pull-right">Details</a></td></tr></tbody></table><div class="k-pager-wrap k-grid-pager k-widget" data-role="pager"><a class="k-link k-pager-nav k-state-disabled k-pager-first" data-page="1" href="https://judge.softuni.bg/Contests/Compete/Index/1297#" title="Go to the first page" tabindex="-1"><span class="k-icon k-i-seek-w">seek-w</span></a><a class="k-link k-pager-nav k-state-disabled" data-page="1" href="https://judge.softuni.bg/Contests/Compete/Index/1297#" title="Go to the previous page" tabindex="-1"><span class="k-icon k-i-arrow-w">arrow-w</span></a><ul class="k-pager-numbers k-reset"><li><span class="k-state-selected">1</span></li></ul><a class="k-link k-pager-nav k-state-disabled" data-page="1" href="https://judge.softuni.bg/Contests/Compete/Index/1297#" title="Go to the next page" tabindex="-1"><span class="k-icon k-i-arrow-e">arrow-e</span></a><a class="k-link k-pager-nav k-state-disabled k-pager-last" data-page="1" href="https://judge.softuni.bg/Contests/Compete/Index/1297#" title="Go to the last page" tabindex="-1"><span class="k-icon k-i-seek-e">seek-e</span></a><a class="k-pager-refresh k-link" href="https://judge.softuni.bg/Contests/Compete/ReadSubmissionResults/8198?_=1624016112733" title="Refresh"><span class="k-icon k-i-refresh">Refresh</span></a></div></div><script>
+	jQuery(function(){jQuery("#Submissions_8198").kendoGrid({"dataBound":cloneSubmissionsGridPager,"columns":[{"title":"Points","template":"#= IsCalculated ? IsCompiledSuccessfully ? displayTestRuns(TestRuns).concat( SubmissionPoints.toString().concat(\u0027 / \u0027).concat(MaximumPoints)) : \u0027Compile time error\u0027:\u0027Not processed yet\u0027#","field":"SubmissionPoints","filterable":{},"encoded":true},{"title":"Time and memory used","template":"#= IsCalculated \u0026\u0026 IsCompiledSuccessfully ? displayMaximumValues(MaximumMemoryUsed, MaximumTimeUsed, \u0027Memory\u0027,\u0027Time\u0027) : \u0027---\u0027 #"},{"title":"Submission date","width":"300px","template":"#= kendo.format(\u0027{0:HH:mm:ss dd.MM.yyyy}\u0027, SubmissionDate) # \u003ca href=\u0027/Contests/Submissions/View/#=SubmissionId#\u0027 target=\u0027_blank\u0027 class=\u0027view-submission-button btn btn-default pull-right\u0027\u003eDetails\u003c/div\u003e","field":"SubmissionDate","filterable":{},"encoded":true}],"pageable":{"info":false,"refresh":true,"buttonCount":10},"scrollable":false,"toolbar":{},"dataSource":{"transport":{"prefix":"","read":{"url":"/Contests/Compete/ReadSubmissionResults/8198"}},"pageSize":10,"page":1,"total":0,"serverPaging":true,"serverSorting":true,"serverFiltering":true,"serverGrouping":true,"serverAggregates":true,"type":"aspnetmvc-ajax","sort":[{"field":"SubmissionDate","dir":"desc"}],"filter":[],"schema":{"data":"Data","total":"Total","errors":"Errors","model":{"fields":{"SubmissionId":{"type":"number"},"ProblemId":{"type":"number","defaultValue":null},"IsOfficial":{"type":"boolean"},"MaximumPoints":{"type":"number"},"TestRuns":{"type":"object"},"SubmissionDate":{"type":"date"},"IsCalculated":{"type":"boolean"},"MaximumMemoryUsed":{"editable":false,"type":"number","defaultValue":null},"MaximumTimeUsed":{"editable":false,"type":"number","defaultValue":null},"SubmissionPoints":{"type":"number","defaultValue":null},"IsCompiledSuccessfully":{"type":"boolean"}}}}}});});
+</script>
+        </div>
+    </div>
+
+<script>
+	jQuery(function(){jQuery("#checkers-tooltip").kendoTooltip({"position":"top","width":500,"content":"Trims the user output and compares it with the expected output."});});
+</script>
+<script type="text/x-kendo-template" id="checkers-template">
+    <ul style="list-style-type: none">
+        <li>
+            <strong>Checker types:</strong>
+        </li>
+        <li>
+            <strong>Exact</strong>  - the system compares the sent code result with the expected output symbol by symbol
+        </li>
+        <li>
+            <strong>Trim</strong> - the system trims the whitespace before and after the sent code result and then compares symbol by symbol with the expected output
+        </li>
+        <li>
+            <strong>Sort</strong> - the system sorts all lines in the sent code result and then compares symbol by symbol with the expected output
+        </li>
+        <li>
+            <strong>Case-insensitive</strong> - the system does not make difference between small and capital letters when comparing the sent code result with the expected output symbol by symbol
+        </li>
+        <li>
+            <strong>Precision N</strong> - only for tasks with end result decimal number - the system compares only the first N digits after the decimal point
+        </li>
+    </ul>
+</script>
+</div><div class="k-content" id="SubmissionsTabStrip-8" role="tabpanel" aria-hidden="true" aria-expanded="false"></div><div class="k-content" id="SubmissionsTabStrip-9" role="tabpanel" aria-hidden="true" aria-expanded="false"></div><div class="k-content" id="SubmissionsTabStrip-10" role="tabpanel" aria-hidden="true" aria-expanded="false"></div></div></div><script>
+	jQuery(function(){jQuery("#SubmissionsTabStrip").kendoTabStrip({"contentLoad":tabStripManager.onContentLoad,"activate":tabStripManager.tabSelected,"contentUrls":["/Contests/Compete/Problem/8188","/Contests/Compete/Problem/8189","/Contests/Compete/Problem/8190","/Contests/Compete/Problem/8191","/Contests/Compete/Problem/8192","/Contests/Compete/Problem/8193","/Contests/Compete/Problem/8198","/Contests/Compete/Problem/8194","/Contests/Compete/Problem/8195","/Contests/Compete/Problem/8196"]});});
+</script>
+    </div>
+</div>
+
+
+        <hr>
+        <footer>
+            <p>© 2011-2021 - Open Judge System (OJS) 1.5.20150729.95737d0 - running on Windows. <a href="https://github.com/NikolayIT/OpenJudgeSystem" target="_blank">Open source project.</a></p>
+        </footer>
+    </div>
+
+    <!-- Cookie usage notification -->
+    <div id="cookies-notification">
+        <a href="http://en.wikipedia.org/wiki/HTTP_cookie" target="_blank">Cookies</a> help us deliver our services. By using our services, you agree to our use of cookies.
+        <a id="cookies-notification-button" href="https://judge.softuni.bg/Contests/Compete/Index/1297#">OK</a>
+    </div>
+
+    <!-- JavaScripts -->
+    <script src="./Lists - Exercise - SoftUni Judge_files/bootstrap(1)"></script>
+
+    
+    <script src="./Lists - Exercise - SoftUni Judge_files/codemirror(1)"></script>
+
+    <script src="./Lists - Exercise - SoftUni Judge_files/test-results.js.download"></script>
+    <script src="./Lists - Exercise - SoftUni Judge_files/countdown.js.download"></script>
+    <script src="./Lists - Exercise - SoftUni Judge_files/submission-page.js.download"></script>
+    <script type="text/javascript">
+        var timeValidator = new submissionTimeValidator(new Date(Date.parse("18 Jun 2021 14:35:21")));
+
+        var validateSubmit = (function () {
+            var submitTime;
+
+                
+                    submitTime = new Date(Date.parse("18 Jun 2021 14:13:09"));
+                
+
+            var serverTime = new Date(Date.parse("18 Jun 2021 14:35:21"));
+
+            var limitBetweenSubmissions = parseInt(60);
+
+            function validateSubmit() {
+                var validationResult = validateSubmissionContent() && timeValidator.validate(submitTime, limitBetweenSubmissions, serverTime);
+                return validationResult;
+            }
+
+            function validateBinarySubmit(fileInput, size, extensions) {
+                var validationResult = validateBinaryFileExists(fileInput)
+                    && validateBinaryFileSize(fileInput, size)
+                    && validateBinaryFileAllowedExtensions(fileInput, extensions)
+                    && timeValidator.validate(submitTime, limitBetweenSubmissions, serverTime);
+                return validationResult;
+            }
+
+            return {
+                content: validateSubmit,
+                binary : validateBinarySubmit
+            };
+        })();
+
+                
+                    calculateRemainingTimeOnClient(
+                        'countdown-timer-container',
+                        "<div id='countdown-timer'>Remaining time: <span id='hours-remaining'></span> h, <span id='minutes-remaining'></span> m and <span id='seconds-remaining'></span> s</div>",
+                        4872218638.3591);
+                
+    </script>
+
+
+
+<div class="k-list-container k-popup k-group k-reset" id="dropdown_8191-list" data-role="popup" style="position: absolute; height: auto; display: none;"><ul unselectable="on" class="k-list k-reset" tabindex="-1" role="listbox" aria-hidden="true" id="dropdown_8191_listbox" aria-live="off" style="overflow: auto; height: auto;"><li tabindex="-1" role="option" unselectable="on" class="k-item k-state-selected k-state-focused" id="dropdown_8191_option_selected" aria-selected="true">Java code</li></ul></div><div class="k-list-container k-popup k-group k-reset" id="dropdown_8192-list" data-role="popup" style="position: absolute; height: auto; display: none;"><ul unselectable="on" class="k-list k-reset" tabindex="-1" role="listbox" aria-hidden="true" id="dropdown_8192_listbox" aria-live="off" style="overflow: auto; height: auto;"><li tabindex="-1" role="option" unselectable="on" class="k-item k-state-selected k-state-focused" id="dropdown_8192_option_selected" aria-selected="true">Java code</li></ul></div><div class="k-list-container k-popup k-group k-reset" id="dropdown_8193-list" data-role="popup" style="position: absolute; height: auto; display: none;"><ul unselectable="on" class="k-list k-reset" tabindex="-1" role="listbox" aria-hidden="true" id="dropdown_8193_listbox" aria-live="off" style="overflow: auto; height: auto;"><li tabindex="-1" role="option" unselectable="on" class="k-item k-state-selected k-state-focused" id="dropdown_8193_option_selected" aria-selected="true">Java code</li></ul></div><div class="k-list-container k-popup k-group k-reset" id="dropdown_8198-list" data-role="popup" style="position: absolute; height: auto; display: none;"><ul unselectable="on" class="k-list k-reset" tabindex="-1" role="listbox" aria-hidden="true" id="dropdown_8198_listbox" aria-live="off" style="overflow: auto; height: auto;"><li tabindex="-1" role="option" unselectable="on" class="k-item k-state-selected k-state-focused" id="dropdown_8198_option_selected" aria-selected="true">Java code</li></ul></div></body></html>
