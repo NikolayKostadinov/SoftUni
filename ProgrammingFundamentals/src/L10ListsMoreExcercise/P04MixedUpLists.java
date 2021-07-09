@@ -11,30 +11,22 @@ public class P04MixedUpLists {
         Scanner scan = new Scanner(System.in);
         List<Integer> nums1 = Arrays.stream(scan.nextLine().split("\\s")).map(Integer::parseInt).collect(Collectors.toList());
         List<Integer> nums2 = Arrays.stream(scan.nextLine().split("\\s")).map(Integer::parseInt).collect(Collectors.toList());
-        List<Integer> range = new ArrayList<>(2);
-        int maxLength;
-        if (nums1.size() > nums2.size()){
-            range = nums1.subList(nums1.size() - 2, nums1.size());
-            nums1 = nums1.subList(0, nums1.size() - 2);
-            range.sort(Integer::compareTo);
-            maxLength = nums2.size();
-        } else {
-            range = nums2.subList(0, 2);
-            nums2 = nums2.subList(2, nums2.size());
-            range.sort(Integer::compareTo);
-            maxLength = nums1.size();
-        }
+        int maxLength = (nums1.size() < nums2.size()) ? nums1.size():nums2.size();
 
         List<Integer> mix = new ArrayList<>(maxLength * 2);
 
         for (int i = 0; i < maxLength; i++) {
-                mix.add(nums1.get(i));
-                mix.add(nums2.get(nums2.size() - i - 1));
+                mix.add(nums1.get(0));
+                nums1.remove(0);
+                mix.add(nums2.get(nums2.size() - 1));
+                nums2.remove(nums2.size() - 1);
         }
 
+        List<Integer> range = nums1;
+        range.addAll(nums2);
+        range.sort(Integer::compareTo);
         mix.sort(Integer::compareTo);
-        List<Integer> finalRange = range;
-        mix = mix.stream().filter(x -> finalRange.get(0) < x && x < finalRange.get(1)).collect(Collectors.toList());
+        mix = mix.stream().filter(x -> range.get(0) < x && x < range.get(1)).collect(Collectors.toList());
         System.out.println(mix.toString().replaceAll("[\\[\\],]", ""));
     }
 }
