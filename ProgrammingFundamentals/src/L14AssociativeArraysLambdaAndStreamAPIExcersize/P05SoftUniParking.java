@@ -1,9 +1,8 @@
-package L13AssociativeArraysLambdaAndStreamAPIExcersize;
+package L14AssociativeArraysLambdaAndStreamAPIExcersize;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Scanner;
-import java.util.TreeMap;
 
 public class P05SoftUniParking {
     public static void main(String[] args) {

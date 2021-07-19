@@ -1,4 +1,4 @@
-package L13AssociativeArraysLambdaAndStreamAPIExcersize;
+package L14AssociativeArraysLambdaAndStreamAPIExcersize;
 
 import java.util.*;
 
@@ -25,7 +25,9 @@ public class P07StudentAcademy {
                 .stream()
                 .map(x -> {
                     List<Double> grades = x.getValue();
-                    double averageGrade = grades.stream().mapToDouble(Double::doubleValue).sum() / (double) grades.size();
+                    double averageGrade = grades
+                            .stream()
+                            .mapToDouble(Double::doubleValue).sum() / (double) grades.size();
                     return new AbstractMap.SimpleEntry<String, Double>(x.getKey(), averageGrade);
                 })
                 .filter(e -> e.getValue() >= 4.5)
