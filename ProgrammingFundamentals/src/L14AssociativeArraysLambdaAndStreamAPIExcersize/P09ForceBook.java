@@ -13,21 +13,29 @@ public class P09ForceBook {
         while (!"Lumpawaroo".equals(command)) {
 
             if (command.contains(" | ")) {
-                String[] tokens = command.split(" | ");
-                sites.putIfAbsent(tokens[0], new ArrayList<>());
-                List<String> users = sites.get(tokens[0]);
-                if (!users.contains(tokens[1])) {
-                    users.add(tokens[0]);
+                String[] tokens = command.split(" \\| ");
+                String forceUser = tokens[1];
+                String forceSite = tokens[0];
+
+                if (sites
+                        .entrySet()
+                        .stream()
+                        .allMatch(x -> !x.getValue().contains(forceUser))) {
+                    sites.putIfAbsent(forceSite, new ArrayList<>());
+                    List<String> users = sites.get(forceSite);
+                    users.add(forceUser);
                 }
             } else if (command.contains(" -> ")) {
                 String[] tokens = command.split(" -> ");
-                sites.putIfAbsent(tokens[1], new ArrayList<>());
+                String forceUser = tokens[0];
+                String forceSite = tokens[1];
+                sites.putIfAbsent(forceSite, new ArrayList<>());
                 sites
                         .entrySet()
                         .stream()
-                        .forEach(x -> x.getValue().remove(tokens[0]));
-                sites.get(tokens[1]).add(tokens[0]);
-                System.out.printf("%s joins the %s side!\n", tokens[0], tokens[1]);
+                        .forEach(x -> x.getValue().remove(forceUser));
+                sites.get(forceSite).add(forceUser);
+                System.out.printf("%s joins the %s side!\n", forceUser, forceSite);
             }
 
             command = scan.nextLine();
@@ -46,7 +54,7 @@ public class P09ForceBook {
                     users
                             .stream()
                             .sorted(String::compareTo)
-                            .forEach(u -> System.out.printf("!%s\n", u));
+                            .forEach(u -> System.out.printf("! %s\n", u));
                 });
     }
 }
