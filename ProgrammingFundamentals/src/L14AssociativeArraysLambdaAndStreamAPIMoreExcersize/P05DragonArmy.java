@@ -27,17 +27,17 @@ public class P05DragonArmy {
                     double avgDamage = type.getValue()
                             .entrySet()
                             .stream()
-                            .mapToInt(x -> x.getValue().damage).sum() / (double) type.getValue().entrySet().size();
+                            .mapToInt(x -> x.getValue().getDamage()).sum() / (double) type.getValue().entrySet().size();
 
                     double avgHealth = type.getValue()
                             .entrySet()
                             .stream()
-                            .mapToInt(x -> x.getValue().health).sum() / (double) type.getValue().entrySet().size();
+                            .mapToInt(x -> x.getValue().getHealth()).sum() / (double) type.getValue().entrySet().size();
 
                     double avgArmor = type.getValue()
                             .entrySet()
                             .stream()
-                            .mapToInt(x -> x.getValue().armor).sum() / (double) type.getValue().entrySet().size();
+                            .mapToInt(x -> x.getValue().getArmor()).sum() / (double) type.getValue().entrySet().size();
 
                     System.out.printf("%s::(%.2f/%.2f/%.2f)\n", type.getKey(), avgDamage, avgHealth, avgArmor);
 
@@ -48,16 +48,16 @@ public class P05DragonArmy {
                                 Stat entryValue = entry.getValue();
                                 System.out.printf("-%s -> damage: %d, health: %d, armor: %d\n",
                                         entry.getKey(),
-                                        entryValue.damage,
-                                        entryValue.health,
-                                        entryValue.armor);});
+                                        entryValue.getDamage(),
+                                        entryValue.getHealth(),
+                                        entryValue.getArmor());});
                 });
     }
 
     private static class Stat {
-        int damage;
-        int health;
-        int armor;
+        private int damage;
+        private int health;
+        private int armor;
 
         public Stat(String damage, String health, String armor) {
             this.damage = (!damage.equals("null")) ? Integer.parseInt(damage) : 45;
