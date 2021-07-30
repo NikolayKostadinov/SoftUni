@@ -9,7 +9,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class P01Furniture {
-    private static final String PATTERN = "^>>(?<name>\\w*)<<(?<price>\\d+\\.*\\d*)!(?<quantity>\\d+)\\b";
+    private static final String PATTERN = "^>>(?<name>\\w+)<<(?<price>\\d+(\\.\\d+)?)!(?<quantity>\\d+)\\b";
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         String command = scan.nextLine();
@@ -31,7 +31,7 @@ public class P01Furniture {
         }
 
         System.out.println("Bought furniture:");
-
+        if (furniture.size() > 0)
         System.out.println(String.join("\n", furniture));
 
         System.out.printf("Total money spend: %.2f\n", sum);
