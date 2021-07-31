@@ -1,11 +1,8 @@
 package L18RegularExpressionsExercises;
 
-import javax.crypto.Mac;
-import java.util.Map;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import java.util.regex.PatternSyntaxException;
 
 public class P06ExtractEmails {
     public static final String PATTERN =
