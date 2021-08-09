@@ -15,7 +15,7 @@ public class P04StarEnigma {
         for (int i = 0; i < n; i++) {
             String encrypted = scan.nextLine();
             String message = decrypt(encrypted);
-            Pattern pattern = Pattern.compile("@([^@\\-!:>])*?(?<palnet>[A-Za-z]+)([^@\\-!:>])*?:([^@\\-!:>])*?(\\d+)([^@\\-!:>])*?!([^@\\-!:>])*?(?<thread>A|D)([^@\\-!:>])*?!");
+            Pattern pattern = Pattern.compile("@([^@\\-!:>])*?(?<palnet>[A-Za-z]+)([^@\\-!:>])*?:([^@\\-!:>])*?(\\d+)([^@\\-!:>])*?!([^@\\-!:>])*?(?<thread>A|D)([^@\\-!:>])*?!([^@\\-!:>])*?->([^@\\-!:>])*?\\d+");
             Matcher matcher = pattern.matcher(message);
             if (matcher.find()){
                 if (matcher.group("thread").equals("A")){
