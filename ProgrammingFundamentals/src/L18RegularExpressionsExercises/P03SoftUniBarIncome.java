@@ -8,6 +8,10 @@ public class P03SoftUniBarIncome {
     private static final String PATTERN =
             "%(?<clientName>[A-Z][a-z]+)%.*<(?<product>\\w+)>.*\\|(?<count>\\d+)\\|\\D*(?<price>\\d+(.\\d+)*)\\$";
 
+    private static final String PATTERN1 =
+            "%(?<customerName>[A-Z][a-z]*)%[^|$%.]*<(?<product>\\w+)>[^|$%.]*\\|(?<count>[0-9]+)\\|[^|$%.]*?(?<price>[0-9]+\\.*[0-9]*)\\$";
+
+
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         String row = scan.nextLine();
