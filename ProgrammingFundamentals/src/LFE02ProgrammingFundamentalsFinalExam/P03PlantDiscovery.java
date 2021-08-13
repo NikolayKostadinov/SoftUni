@@ -95,11 +95,9 @@ public class P03PlantDiscovery {
         }
 
         public double getAverageRate() {
-            if (this.rates.size() > 0) {
-                return this.rates.stream().mapToInt(Integer::intValue).sum() / (double) this.rates.size();
-            } else {
-                return 0;
-            }
+                return this.rates
+                        .stream().mapToInt(Integer::intValue)
+                        .average().orElse(0);
         }
     }
 }

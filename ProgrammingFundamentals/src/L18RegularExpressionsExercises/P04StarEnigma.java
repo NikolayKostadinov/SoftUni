@@ -20,7 +20,7 @@ public class P04StarEnigma {
             if (matcher.find()){
                 if (matcher.group("thread").equals("A")){
                     attacked.putIfAbsent(matcher.group("palnet"), 0);
-                }else {
+                } else {
                     destroyed.putIfAbsent(matcher.group("palnet"), 0);
                 }
             }
