@@ -1,12 +1,10 @@
 package LFE03ProgrammingFundamentalsFinalExamRetake;
 
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
-import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.stream.Collector;
 
 public class P02MirrorWords {
     private static final String PATTERN = "(@|#)(?<word1>[A-Za-z]{3,})\\1\\1(?<word2>[A-Za-z]{3,})\\1";
@@ -34,7 +32,8 @@ public class P02MirrorWords {
         pairs.forEach(pair -> {
             String[] words = pair.split(" <=> ");
             StringBuilder reversed = new StringBuilder(words[1].length());
-            words[1].chars().forEach(c -> reversed.insert(0, (char) c));
+            reversed = reversed.append(words[1]).reverse();
+//            words[1].chars().forEach(c -> reversed.insert(0, (char) c));
             if (words[0].equals(reversed.toString())) {
                 mirrored.add(pair);
             }

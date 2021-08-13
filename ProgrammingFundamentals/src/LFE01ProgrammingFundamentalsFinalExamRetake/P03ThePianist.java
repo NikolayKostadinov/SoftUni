@@ -55,11 +55,10 @@ public class P03ThePianist {
         pieces
                 .entrySet()
                 .stream()
-                .forEach(p->{
+                .forEach(p->
                     p.getValue()
                             .entrySet()
                             .stream()
-                            .forEach(c-> System.out.printf("%s -> Composer: %s, Key: %s\n",p.getKey(),c.getKey(),c.getValue()));
-                });
+                            .forEach(c-> System.out.printf("%s -> Composer: %s, Key: %s\n",p.getKey(),c.getKey(),c.getValue())));
     }
 }
