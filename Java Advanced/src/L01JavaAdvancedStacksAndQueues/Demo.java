@@ -10,6 +10,6 @@ public class Demo {
 
         // offer, poll , peek
         ArrayDeque<Integer> queue = new ArrayDeque<Integer>();
-
+        //ping
     }
 }
