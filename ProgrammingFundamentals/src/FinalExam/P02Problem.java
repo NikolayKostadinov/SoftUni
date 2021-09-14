@@ -1,4 +1,4 @@
-package LastExam;
+package FinalExam;
 
 import java.util.Scanner;
 import java.util.regex.Matcher;
