@@ -5,41 +5,42 @@ import java.util.Scanner;
 
 public class P08BrowserHistoryUpgrade {
     public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
-        ArrayDeque<String> stack = new ArrayDeque<>();
-        ArrayDeque<String> forwardSteps = new ArrayDeque<>();
-        String command = scan.nextLine();
+        Scanner scanner = new Scanner(System.in);
 
-        while (!"Home".equals(command)) {
-            switch (command) {
+        String command = scanner.nextLine();
+
+        ArrayDeque <String> stackURLs = new ArrayDeque<>();
+        ArrayDeque <String> forwardsQueue = new ArrayDeque<>();
+
+        while (!command.equals("Home")){
+            switch (command){
                 case "back":
-                    if (!stack.isEmpty()) {
-                        forwardSteps.offer(stack.pop());
+                    if (stackURLs.size() < 2){
+                        System.out.println("no previous URLs");
                     }
-                    printStack(stack, "no previous URLs");
+                    else {
+                        String currentURL = stackURLs.pop();
+                        forwardsQueue.push(currentURL);
+                        System.out.println(stackURLs.peek());
+                    }
                     break;
                 case "forward":
-                    printStack(forwardSteps, "no next URLs");
-                    if (!forwardSteps.isEmpty()) {
-                        forwardSteps.poll();
+                    if (forwardsQueue.isEmpty()){
+                        System.out.println("no next URLs");
+                    }
+                    else {
+                        String currentForward = forwardsQueue.pop();
+                        System.out.println(currentForward);
+                        stackURLs.push(currentForward);
                     }
                     break;
                 default:
-                    stack.push(command);
-                    forwardSteps.clear();
-                    printStack(stack, "no previous URLs");
+                    stackURLs.push(command);
+                    System.out.println(command);
+                    forwardsQueue.clear();
                     break;
             }
-
-            command = scan.nextLine();
-        }
-    }
-
-    private static void printStack(ArrayDeque<String> stack, String message) {
-        if (!stack.isEmpty()) {
-            System.out.println(stack.peek());
-        } else {
-            System.out.println(message);
+            command = scanner.nextLine();
         }
     }
 }
