@@ -1,6 +1,5 @@
-package LastExam;
+package FinalExam;
 
-import java.util.Locale;
 import java.util.Scanner;
 
 public class P01Problem {
