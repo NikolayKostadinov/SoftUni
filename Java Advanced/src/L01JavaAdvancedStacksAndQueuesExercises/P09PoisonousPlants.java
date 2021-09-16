@@ -30,6 +30,5 @@ public class P09PoisonousPlants {
         }
 
         System.out.println(Arrays.stream(plantsDieDay).max().orElse(0));
-
     }
 }
