@@ -1,7 +1,6 @@
-package L01JavaAdvancedStacksAndQueues;
+package L01StacksAndQueues;
 
 import java.util.ArrayDeque;
-import java.util.Stack;
 
 public class Demo {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package L01JavaAdvancedStacksAndQueues;
+package L01StacksAndQueues;
 
 import java.util.ArrayDeque;
 import java.util.Arrays;
