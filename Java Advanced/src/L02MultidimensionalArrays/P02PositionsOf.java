@@ -1,4 +1,4 @@
-package L02MultidimensionalArraysLab;
+package L02MultidimensionalArrays;
 
 import java.util.ArrayList;
 import java.util.Arrays;

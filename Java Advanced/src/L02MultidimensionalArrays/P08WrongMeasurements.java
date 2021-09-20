@@ -1,4 +1,4 @@
-package L02MultidimensionalArraysLab;
+package L02MultidimensionalArrays;
 
 import java.util.Arrays;
 import java.util.Scanner;
@@ -19,7 +19,7 @@ public class P08WrongMeasurements {
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[0].length; j++) {
                 if (matrix[i][j] == wrongValue) {
-                    correctMatrix[i][j] = getRightValue(matrix, i, j);
+                    correctMatrix[i][j] = getRightValue(matrix, i, j, wrongValue);
                 } else {
                     correctMatrix[i][j] = matrix[i][j];
                 }
@@ -29,17 +29,16 @@ public class P08WrongMeasurements {
         return correctMatrix;
     }
 
-    private static int getRightValue(int[][] matrix, int i, int j) {
+    private static int getRightValue(int[][] matrix, int i, int j, int wrongValue) {
         int sum = 0;
-        int wrongNumber = matrix[i][j];
         //get lent
-        if (j > 0) sum += matrix[i][j - 1] != wrongNumber ? matrix[i][j - 1] : 0;
+        if (j > 0) sum += matrix[i][j - 1] != wrongValue ? matrix[i][j - 1] : 0;
         //get right
-        if (j < matrix[0].length - 1) sum += matrix[i][j + 1] != wrongNumber ? matrix[i][j + 1] : 0;
+        if (j < matrix[0].length - 1) sum += matrix[i][j + 1] != wrongValue ? matrix[i][j + 1] : 0;
         //get upper
-        if (i > 0) sum += matrix[i - 1][j] != wrongNumber ? matrix[i - 1][j] : 0;
+        if (i > 0) sum += matrix[i - 1][j] != wrongValue ? matrix[i - 1][j] : 0;
         //get downer
-        if (i <matrix.length - 1) sum += matrix[i + 1][j] != wrongNumber ? matrix[i + 1][j] : 0;
+        if (i <matrix.length - 1) sum += matrix[i + 1][j] != wrongValue ? matrix[i + 1][j] : 0;
 
         return sum;
     }
