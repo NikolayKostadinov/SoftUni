@@ -14,21 +14,31 @@ public class P11ReverseMatrixDiagonals {
 
         int[][] matrix = readMatrix(rows, cols, scan, "\\s+");
 
+        int row = rows - 1;
+        int col = cols - 1;
+
         StringBuilder sb = new StringBuilder();
-        for (int i = rows - 1; i >= 0; i--) {
-            for (int j = cols - 1; j >= 0; j--) {
-                int row = i;
-                int col = j;
-                while (row >= 0 && col < cols-1) {
-                    sb.append(String.format("%d ", matrix[row][col]));
-                    row--;
-                    col++;
-                }
-                sb.append("\n");
+        while (row >= 0) {
+            int i = row;
+            int j = col;
+            while (i >= 0 && j < cols) {
+                sb.append(String.format("%d ", matrix[i--][j++]));
+            }
+            sb.append("\n");
+
+            if (col > 0) {
+                col--;
+            } else {
+                row--;
+                col = 0;
             }
         }
 
         System.out.print(sb);
+    }
+
+    private static void appendDiagonal(int cols, int[][] matrix, StringBuilder sb, int i, int j) {
+
     }
 
     private static int[][] readMatrix(int rows, int cols, Scanner scan, String separator) {
