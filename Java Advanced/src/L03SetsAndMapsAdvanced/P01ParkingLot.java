@@ -1,6 +1,5 @@
-package L03SetsAndMapsAdvancedLab;
+package L03SetsAndMapsAdvanced;
 
-import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.Scanner;
 

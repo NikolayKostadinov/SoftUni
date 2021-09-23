@@ -14,7 +14,10 @@ public class P07Crossfire {
         String command = scan.nextLine();
         while (!"Nuke it from orbit".equals(command)) {
             int[] tokens = Arrays.stream(command.split("\\s+")).mapToInt(Integer::parseInt).toArray();
-            nukeTheMatrix(tokens[0], tokens[1], tokens[2], matrix);
+            int row = tokens[0];
+            int col = tokens[1];
+            int radius = tokens[2];
+            nukeTheMatrix(row, col, radius, matrix);
             command = scan.nextLine();
         }
 

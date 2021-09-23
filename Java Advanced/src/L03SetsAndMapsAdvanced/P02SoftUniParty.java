@@ -1,4 +1,4 @@
-package L03SetsAndMapsAdvancedLab;
+package L03SetsAndMapsAdvanced;
 //todo: extract method
 import java.util.Scanner;
 import java.util.Set;

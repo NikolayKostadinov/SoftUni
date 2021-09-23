@@ -1,6 +1,5 @@
-package L03SetsAndMapsAdvancedLab;
+package L03SetsAndMapsAdvanced;
 
-import java.text.DecimalFormat;
 import java.util.*;
 
 public class P08AcademyGraduation {
