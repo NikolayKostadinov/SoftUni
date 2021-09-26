@@ -1,49 +1,43 @@
 package L03SetsAndMapsAdvancedExcercise;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class P02SetsOfElements {
     public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
+        LinkedHashSet<Integer> firstSet = new LinkedHashSet<>();
+        LinkedHashSet<Integer> secondSet = new LinkedHashSet<>();
 
-        int n = scan.nextInt();
-        int m = scan.nextInt();
-        scan.nextLine();
+        String input = scanner.nextLine();//"4 3".SPLIT -> ["4", "3"]
+        int countFirstSet = Integer.parseInt(input.split("\\s+")[0]);
+        int countSecondSet = Integer.parseInt(input.split("\\s+")[1]);
 
-        LinkedHashSet<Integer> nSet = readSet(n, scan);
-        LinkedHashSet<Integer> mSet = readSet(m, scan);
-
-        List<Integer> repeatingElements;
-        if (nSet.size() > mSet.size()){
-             repeatingElements = findRepeating(nSet, mSet);
-        } else {
-            repeatingElements = findRepeating(mSet, nSet);
+        //1. напълним двата сета
+        for (int i = 0; i < countFirstSet; i++) {
+            int number = Integer.parseInt(scanner.nextLine());
+            firstSet.add(number);
         }
 
-        System.out.println(String.join(" ", repeatingElements.stream().map(Object::toString).collect(Collectors.toCollection(ArrayList::new))));
-    }
-
-    private static List<Integer> findRepeating(LinkedHashSet<Integer> longerSet, LinkedHashSet<Integer> shorterSet) {
-        List<Integer> repeatingElements = new ArrayList<>();
-        for (Integer number : longerSet) {
-            if (shorterSet.contains(number)){
-                repeatingElements.add(number);
+        for (int i = 0; i < countSecondSet; i++) {
+            int number = Integer.parseInt(scanner.nextLine());
+            secondSet.add(number);
+        }
+        // 2. взимаме елементите, които ги има в двата сета
+        //1. нов сет за съхранение на поввтарящите елементи
+        //{1, 3, 5, 7}
+        //{3, 4, 5}
+        LinkedHashSet<Integer> duplicatedElements = new LinkedHashSet<>();
+        for (int number : firstSet) {
+            if (secondSet.contains(number)) {
+                duplicatedElements.add(number);
             }
         }
 
-        return repeatingElements;
+        //{1, 3, 5, 7}
+        //{3, 4, 5}
+        //firstSet.retainAll(secondSet);
+        //в първия сет остават елементите, които ги има във втория
+
+        duplicatedElements.forEach(number -> System.out.print(number + " "));
     }
-
-    private static LinkedHashSet<Integer> readSet(int elementsCount, Scanner scan) {
-        LinkedHashSet<Integer> set = new LinkedHashSet<>();
-
-        for (int i = 0; i < elementsCount; i++) {
-            set.add(Integer.parseInt(scan.nextLine()));
-        }
-
-        return set;
-    }
-
-
 }
