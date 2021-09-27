@@ -32,7 +32,7 @@ public class P08WrongMeasurements {
     private static int getRightValue(int[][] matrix, int i, int j, int wrongValue) {
         int sum = 0;
         //get lent
-        if (j > 0) sum += matrix[i][j - 1] != wrongValue ? matrix[i][j - 1] : 0;
+        if (j > 0) sum += (matrix[i][j - 1] != wrongValue ) ? matrix[i][j - 1] : 0;
         //get right
         if (j < matrix[0].length - 1) sum += matrix[i][j + 1] != wrongValue ? matrix[i][j + 1] : 0;
         //get upper
