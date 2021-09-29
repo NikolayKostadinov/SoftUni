@@ -1,6 +1,6 @@
 package cafe;
 
-public class Employee {
+public class Employee implements Comparable<Employee> {
     private String name;
     private int age;
     private String country;
@@ -22,5 +22,10 @@ public class Employee {
     @Override
     public String toString() {
         return String.format("Employee: %s, %s from %s", name, age, country);
+    }
+
+    @Override
+    public int compareTo(Employee o) {
+        return this.age - o.age;
     }
 }

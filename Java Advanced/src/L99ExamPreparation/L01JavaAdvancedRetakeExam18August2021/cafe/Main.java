@@ -25,7 +25,8 @@ public class Main {
 
         Employee oldestEmployee = cafe.getOldestEmployee();
         Employee employeeStephen = cafe.getEmployee("Sara");
-        System.out.println(oldestEmployee); // Employee: Alexander, 30 from Bulgaria System.out.println(employeeStephen); //Employee: Sara, 24 from UK
+        System.out.println(oldestEmployee); // Employee: Alexander, 30 from Bulgaria
+        System.out.println(employeeStephen); //Employee: Sara, 24 from UK
 
         System.out.println(cafe.getCount()); // 3
         System.out.println(cafe.removeEmployee("Anna")); // true
