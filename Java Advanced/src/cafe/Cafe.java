@@ -16,13 +16,14 @@ public class Cafe {
     }
 
     public void addEmployee(cafe.Employee employee){
+        if (this.employees.size() < this.capacity)
         this.employees.put(employee.getName(),employee);
     }
 
     public boolean removeEmployee(String name){
         boolean result = employees.containsKey(name);
         employees.remove(name);
-        return result;
+        return false;
     }
 
     public cafe.Employee getOldestEmployee(){
@@ -38,11 +39,12 @@ public class Cafe {
     }
 
     public String report(){
-        return String.format("Employees working at Cafe %s:%n%s",
-                this.name,
-                this.employees.values()
-                        .stream()
-                        .map(cafe.Employee::toString)
-                        .collect(Collectors.joining("\n")));
+        String employees = this.employees.isEmpty()?"":"\n"+
+        this.employees.values()
+                .stream()
+                .map(cafe.Employee::toString)
+                .collect(Collectors.joining("\n"));
+        return String.format("Employees working at Cafe %s:%s",
+                this.name, employees);
     }
 }
