@@ -1,4 +1,6 @@
-package L06DefiningClasses.P02Car;
+package L06DefiningClasses.P02Constructors;
+
+import java.util.Objects;
 
 public class Car {
     private String brand;
