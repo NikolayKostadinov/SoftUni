@@ -25,7 +25,7 @@ public class Person {
     }
 
     public void addChild(Person child){
-        this.parents.putIfAbsent(child.getName(), child);
+        this.children.putIfAbsent(child.getName(), child);
     }
 
     public Map<String, Person> getParents() {

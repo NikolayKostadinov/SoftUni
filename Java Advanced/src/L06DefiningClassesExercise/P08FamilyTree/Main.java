@@ -36,13 +36,18 @@ public class Main {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
 
-        String targetPersonName = scan.nextLine();
+        String targetPerson = scan.nextLine();
 
         readInput(scan);
         applyRelations();
-        var person = relativesByName.get(targetPersonName);
-        printPerson(person);
+        Person person;
+        if (targetPerson.contains("/")){
+            person = relativesByDate.get(targetPerson);
+        } else {
+            person = relativesByName.get(targetPerson);
+        }
 
+        printPerson(person);
     }
 
     private static void printPerson(Person person) {
