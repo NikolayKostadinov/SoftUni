@@ -90,5 +90,4 @@ public class P12TheMatrix {
             this.row = row;
             this.col = col;
         }
-    }
-}
+    }}
