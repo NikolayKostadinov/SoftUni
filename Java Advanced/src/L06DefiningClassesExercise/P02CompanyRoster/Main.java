@@ -24,15 +24,13 @@ public class Main {
                             return avgSalary1.compareTo(avgSalary2);
                         }).orElse(null);
 
-        if (maxDepartment != null) {
+
             System.out.println("Highest Average Salary: " + maxDepartment.getKey());
             System.out.println(maxDepartment.getValue()
                     .stream()
                     .sorted(Comparator.comparing(Employee::getSalary).reversed())
                     .map(Object::toString)
                     .collect(Collectors.joining("\n")));
-        }
-
     }
 
     private static double calculateAverageSalary(Map.Entry<String, List<Employee>> dep1) {
