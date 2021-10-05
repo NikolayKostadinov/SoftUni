@@ -1,38 +1,36 @@
 package L06DefiningClassesExercise.P08FamilyTree;
 
+import java.util.ArrayList;
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 
 public class Person {
     private String name;
     private String birthDay;
-    private final Map<String, Person> parents;
-    private final Map<String, Person> children;
+    private final List<Person> parents;
+    private final List<Person> children;
 
     public Person(String name, String birthDay) {
         this.name = name;
         this.birthDay = birthDay;
-        this.parents = new LinkedHashMap<>();
-        this.children = new LinkedHashMap<>();
-    }
-
-    public String getName() {
-        return name;
+        this.parents = new ArrayList<>();
+        this.children = new ArrayList<>();
     }
 
     public void addParent(Person parent){
-        this.parents.putIfAbsent(parent.getName(), parent);
+        this.parents.add(parent);
     }
 
     public void addChild(Person child){
-        this.children.putIfAbsent(child.getName(), child);
+        this.children.add(child);
     }
 
-    public Map<String, Person> getParents() {
+    public List<Person> getParents() {
         return parents;
     }
 
-    public Map<String, Person> getChildren() {
+    public List<Person> getChildren() {
         return children;
     }
 
