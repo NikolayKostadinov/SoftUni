@@ -1,8 +1,7 @@
-package L99ExamPreparation.L02JavaAdvancedExam26June2021;
+package L99ExamPreparation.E02JavaAdvancedExam26June2021;
 
 import java.util.ArrayDeque;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.Scanner;
 import java.util.function.Consumer;
 import java.util.stream.Collectors;

@@ -1,4 +1,4 @@
-package L99ExamPreparation.L01JavaAdvancedRetakeExam18August2021;
+package L99ExamPreparation.E01JavaAdvancedRetakeExam18August2021;
 
 import java.util.Arrays;
 import java.util.Map;

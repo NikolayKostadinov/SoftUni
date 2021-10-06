@@ -1,6 +1,9 @@
 package L07WorkshopDataStructures;
 
 import javax.lang.model.util.Elements;
+import java.util.Arrays;
+import java.util.function.Consumer;
+import java.util.stream.IntStream;
 
 public class SmartArray {
     private static final int INITIAL_CAPACITY = 8;
@@ -11,11 +14,23 @@ public class SmartArray {
         this.elements = new int[INITIAL_CAPACITY];
     }
 
-    public void add(int number) {
+    public void add(int element) {
         if (this.elements.length == size) {
             this.elements = grow();
         }
-        this.elements[this.size++] = number;
+        this.elements[this.size++] = element;
+    }
+
+    public void add(int index, int element) {
+        validateIndex(index);
+        int lastElement = this.elements[this.size - 1];
+
+        if (this.size - 1 - index > 0) {
+            System.arraycopy(this.elements, index, this.elements, index + 1, this.size - 1 - index);
+        }
+
+        this.elements[index] = element;
+        this.add(lastElement);
     }
 
     private int[] grow() {
@@ -37,7 +52,12 @@ public class SmartArray {
         }
 
         this.elements[--this.size] = 0;
-        if (size >= INITIAL_CAPACITY && size <= this.elements.length / 2) {
+
+        if (this.size == 0) {
+            this.elements = new int[INITIAL_CAPACITY];
+        }
+
+        if (size >= INITIAL_CAPACITY && size <= this.elements.length / 4) {
             this.elements = shrink();
         }
         return element;
@@ -58,4 +78,17 @@ public class SmartArray {
     public int size() {
         return this.size;
     }
+
+    public boolean contains(int element) {
+        return IntStream.range(0, this.size)
+                .anyMatch(i -> this.elements[i] == element);
+    }
+
+    public void forEach(Consumer<Integer> consumer){
+        IntStream.range(0, this.size)
+                .mapToObj(i->this.elements[i])
+                .forEach(consumer);
+    }
+
+
 }

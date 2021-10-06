@@ -1,4 +1,4 @@
-package L99ExamPreparation.L02JavaAdvancedExam26June2021;
+package L99ExamPreparation.E02JavaAdvancedExam26June2021;
 
 import java.util.Arrays;
 import java.util.Scanner;
