@@ -1,29 +1,29 @@
 package L07WorkshopDataStructures;
 
-import javax.lang.model.util.Elements;
-import java.util.Arrays;
 import java.util.function.Consumer;
 import java.util.stream.IntStream;
 
-public class SmartArray {
+public class SmartArray<T> {
     private static final int INITIAL_CAPACITY = 8;
     private int size = 0;
-    private int[] elements;
+    private Object[] elements;
 
     public SmartArray() {
-        this.elements = new int[INITIAL_CAPACITY];
+
+        this.elements = new Object[INITIAL_CAPACITY];
     }
 
-    public void add(int element) {
+    public void add(T element) {
         if (this.elements.length == size) {
             this.elements = grow();
         }
         this.elements[this.size++] = element;
     }
 
-    public void add(int index, int element) {
+    @SuppressWarnings("unchecked")
+    public void add(int index, T element) {
         validateIndex(index);
-        int lastElement = this.elements[this.size - 1];
+        T lastElement = (T) this.elements[this.size - 1];
 
         if (this.size - 1 - index > 0) {
             System.arraycopy(this.elements, index, this.elements, index + 1, this.size - 1 - index);
@@ -33,20 +33,20 @@ public class SmartArray {
         this.add(lastElement);
     }
 
-    private int[] grow() {
-        int[] newElements = new int[this.elements.length * 2];
+    private Object[] grow() {
+        Object[] newElements = new Object[this.elements.length * 2];
         System.arraycopy(this.elements, 0, newElements, 0, elements.length);
         return newElements;
     }
 
-
-    public int get(int index) {
+    @SuppressWarnings("unchecked")
+    public T get(int index) {
         validateIndex(index);
-        return this.elements[index];
+        return (T) this.elements[index];
     }
 
-    public int remove(int index) {
-        int element = this.get(index);
+    public T remove(int index) {
+        T element = this.get(index);
         if (this.size - 1 - index >= 0) {
             System.arraycopy(this.elements, index + 1, this.elements, index, this.size - 1 - index);
         }
@@ -54,7 +54,7 @@ public class SmartArray {
         this.elements[--this.size] = 0;
 
         if (this.size == 0) {
-            this.elements = new int[INITIAL_CAPACITY];
+            this.elements = new Object[INITIAL_CAPACITY];
         }
 
         if (size >= INITIAL_CAPACITY && size <= this.elements.length / 4) {
@@ -63,8 +63,8 @@ public class SmartArray {
         return element;
     }
 
-    private int[] shrink() {
-        int[] newElements = new int[this.elements.length / 2];
+    private Object[] shrink() {
+        Object[] newElements = new Object[this.elements.length / 2];
         System.arraycopy(this.elements, 0, newElements, 0, newElements.length);
         return newElements;
     }
@@ -79,15 +79,15 @@ public class SmartArray {
         return this.size;
     }
 
-    public boolean contains(int element) {
+    public boolean contains(T element) {
         return IntStream.range(0, this.size)
-                .anyMatch(i -> this.elements[i] == element);
+                .anyMatch(i -> this.elements[i].equals(element));
     }
 
-    public void forEach(Consumer<Integer> consumer){
+    public void forEach(Consumer<T> consumer) {
         IntStream.range(0, this.size)
-                .mapToObj(i->this.elements[i])
-                .forEach(consumer);
+                .mapToObj(i -> this.elements[i])
+                .forEach(e -> consumer.accept((T) e));
     }
 
 
