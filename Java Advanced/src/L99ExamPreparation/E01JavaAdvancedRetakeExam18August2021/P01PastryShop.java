@@ -5,6 +5,7 @@ import java.util.function.Consumer;
 import java.util.stream.Collectors;
 
 public class P01PastryShop {
+    private static Scanner scan = new Scanner(System.in);
     public static void main(String[] args) {
         final Map<Integer, Food> foods = new LinkedHashMap<>(){{
                         put(25, new Food("Biscuit", 0));
@@ -15,11 +16,9 @@ public class P01PastryShop {
 
         Scanner scan = new Scanner(System.in);
 
-        ArrayDeque<Integer> liquidsQueue = new ArrayDeque<>();
-        getDequeData(scan, (Integer x) -> liquidsQueue.offer(x));
+        ArrayDeque<Integer> liquidsQueue = readQueue("\\s+");
 
-        ArrayDeque<Integer> ingredientsStack = new ArrayDeque<>();
-        getDequeData(scan, (Integer x) -> ingredientsStack.push(x));
+        ArrayDeque<Integer> ingredientsStack = readStack("\\s+");
 
         cookTheFood(foods, liquidsQueue, ingredientsStack);
 
@@ -63,10 +62,22 @@ public class P01PastryShop {
                 .filter(x -> x.quantity == 0).count() == 0;
     }
 
-    private static void getDequeData(Scanner scan, Consumer<Integer> consumer) {
-        Arrays.stream(scan.nextLine().split("\\s+"))
+    private static ArrayDeque<Integer> readStack(String delimiter) {
+        ArrayDeque<Integer> stack = new ArrayDeque<>();
+        getMembers(stack, stack::push, delimiter);
+        return stack;
+    }
+
+    private static ArrayDeque<Integer> readQueue(String delimiter) {
+        ArrayDeque<Integer> queue = new ArrayDeque<>();
+        getMembers(queue, queue::offer, delimiter);
+        return queue;
+    }
+
+    private static void getMembers(ArrayDeque<Integer> deque, Consumer<Integer> operation, String separator) {
+        Arrays.stream(scan.nextLine().split(separator))
                 .map(Integer::parseInt)
-                .forEach(consumer);
+                .forEach(operation);
     }
 
     private static class Food {
