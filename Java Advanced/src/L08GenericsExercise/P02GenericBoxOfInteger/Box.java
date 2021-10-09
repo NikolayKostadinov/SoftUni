@@ -1,4 +1,4 @@
-package L10GenericsExercise.P02GenericBoxOfInteger;
+package L08GenericsExercise.P02GenericBoxOfInteger;
 
 public class Box<T>{
     T value;
