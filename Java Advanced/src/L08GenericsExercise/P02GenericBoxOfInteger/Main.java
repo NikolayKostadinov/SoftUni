@@ -1,5 +1,4 @@
-package L10GenericsExercise.P01GenericBox;
-
+package L08GenericsExercise.P02GenericBoxOfInteger;
 import java.util.Scanner;
 import java.util.stream.IntStream;
 
@@ -9,7 +8,8 @@ public class Main {
         int counter = Integer.parseInt(scan.nextLine());
         IntStream.range(0,counter)
                 .forEach(x->{
-                    System.out.println(new Box<String>(scan.nextLine()));
+                    Integer input = Integer.parseInt(scan.nextLine());
+                    System.out.println(new Box<>(input));
                 });
     }
 }

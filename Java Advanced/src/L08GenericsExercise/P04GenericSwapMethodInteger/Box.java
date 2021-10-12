@@ -1,4 +1,4 @@
-package L10GenericsExercise.P03GenericSwapMethodString;
+package L08GenericsExercise.P04GenericSwapMethodInteger;
 
 public class Box<T>{
     T value;

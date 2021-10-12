@@ -1,4 +1,4 @@
-package L10GenericsExercise.P04GenericSwapMethodInteger;
+package L08GenericsExercise.P04GenericSwapMethodInteger;
 
 import java.util.ArrayList;
 import java.util.Arrays;

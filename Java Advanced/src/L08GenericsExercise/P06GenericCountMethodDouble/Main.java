@@ -1,4 +1,4 @@
-package L10GenericsExercise.P05GenericCountMethodString;
+package L08GenericsExercise.P06GenericCountMethodDouble;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,14 +8,14 @@ import java.util.stream.Collectors;
 public class Main {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        List<String> list = new ArrayList<>();
+        List<Double> list = new ArrayList<>();
 
         int counter = Integer.parseInt(scan.nextLine());
         while (counter-->0){
-            list.add(scan.nextLine());
+            list.add(Double.parseDouble(scan.nextLine()));
         }
 
-        String target = scan.nextLine();
+        Double target = Double.parseDouble(scan.nextLine());
         System.out.println(getGreaterElements(list, target).size());
     }
 

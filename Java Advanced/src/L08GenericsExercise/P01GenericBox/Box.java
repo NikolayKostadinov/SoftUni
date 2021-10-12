@@ -1,4 +1,4 @@
-package L10GenericsExercise.P01GenericBox;
+package L08GenericsExercise.P01GenericBox;
 
 public class Box <T>{
     T value;
