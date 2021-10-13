@@ -48,9 +48,8 @@ public class P02PresentDelivery {
 
             santaPosition.copy(newPosition);
             neighborhood[santaPosition.row][santaPosition.col] = 'S';
-            if (presentsCount > 0) {
-                command = scan.nextLine();
-            }
+            if (presentsCount == 0) break;
+            command = scan.nextLine();
         }
 
         if (presentsCount == 0 || !isInMatrix(santaPosition, size)) {
