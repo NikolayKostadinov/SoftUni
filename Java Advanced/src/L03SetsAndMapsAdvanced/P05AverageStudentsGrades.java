@@ -23,7 +23,7 @@ public class P05AverageStudentsGrades {
                 .entrySet()
                 .stream()
                 .sorted(Map.Entry.<String, List<Double>>comparingByKey())
-                .forEach(student ->{
+                .forEach(student -> {
                     double sum = 0;
                     for (int i = 0; i < student.getValue().size(); i++) {
                         sum += student.getValue().get(i);
@@ -32,11 +32,10 @@ public class P05AverageStudentsGrades {
 
                     System.out.printf("%s -> %s (avg: %.2f)\n",
                             student.getKey(),
-                            String.join(" ",
-                                    student.getValue()
-                                            .stream()
-                                            .map(x -> String.format("%.2f", x))
-                                            .collect(Collectors.toList())),
+                            student.getValue()
+                                    .stream()
+                                    .map(x -> String.format("%.2f", x))
+                                    .collect(Collectors.joining(" ")),
                             avgSum);
                 });
     }
