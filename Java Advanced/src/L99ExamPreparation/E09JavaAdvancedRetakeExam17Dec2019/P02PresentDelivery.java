@@ -19,6 +19,7 @@ public class P02PresentDelivery {
         char[][] neighborhood = new char[size][size];
         readMatrix(neighborhood);
         int niceKidsCountBuffer = niceKidsCount;
+        int happyKids = 0;
 
         String command = scan.nextLine();
 
@@ -30,17 +31,16 @@ public class P02PresentDelivery {
                 if (currenPosition == 'V') {
                     presentsCount--;
                     niceKidsCount--;
+                    happyKids++;
                 } else if (currenPosition == 'C') {
                     for (String cmd : commands) {
                         Position nextPosition = calculateNewPosition(cmd, newPosition);
                         char currPosition = neighborhood[nextPosition.row][nextPosition.col];
-                        if (currPosition == 'X' || currPosition == 'V') {
-                            neighborhood[nextPosition.row][nextPosition.col] = '-';
+                        neighborhood[nextPosition.row][nextPosition.col] = '-';
+                        if (currPosition == 'V') {
                             presentsCount--;
-                            if (currenPosition == 'V') niceKidsCount--;
-                        }
-                        if (presentsCount == 0) {
-                            break;
+                            happyKids++;
+                            niceKidsCount--;
                         }
                     }
                 }
@@ -61,7 +61,7 @@ public class P02PresentDelivery {
         if (niceKidsCount > 0) {
             System.out.printf("No presents for %d nice kid/s.", niceKidsCount);
         } else {
-            System.out.printf("Good job, Santa! %d happy nice kid/s.", niceKidsCountBuffer);
+            System.out.printf("Good job, Santa! %d happy nice kid/s.", happyKids);
         }
 
     }
