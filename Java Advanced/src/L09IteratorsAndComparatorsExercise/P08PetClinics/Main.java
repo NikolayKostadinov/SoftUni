@@ -42,7 +42,8 @@ public class Main {
                     if (tokens.length == 2){
                         System.out.println(clinics.get(tokens[1]).toString());
                     } else {
-                        clinics.get(tokens[1]).getRoom(Integer.parseInt(tokens[2]));
+                        Pet pet = clinics.get(tokens[1]).getRoom(Integer.parseInt(tokens[2]));
+                        System.out.println((pet == null ? "Room empty" : pet.toString()));
                     }
                     break;
             }

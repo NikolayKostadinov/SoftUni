@@ -31,7 +31,7 @@ public class ClinicAddIterator implements Iterator<Pet> {
 
     @Override
     public boolean hasNext() {
-        return getNextFreeIndex() < this.rooms.size();
+        return this.rooms.stream().anyMatch(r -> r == null);
     }
 
     @Override
@@ -43,21 +43,20 @@ public class ClinicAddIterator implements Iterator<Pet> {
         this.rooms.set(getNextFreeIndex(), pet);
     }
 
-    public boolean release() {
+    @Override
+    public void remove() {
         for (int i = center; i < this.rooms.size(); i++) {
             if (this.rooms.get(i) != null) {
-                this.rooms.remove(i);
-                return true;
+                this.rooms.set(i, null);
+                return;
             }
         }
 
         for (int i = 0; i < center; i++) {
             if (this.rooms.get(i) != null) {
-                this.rooms.remove(i);
-                return true;
+                this.rooms.set(i, null);
+                return;
             }
         }
-
-        return false;
     }
 }

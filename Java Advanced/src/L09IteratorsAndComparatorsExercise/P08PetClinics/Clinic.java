@@ -24,24 +24,32 @@ public class Clinic {
         return false;
     }
 
-    public boolean release(){
-        return this.iterator.release();
+    public boolean release() {
+        if (!this.pets.stream().allMatch(x -> x == null)) {
+            this.iterator.remove();
+            return true;
+        }
+
+        return false;
     }
 
     public String getName() {
         return name;
     }
 
-    @Override
-    public String toString() {
-        return this.pets.stream().map(Pet::toString).collect(Collectors.joining(System.lineSeparator()));
-    }
-
-    public boolean hasEmptyRooms(){
+    public boolean hasEmptyRooms() {
         return iterator.hasNext();
     }
 
-    public void getRoom(int index) {
-        this.pets.get(index);
+    public Pet getRoom(int roomNumber) {
+        return this.pets.get(roomNumber - 1);
+    }
+
+    @Override
+    public String toString() {
+        return this.pets
+                .stream()
+                .map(x->x == null ? "Room empty": x.toString())
+                .collect(Collectors.joining(System.lineSeparator()));
     }
 }
