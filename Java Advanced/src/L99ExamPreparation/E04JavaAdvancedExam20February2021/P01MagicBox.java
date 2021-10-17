@@ -37,6 +37,7 @@ public class P01MagicBox {
         }
     }
 
+
     private static ArrayDeque<Integer> readStack(String delimiter) {
         ArrayDeque<Integer> stack = new ArrayDeque<>();
         getMembers(stack, stack::push, delimiter);
