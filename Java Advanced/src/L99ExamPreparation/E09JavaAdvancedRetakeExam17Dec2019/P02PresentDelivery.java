@@ -37,11 +37,12 @@ public class P02PresentDelivery {
                         Position nextPosition = calculateNewPosition(cmd, newPosition);
                         char currPosition = neighborhood[nextPosition.row][nextPosition.col];
                         neighborhood[nextPosition.row][nextPosition.col] = '-';
-                        if (currPosition == 'V') {
+                        if (currPosition == 'V' || currPosition == 'X') {
                             presentsCount--;
                             happyKids++;
-                            niceKidsCount--;
+                            if (currPosition == 'V') niceKidsCount--;
                         }
+                        if (presentsCount == 0) break;
                     }
                 }
             }

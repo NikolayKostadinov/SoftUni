@@ -1,9 +1,9 @@
-package parking;
+package L99ExamPreparation.E07JavaAdvancedExam28June2020.parking;
 
 public class Main {
     public static void main(String[] args) {
         // Initialize the repository
-        Parking parking = new Parking("Underground parking garage", 5);
+        Parking parking = new Parking("Underground L99ExamPreparation.E07JavaAdvancedExam28June2020.parking garage", 5);
 
 // Initialize entity
         Car volvo = new Car("Volvo", "XC70", 2010);
@@ -37,7 +37,7 @@ public class Main {
 
 // Get Statistics
         System.out.println(parking.getStatistics());
-// The cars are parked in Underground parking garage:
+// The cars are parked in Underground L99ExamPreparation.E07JavaAdvancedExam28June2020.parking garage:
 // Peugeot 307 (2011)
 // Audi S4 (2005)
 
