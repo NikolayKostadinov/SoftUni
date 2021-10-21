@@ -1,7 +1,5 @@
 package L100FinalExam;
 
-import L99ExamPreparation.E10JavaAdvancedExam26Oct2019.P02BookWorm;
-
 import java.util.Arrays;
 import java.util.Scanner;
 import java.util.stream.Collectors;
