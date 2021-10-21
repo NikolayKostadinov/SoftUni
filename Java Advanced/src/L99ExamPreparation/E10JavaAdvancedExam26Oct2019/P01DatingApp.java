@@ -20,12 +20,10 @@ public class P01DatingApp {
 
         while (!maleStack.isEmpty() && !femaleQueue.isEmpty()) {
 
-            Integer male = getValue(maleStack, d->d.pop());
-            Integer female = getValue(femaleQueue, d->d.poll());
+            if (!gotValue(maleStack, ArrayDeque::pop)
+                    || !gotValue(femaleQueue, ArrayDeque::poll)) break;
 
-            if (male==null || female == null) break;
-
-            if (male == female) {
+            if (maleStack.peek() == femaleQueue.peek()) {
                 matchesCount++;
                 maleStack.pop();
                 femaleQueue.poll();
@@ -41,8 +39,8 @@ public class P01DatingApp {
         printDeque(femaleQueue, "Females left: none", "Females left: %s%n", ", ");
     }
 
-    private static Integer getValue(ArrayDeque<Integer> deque, Consumer<ArrayDeque<Integer>> removeElement) {
-       while (!deque.isEmpty()){
+    private static boolean gotValue(ArrayDeque<Integer> deque, Consumer<ArrayDeque<Integer>> removeElement) {
+        while (!deque.isEmpty()) {
             if (deque.peek() <= 0) {
                 removeElement.accept(deque);
                 continue;
@@ -54,10 +52,10 @@ public class P01DatingApp {
                 continue;
             }
 
-            return deque.peek();
+            return true;
         }
 
-        return null;
+        return false;
     }
 
     private static void printDeque(ArrayDeque<Integer> deque, String emptyMessage,
