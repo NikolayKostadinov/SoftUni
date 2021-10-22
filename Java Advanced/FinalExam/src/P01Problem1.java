@@ -8,7 +8,6 @@ public class P01Problem1 {
     public static Scanner scan = new Scanner(System.in);
 
     public static void main(String[] args) {
-
     }
 
     private static void printDeque(ArrayDeque<Integer> deque, String emptyMessage,

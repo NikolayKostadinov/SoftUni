@@ -5,9 +5,9 @@ import java.util.stream.Collectors;
 public class P02Problem2 {
     private static Scanner scan = new Scanner(System.in);
     private static Position playersPosition = new Position();
+    private static final char PLAYER_SYMBOL = 'P';
 
     public static void main(String[] args) {
-
     }
 
     private static boolean isInMatrix(Position cookPosition, int size) {
@@ -20,7 +20,7 @@ public class P02Problem2 {
             char[] row = scan.nextLine().replaceAll("\\s+", "").toCharArray();
             for (int j = 0; j < matrix.length; j++) {
                 matrix[i][j] = row[j];
-                if (row[j] == 'P') {
+                if (row[j] == PLAYER_SYMBOL) {
                     playersPosition = new Position(i, j);
                 }
             }
@@ -48,8 +48,8 @@ public class P02Problem2 {
         return newPosition;
     }
 
-    private static Position calculateNewPosition(String command, Position snakePosition, int screenSize) {
-        Position newPosition = new Position(snakePosition.row, snakePosition.col);
+    private static Position calculateNewPosition(String command, Position position, int screenSize) {
+        Position newPosition = new Position(position.row, position.col);
 
         switch (command) {
             case "up":
