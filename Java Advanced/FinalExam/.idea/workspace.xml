@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4af80ff2-c12b-4c79-b4dd-479caae1d0c4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/out/production/FinalExam/groomingSalon/GroomingSalon.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/FinalExam/groomingSalon/Main.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/FinalExam/groomingSalon/Pet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/P02Problem2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/P02Problem2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/L100FinalExam/P02Problem2.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/L100FinalExam/P02Problem2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Java OOP/src/P01RhombusOfStars.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +33,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -90,6 +86,7 @@
       <updated>1634885916590</updated>
       <workItem from="1634885918150" duration="5335000" />
       <workItem from="1634905436661" duration="21000" />
+      <workItem from="1635155616838" duration="116000" />
     </task>
     <servers />
   </component>
@@ -110,5 +107,16 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/P01Problem1.java</url>
+          <line>13</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
