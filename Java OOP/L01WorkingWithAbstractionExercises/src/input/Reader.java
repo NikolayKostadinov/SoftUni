@@ -16,4 +16,10 @@ public class Reader {
     public static String[] readStringArray(String delimiter) {
         return scan.nextLine().split(delimiter);
     }
+
+    public static String readLine() {
+        return scan.nextLine();
+    }
+
+
 }
