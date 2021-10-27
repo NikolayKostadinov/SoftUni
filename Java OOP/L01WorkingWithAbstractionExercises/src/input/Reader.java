@@ -7,10 +7,7 @@ public class Reader {
     private static final Scanner scan = new Scanner(System.in);
 
     public static int[] readIntArray(String delimiter) {
-        return Arrays.stream(scan.nextLine()
-                        .split(delimiter))
-                .mapToInt(Integer::parseInt)
-                .toArray();
+        return parseIntArray(scan.nextLine(), delimiter);
     }
 
     public static String[] readStringArray(String delimiter) {
@@ -22,4 +19,9 @@ public class Reader {
     }
 
 
+    public static int[] parseIntArray(String input, String delimiter) {
+        return Arrays.stream(input.split(delimiter))
+                .mapToInt(Integer::parseInt)
+                .toArray();
+    }
 }
