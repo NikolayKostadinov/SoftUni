@@ -14,8 +14,18 @@ public class Bag {
         this.bag = new LinkedHashMap<>();
     }
 
-    private boolean canTake(long quantity) {
-        return this.capacity >= getTotalQuantity() + quantity;
+    private boolean canTake(Item item) {
+        if (this.capacity < getTotalQuantity() + item.getQuantity()) return false;
+        switch (item.getType()) {
+            case CASH:
+                return this.getCash() + item.getQuantity() <= this.getGem();
+            case GEM:
+                return this.getGem() + item.getQuantity() <= this.getGold();
+            case GOLD:
+                return true;
+            default:
+                return false;
+        }
     }
 
     public long getTotalQuantity() {
@@ -42,12 +52,8 @@ public class Bag {
         }
     }
 
-    public boolean hasItem(ItemType type) {
-        return this.bag.containsKey(type);
-    }
-
     public void addItem(Item item) {
-        if (this.canTake(item.getQuantity())) {
+        if (this.canTake(item)) {
             bag.putIfAbsent(item.getType(), new LinkedHashMap<>());
             bag.get(item.getType()).putIfAbsent(item.getName(), 0L);
             bag.get(item.getType()).put(item.getName(), bag.get(item.getType()).get(item.getName()) + item.getQuantity());

@@ -1,19 +1,14 @@
 package P06GreedyTimes;
 
-import P06GreedyTimes.Handlers.ItemHandler;
 import input.Reader;
 import output.ConsolePrinter;
 
-import java.util.List;
-
 public class GreedySystem {
     private final Bag bag;
-    private final List<ItemHandler> handlers;
 
-    public GreedySystem(List<ItemHandler> handlers) {
+    public GreedySystem() {
         long bagCapacity = Long.parseLong(Reader.readLine());
         this.bag = new Bag(bagCapacity);
-        this.handlers = handlers;
     }
 
     public void start() {
@@ -24,13 +19,7 @@ public class GreedySystem {
             long quantity = Long.parseLong(safe[i + 1]);
 
             Item item = new Item(typeName, quantity);
-
-            for (ItemHandler handler : handlers) {
-                if (handler.canHandle(item, bag)){
-                    handler.Handle(item, bag);
-                    break;
-                }
-            }
+            bag.addItem(item);
         }
 
         ConsolePrinter.printLine(bag.toString());
