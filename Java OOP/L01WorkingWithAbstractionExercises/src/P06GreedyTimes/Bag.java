@@ -7,7 +7,11 @@ import java.util.Set;
 
 public class Bag {
     private long capacity;
+    private long totalQuantity;
     private final Map<ItemType, Map<String, Long>> bag;
+    private long gold;
+    private long gem;
+    private long cash;
 
     public Bag(long capacity) {
         this.capacity = capacity;
@@ -15,40 +19,16 @@ public class Bag {
     }
 
     private boolean canTake(Item item) {
-        if (this.capacity < getTotalQuantity() + item.getQuantity()) return false;
+        if (this.capacity < this.totalQuantity + item.getQuantity()) return false;
         switch (item.getType()) {
             case CASH:
-                return this.getCash() + item.getQuantity() <= this.getGem();
+                return cash + item.getQuantity() <= this.gem;
             case GEM:
-                return this.getGem() + item.getQuantity() <= this.getGold();
+                return this.gem + item.getQuantity() <= this.gold;
             case GOLD:
                 return true;
             default:
                 return false;
-        }
-    }
-
-    public long getTotalQuantity() {
-        return this.bag.values().stream().map(Map::values).flatMap(Collection::stream).mapToLong(e -> e).sum();
-    }
-
-    public long getGold() {
-        return this.getQuantityByType(ItemType.GOLD);
-    }
-
-    public long getGem() {
-        return this.getQuantityByType(ItemType.GEM);
-    }
-
-    public long getCash() {
-        return this.getQuantityByType(ItemType.CASH);
-    }
-
-    private long getQuantityByType(ItemType itemType) {
-        if (bag.containsKey(itemType)) {
-            return bag.get(itemType).values().stream().mapToLong(e -> e).sum();
-        } else {
-            return 0;
         }
     }
 
@@ -57,11 +37,19 @@ public class Bag {
             bag.putIfAbsent(item.getType(), new LinkedHashMap<>());
             bag.get(item.getType()).putIfAbsent(item.getName(), 0L);
             bag.get(item.getType()).put(item.getName(), bag.get(item.getType()).get(item.getName()) + item.getQuantity());
+            totalQuantity += item.getQuantity();
+            switch (item.getType()){
+                case GOLD :
+                    this.gold += item.getQuantity();
+                    break;
+                case GEM :
+                    this.gem += item.getQuantity();
+                    break;
+                case CASH :
+                    this.cash += item.getQuantity();
+                    break;
+            }
         }
-    }
-
-    public Set<Map.Entry<ItemType, Map<String, Long>>> entrySet() {
-        return this.bag.entrySet();
     }
 
     @Override
