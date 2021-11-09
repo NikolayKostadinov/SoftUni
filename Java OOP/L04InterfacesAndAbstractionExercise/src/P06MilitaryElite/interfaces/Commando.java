@@ -1,4 +1,4 @@
-package P06MilitaryElite;
+package P06MilitaryElite.interfaces;
 
 import java.util.Collection;
 

@@ -1,6 +1,11 @@
-package P06MilitaryElite;
+package P06MilitaryElite.entities;
+
+import P06MilitaryElite.interfaces.LieutenantGeneral;
+import P06MilitaryElite.interfaces.Private;
+import P06MilitaryElite.interfaces.Soldier;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -13,6 +18,10 @@ public class LieutenantGeneralImpl extends PrivateImpl implements LieutenantGene
         this.privates = new ArrayList<>();
     }
 
+    public List<Private> getPrivates() {
+        return Collections.unmodifiableList(privates);
+    }
+
     @Override
     public void addPrivate(Private priv) {
         this.privates.add(priv);
@@ -21,10 +30,11 @@ public class LieutenantGeneralImpl extends PrivateImpl implements LieutenantGene
     @Override
     public String toString() {
         return super.toString() + System.lineSeparator()
-                + "Privates:" + System.lineSeparator()
+                + "Privates:" + (this.privates.isEmpty() ? "" :
+                System.lineSeparator()
                 + this.privates.stream()
                 .sorted(Comparator.comparingInt(Soldier::getId).reversed())
-                .map(p->p.toString())
-                .collect(Collectors.joining(System.lineSeparator()));
+                .map(p -> "  " + p)
+                .collect(Collectors.joining(System.lineSeparator())));
     }
 }

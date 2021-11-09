@@ -1,6 +1,8 @@
-package P06MilitaryElite;
+package P06MilitaryElite.entities;
 
-public class SoldierImpl implements Soldier {
+import P06MilitaryElite.interfaces.Soldier;
+
+public abstract class SoldierImpl implements Soldier {
     private int id;
     private String firstName;
     private String lastName;

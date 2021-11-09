@@ -1,4 +1,6 @@
-package P06MilitaryElite;
+package P06MilitaryElite.entities;
+
+import P06MilitaryElite.interfaces.Spy;
 
 public class SpyImpl extends SoldierImpl implements Spy {
     private String codeNumber;
@@ -15,6 +17,7 @@ public class SpyImpl extends SoldierImpl implements Spy {
 
     @Override
     public String toString() {
-        return super.toString() + " " + String.format("Code Number: %s", this.codeNumber);
+        return super.toString() + System.lineSeparator() +
+                String.format("Code Number: %s", this.codeNumber);
     }
 }
