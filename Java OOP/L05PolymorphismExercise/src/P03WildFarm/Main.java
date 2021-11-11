@@ -9,6 +9,7 @@ public class Main {
         while (!"End".equals(input)) {
             Animal animal = createAnimal(input);
             Food food = createFood(scan.nextLine());
+            animal.makeSound();
             try {
                 animal.eat(food);
             } catch (IllegalArgumentException ex) {
