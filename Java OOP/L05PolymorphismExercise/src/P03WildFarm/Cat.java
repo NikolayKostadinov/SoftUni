@@ -18,8 +18,8 @@ public class Cat extends Felime{
     @Override
     public String toString() {
         DecimalFormat df = new DecimalFormat("##.##");
-        return String.format("%s [%s, %s, %s, %s, %d]",
-                this.getClass().getSimpleName(),
+        return String.format("%s[%s, %s, %s, %s, %d]",
+                this.getAnimalType(),
                 this.getAnimalName(),
                 this.breed,
                 df.format(this.getAnimalWeight()),

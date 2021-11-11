@@ -16,7 +16,7 @@ public class Tiger extends Felime{
         if (food instanceof Meat){
             super.eat(food);
         } else {
-            String message = String.format("%s are not eating that type of food!", this.getAnimalType());
+            String message = String.format("Tigers are not eating that type of food!");
             throw new IllegalArgumentException(message);
         }
     }

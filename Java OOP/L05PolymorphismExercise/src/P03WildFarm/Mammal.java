@@ -17,8 +17,8 @@ public abstract class Mammal extends Animal {
     @Override
     public String toString() {
         DecimalFormat df = new DecimalFormat("##.##");
-        return String.format("%s [%s, %s, %s, %d]",
-                this.getClass().getSimpleName(),
+        return String.format("%s[%s, %s, %s, %d]",
+                this.getAnimalType(),
                 this.getAnimalName(),
                 df.format(this.getAnimalWeight()),
                 livingRegion,

@@ -1,8 +1,8 @@
 package P03WildFarm;
 
 public abstract class Animal{
-    private String animalName;
     private String animalType;
+    private String animalName;
     private Double animalWeight;
     private Integer foodEaten;
 
