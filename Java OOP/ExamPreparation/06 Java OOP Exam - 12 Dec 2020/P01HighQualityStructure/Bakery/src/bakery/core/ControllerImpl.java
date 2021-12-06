@@ -154,6 +154,7 @@ public class ControllerImpl implements Controller {
         Table table = this.tableRepository.getByNumber(tableNumber);
         double bill = table.getBill() + table.getPrice();
         totalIncome += bill;
+        table.clear();
         return String.format(BILL, table.getTableNumber(), bill);
     }
 
