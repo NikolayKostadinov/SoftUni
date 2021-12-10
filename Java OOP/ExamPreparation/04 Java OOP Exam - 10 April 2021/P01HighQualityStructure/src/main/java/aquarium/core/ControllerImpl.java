@@ -1,7 +1,5 @@
 package aquarium.core;
 
-import aquarium.common.ConstantMessages;
-import aquarium.common.ExceptionMessages;
 import aquarium.entities.aquariums.Aquarium;
 import aquarium.entities.aquariums.FreshwaterAquarium;
 import aquarium.entities.aquariums.SaltwaterAquarium;
