@@ -1,10 +1,11 @@
+DROP DATABASE IF EXISTS `minions`;
 CREATE DATABASE `minions`;
-
+USE `minions`;
 -- 01. Create Tables
 CREATE TABLE `minions` (
     `id` INT PRIMARY KEY AUTO_INCREMENT,
     `name` VARCHAR(50) NOT NULL,
-    `age` INT NOT NULL
+    `age` INT
 );
 
 CREATE TABLE `towns` (
@@ -13,7 +14,7 @@ CREATE TABLE `towns` (
 );
 
 -- 02. Alter Minions Table
--- ALTER TABLE `towns` RENAME COLUMN `town_id` TO `id`;
+ALTER TABLE `towns` RENAME COLUMN `town_id` TO `id`;
 ALTER TABLE `minions` ADD COLUMN `town_id` INT NOT NULL,
 					  ADD FOREIGN KEY (`town_id`) 
 						  REFERENCES `towns`(`id`);
@@ -89,6 +90,10 @@ ALTER TABLE `users` DROP PRIMARY KEY,
                     ADD UNIQUE(`username`);
                     
 -- 11. Movies Database
+DROP DATABASE IF EXISTS `movies`;
+CREATE DATABASE `movies`;
+USE `movies`;
+
 DROP TABLE IF EXISTS `directors`, `genres`, `categories`, `movies`;
 CREATE TABLE `directors` (
 	`id` INT PRIMARY KEY AUTO_INCREMENT, 
@@ -145,4 +150,8 @@ VALUES
 	('Pulp Fiction', 3, 1994, 154, 3, 1, 8.6),
 	('West Side Story', 4, 2021, 156, 4, 5, 8.6),
 	('Taxi Driver', 5, 1976, 114, 1, 1, 8.2);
+    
+    
+    
+    
     
