@@ -61,16 +61,25 @@ WHERE LENGTH(country_name) - LENGTH(REPLACE(LOWER(country_name), 'a', '')) >= 3
 ORDER BY iso_code;
 
 -- 11. Mix of Peak and River Names
-SELECT peak_name, river_name, LOWER( CONCAT(peak_name, RIGHT(river_name, LENGTH(river_name) - 1))) as mix
-FROM peaks, rivers
-WHERE RIGHT(peak_name, 1) = LEFT(river_name,1)
+SELECT 
+    peak_name,
+    river_name,
+    LOWER(CONCAT(peak_name, SUBSTR(river_name, 2))) AS mix
+FROM
+    peaks,
+    rivers
+WHERE
+    RIGHT(peak_name, 1) = LEFT(river_name, 1)
 ORDER BY mix;
 
 -- 12. Games From 2011 and 2012 Year
-SELECT `name`, DATE_FORMAT(`start`, '%Y-%m-%d') as start
-FROM games
-WHERE YEAR(`start`) BETWEEN 2011 AND 2012
-ORDER BY `start`, `name`
+SELECT 
+    `name`, DATE_FORMAT(`start`, '%Y-%m-%d') AS start
+FROM
+    games
+WHERE
+    YEAR(`start`) BETWEEN 2011 AND 2012
+ORDER BY `start` , `name`
 LIMIT 50;
 
 -- 13. User Email Providers
@@ -98,6 +107,23 @@ SELECT
 		IF(duration > 3 AND duration <=6, 'Short',
 			IF(duration > 6 AND duration <=10,'Long',
 				'Extra Long'))) AS `Duration`
+FROM
+    games; 
+    
+    -- v2
+    SELECT 
+    `name` AS game,
+    (CASE 
+		WHEN HOUR(`start`) BETWEEN 0 AND 11 THEN 'Morning'
+		WHEN HOUR(`start`) BETWEEN 12 AND 17 THEN 'Afternoon'
+		ELSE 'Evaning'
+	END) AS `Part of the Day`,
+    (CASE 
+		WHEN `duration` < 4 'Extra Short'
+		WHEN `duration` < 7 'Short'
+		WHEN `duration` < 11 THEN 'Long'
+		ELSE 'Extra Long'
+    END) AS `Duration`
 FROM
     games; 
     
