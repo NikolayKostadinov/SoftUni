@@ -184,3 +184,22 @@ SELECT udf_game_info_by_name('Bitwolf') AS info;
 SELECT udf_game_info_by_name('Fix San') AS info;
 
 -- 11. Update Budget of the Games
+USE `sgd`;
+DROP procedure IF EXISTS `udp_update_budget`;
+
+DELIMITER $$
+USE `sgd`$$
+CREATE PROCEDURE udp_update_budget (min_game_rating FLOAT)
+BEGIN
+	UPDATE games AS g 
+	SET g.budget = g.budget + 100000,
+		g.release_date = DATE_ADD(g.release_date, INTERVAL 1 YEAR)
+	WHERE g.release_date IS NOT NULL 
+		AND g.rating > min_game_rating
+		AND (SELECT COUNT(game_id) FROM games_categories WHERE game_id = g.id) = 0;
+END$$
+
+DELIMITER ;
+
+CALL udp_update_budget (8);
+

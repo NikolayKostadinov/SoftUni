@@ -152,11 +152,58 @@ GROUP BY mc.country_code
 ORDER BY mountain_range DESC;
 
 -- 14. Countries with Rivers
-SELECT c.country_name, r.river_name
-	FROM countries AS c
-		JOIN continents AS co USING(continent_code)
-        LEFT JOIN countries_rivers cr USING(country_code)
-        JOIN rivers as r ON cr.river_id = river_id
-        WHERE co.continent_name = 'Africa'
+SELECT 
+    c.country_name, r.river_name
+FROM
+    countries AS c
+        JOIN
+    continents AS co USING (continent_code)
+        LEFT JOIN
+    countries_rivers cr ON c.country_code = cr.country_code
+        LEFT JOIN
+    rivers AS r ON cr.river_id = r.id
+WHERE
+    co.continent_name = 'Africa'
 ORDER BY c.country_name
+LIMIT 5;
+
+-- 15. *Continents and Currencies
+SELECT 
+    c.continent_code AS continent_code,
+    c.currency_code AS currency_code,
+	COUNT(c.currency_code) AS currency_usage
+FROM countries as c
+GROUP BY continent_code, currency_code
+HAVING COUNT(currency_code) = (SELECT COUNT(ci.currency_code) AS max_currency_usage
+        FROM countries as ci
+            WHERE ci.continent_code = c.continent_code 
+		GROUP BY ci.continent_code, ci.currency_code
+        ORDER BY COUNT(ci.currency_code) DESC
+        LIMIT 1) AND COUNT(currency_code) > 1
+ORDER BY continent_code, currency_code;
+
+-- 16. Countries without any Mountains
+SELECT COUNT(c.country_code)
+FROM
+	countries as c LEFT JOIN mountains_countries as m 
+    USING (country_code)
+ WHERE m.mountain_id IS NULL;
+ 
+ -- 17. Highest Peak and Longest River by Country
+ SELECT 
+    country_name,
+    MAX(p.elevation) AS highest_peak_elevation,
+    MAX(r.length) AS longest_river_length
+FROM
+    countries AS c
+        JOIN
+    mountains_countries AS mc ON c.country_code = mc.country_code
+        JOIN
+    peaks AS p ON p.mountain_id = mc.mountain_id
+        JOIN
+    countries_rivers AS cr ON cr.country_code = c.country_code
+        JOIN
+    rivers AS r ON r.id = cr.river_id
+GROUP BY c.country_code
+ORDER BY highest_peak_elevation DESC , longest_river_length DESC
 LIMIT 5;
