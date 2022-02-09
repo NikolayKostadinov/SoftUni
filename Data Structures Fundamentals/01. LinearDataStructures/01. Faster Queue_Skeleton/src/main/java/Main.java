@@ -13,6 +13,6 @@ public class Main {
         test.insert(0, 0);
         test.add(9);
         test.insert(8,8);
-
+        test.remove(3);
     }
 }
