@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="LinearDS" />
+        <module name="01. Faster Queue_Skeleton" />
       </profile>
     </annotationProcessing>
   </component>
