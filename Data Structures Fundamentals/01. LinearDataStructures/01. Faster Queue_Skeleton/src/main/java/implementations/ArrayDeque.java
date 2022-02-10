@@ -10,6 +10,7 @@ public class ArrayDeque<E> implements Deque<E> {
 
     private final int DEFAULT_CAPACITY = 7;
     private int head;
+    private int tail;
     private int size;
 
     private Object[] elements;
@@ -17,21 +18,13 @@ public class ArrayDeque<E> implements Deque<E> {
     public ArrayDeque() {
         this.elements = new Object[DEFAULT_CAPACITY];
         this.head = this.DEFAULT_CAPACITY / 2;
-    }
-
-    public int getLeftTail() {
-        return this.head - size;
-    }
-
-    public int getRightTail() {
-        return this.head + size;
+        this.tail = this.head;
     }
 
     @Override
     public void add(E element) {
         ensureCapacity();
-        this.elements[getLeftTail()] = element;
-        this.elements[getRightTail()] = element;
+        this.elements[tail++] = element;
         size++;
     }
 
@@ -53,25 +46,25 @@ public class ArrayDeque<E> implements Deque<E> {
 
     @Override
     public void addFirst(E element) {
-        insert(0, element);
+        ensureCapacity();
+        this.elements[--head] = element;
+        size++;
     }
 
     @Override
     public void insert(int index, E element) {
         checkIndex(index);
         ensureCapacity();
-        System.arraycopy(this.elements, getLeftTail() + 1, this.elements, getLeftTail() , size - index);
         int rightStartElementIndex = this.head + index;
         System.arraycopy(this.elements, rightStartElementIndex, this.elements, rightStartElementIndex + 1, size - index);
-        this.elements[this.head - index] = element;
         this.elements[this.head + index] = element;
+        this.tail++;
         size++;
     }
 
     @Override
     public void set(int index, E element) {
         checkIndex(index);
-        this.elements[this.head - index] = element;
         this.elements[this.head + index] = element;
     }
 
@@ -101,9 +94,8 @@ public class ArrayDeque<E> implements Deque<E> {
     @SuppressWarnings("unchecked cast")
     public E get(Object object) {
         return Arrays.stream(this.elements)
-                .limit(this.elements.length / 2)
-                .filter(e -> e.equals(object))
-                .map(e -> (E) e)
+                .filter(e -> e != null && object.equals((E)e))
+                .map(e-> (E)e)
                 .findFirst().orElse(null);
     }
 
@@ -111,18 +103,16 @@ public class ArrayDeque<E> implements Deque<E> {
     public E remove(int index) {
         checkIndex(index);
         E element = (E) this.elements[this.head + index];
-        System.arraycopy(this.elements, getLeftTail()+1, this.elements, getLeftTail() + 2, size - index-1);
         int rightStartElementIndex = this.head + index + 1;
         System.arraycopy(this.elements, rightStartElementIndex, this.elements, rightStartElementIndex - 1, size - index-1);
-        this.elements[getLeftTail() + 1 ] = null;
-        this.elements[getRightTail() - 1 ] = null;
+        this.elements[--tail] = null;
         size--;
         return element;
     }
 
     @Override
     public E remove(Object object) {
-        for (int i = this.head; i > this.getLeftTail(); i--) {
+        for (int i = this.head; i < this.tail; i++) {
             if (elements[i].equals(object)) {
                 return remove(this.head - i);
             }
@@ -132,12 +122,18 @@ public class ArrayDeque<E> implements Deque<E> {
 
     @Override
     public E removeFirst() {
-        return this.remove(0);
+        E element = (E) this.elements[this.head];
+        this.elements[this.head++] = null;
+        size--;
+        return element;
     }
 
     @Override
     public E removeLast() {
-        return this.remove(size-1);
+        E element = (E) this.elements[--this.tail];
+        this.elements[this.tail] = null;
+        size--;
+        return element;
     }
 
     @Override
@@ -147,16 +143,17 @@ public class ArrayDeque<E> implements Deque<E> {
 
     @Override
     public int capacity() {
-        return this.elements.length / 2 + 1;
+        return this.elements.length;
     }
 
     @Override
     public void trimToSize() {
         int leftElementIndex = this.head - (size - 1);
-        Object[] newElements = new Object[size*2-1];
-        System.arraycopy(this.elements,leftElementIndex, newElements, 0, newElements.length);
+        Object[] newElements = new Object[size];
+        System.arraycopy(this.elements,this.head, newElements, 0, size);
         this.elements = newElements;
-        this.head = newElements.length / 2;
+        this.head = 0;
+        this.tail = this.elements.length;
     }
 
     @Override
@@ -180,12 +177,6 @@ public class ArrayDeque<E> implements Deque<E> {
         };
     }
 
-    private void ensureCapacity() {
-        if (this.size == this.capacity()) {
-            grow();
-        }
-    }
-
     @Override
     public String toString() {
        return Arrays.stream(this.elements)
@@ -193,15 +184,22 @@ public class ArrayDeque<E> implements Deque<E> {
                .collect(Collectors.joining(" "));
     }
 
+    private void ensureCapacity() {
+        if (this.tail == this.elements.length || this.head == 0) {
+            grow();
+        }
+    }
+
     private void grow() {
-        Object[] newElements = new Object[this.elements.length * 2 + 1];
-        System.arraycopy(this.elements, 0, newElements, (newElements.length / 2 + 1) - size, this.elements.length);
-        this.head = newElements.length / 2;
+        Object[] newElements = new Object[this.elements.length * 2];
+        System.arraycopy(this.elements, this.head, newElements, (newElements.length / 2) - size / 2 - 1, this.size);
+        this.head = (newElements.length / 2) - size / 2 - 1;
+        this.tail = head + size;
         this.elements = newElements;
     }
 
     private void checkIndex(int index) {
-        if (0 > index || index > size - 1)
+        if (0 > index || index > size)
             throw new IndexOutOfBoundsException();
     }
 }
