@@ -12,5 +12,10 @@ public class Main {
         for (Integer o : test) {
             System.out.println(o);
         }
+
+        test.removeAt(9);
+        System.out.println(test);
+
+
     }
 }
