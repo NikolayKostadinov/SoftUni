@@ -5,6 +5,7 @@ public class Main {
     public static void main(String[] args) throws SQLException {
         Scanner scan = new Scanner(System.in);
         StringBuilder stringBuilder;
+
         try (Connection connection = DriverManager
                 .getConnection(
                         "jdbc:mysql://localhost:3306/soft_uni",
