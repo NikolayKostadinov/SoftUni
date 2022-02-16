@@ -108,3 +108,5 @@ DELIMITER ;
 
 CALL udp_reduce_price ('Phones and tablets');
 
+
+

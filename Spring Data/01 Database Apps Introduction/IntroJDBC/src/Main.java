@@ -10,7 +10,7 @@ public class Main {
                 .getConnection(
                         "jdbc:mysql://localhost:3306/soft_uni",
                         "root",
-                        "K@lvad0s")) {
+                        "")) {
             System.out.println("Enter the salary you want to search for:");
             Double salary = Double.parseDouble(scan.nextLine());
             String query = "SELECT * FROM employees WHERE salary > ?";
