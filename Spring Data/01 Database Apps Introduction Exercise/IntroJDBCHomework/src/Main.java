@@ -290,14 +290,14 @@ public class Main {
      * @apiNote You have to run SQL script to create stored procedure before run code!!!
      * -- The query for creation ot the stored procedure for problem 9 Increase Age Stored Procedure
      * DROP procedure IF EXISTS `minions_db`.`usp_get_older`;
-     * <p>
+     *
      * DELIMITER $$
      * USE `minions_db`$$
      * CREATE PROCEDURE `usp_get_older`(minion_id INT)
      * BEGIN
      * UPDATE minions SET age = age + 1 WHERE id = minion_id;
      * END$$
-     * <p>
+     *
      * DELIMITER ;
      * ;
      */
