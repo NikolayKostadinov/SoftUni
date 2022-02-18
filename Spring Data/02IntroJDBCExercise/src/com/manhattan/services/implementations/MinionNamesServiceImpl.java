@@ -36,7 +36,7 @@ public class MinionNamesServiceImpl extends BaseServiceImpl {
         }
     }
 
-    private static void printMinionData(ResultSet resultSet, int villainId) throws SQLException {
+    private void printMinionData(ResultSet resultSet, int villainId) throws SQLException {
         if (resultSet.next() == false) {
             System.out.printf("No villain with ID %d exists in the database.%n", villainId);
         } else {

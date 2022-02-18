@@ -31,6 +31,11 @@ public class Main {
         }
     }
 
+    private static Connection initializeConnection() throws IOException, SQLException {
+        Properties properties = getUsernameAndPassword();
+        return DriverManager.getConnection(CONNECTION_STRING + DATABASE, properties);
+    }
+
     private static Properties getUsernameAndPassword() throws IOException {
        printRedMessage("Peace enter your credentials for database!");
         Properties properties = new Properties();
@@ -39,10 +44,5 @@ public class Main {
         String password = readStringFromConsole("Enter password: ");
         properties.setProperty("password", password);
         return properties;
-    }
-
-    private static Connection initializeConnection() throws IOException, SQLException {
-        Properties properties = getUsernameAndPassword();
-        return DriverManager.getConnection(CONNECTION_STRING + DATABASE, properties);
     }
 }

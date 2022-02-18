@@ -16,17 +16,6 @@ public class Application {
         this.factory = factory;
     }
 
-    private static void printMainMenu() {
-        System.out.println("2. Get Villain's Names");
-        System.out.println("3. Get Minion Names");
-        System.out.println("4. Add Minion");
-        System.out.println("5. Change Town Names Casing");
-        System.out.println("6. Remove Villain");
-        System.out.println("7. Print All Minion Names");
-        System.out.println("8. Increase Minions Age");
-        System.out.println("9. Increase Age Stored Procedure");
-    }
-
     public void run() throws IOException, SQLException {
         printMainMenu();
         int problemNumber = readIntFromConsole("Choose the problem number: ");
@@ -37,6 +26,17 @@ public class Application {
         } catch (ProblemNotFoundException e) {
             e.getMessage();
         }
+    }
+
+    private void printMainMenu() {
+        System.out.println("2. Get Villain's Names");
+        System.out.println("3. Get Minion Names");
+        System.out.println("4. Add Minion");
+        System.out.println("5. Change Town Names Casing");
+        System.out.println("6. Remove Villain");
+        System.out.println("7. Print All Minion Names");
+        System.out.println("8. Increase Minions Age");
+        System.out.println("9. Increase Age Stored Procedure");
     }
 
     private void checkForSpacialCases(int problemNumber) throws IOException {
