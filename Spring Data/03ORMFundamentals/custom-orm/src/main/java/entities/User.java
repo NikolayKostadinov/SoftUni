@@ -21,6 +21,9 @@ public class User {
     @Column(name = "registration_date")
     private LocalDate registration;
 
+    @Column(name = "last_logged_date")
+    private LocalDate lastLoggedIn;
+
     public User() {
     }
 
@@ -28,6 +31,7 @@ public class User {
         this.username = username;
         this.age = age;
         this.registration = registration;
+        this.lastLoggedIn = LocalDate.now();
     }
 
     public String getUsername() {
