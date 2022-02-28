@@ -8,7 +8,7 @@ import javax.persistence.Table;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name="visitations")
+@Table(name="_04_visitations")
 public class Visitation extends BaseEntity<Integer> {
     private LocalDateTime date;
     private String comments;

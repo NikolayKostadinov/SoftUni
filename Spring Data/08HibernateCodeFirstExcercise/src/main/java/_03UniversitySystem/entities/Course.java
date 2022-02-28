@@ -7,7 +7,7 @@ import java.time.LocalDate;
 import java.util.Set;
 
 @Entity
-@Table(name="courses")
+@Table(name="_03_courses")
 public class Course extends BaseEntity<Integer> {
     private String name;
 

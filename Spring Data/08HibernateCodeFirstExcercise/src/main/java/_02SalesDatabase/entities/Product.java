@@ -10,7 +10,7 @@ import java.math.BigDecimal;
 import java.util.Set;
 
 @Entity
-@Table(name = "products")
+@Table(name = "_02_products")
 public class Product extends BaseEntity<Integer> {
     private String name;
 

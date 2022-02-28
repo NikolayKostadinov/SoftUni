@@ -7,7 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="medicaments")
+@Table(name="_04_medicaments")
 public class Medicament extends BaseEntity<Integer> {
     private String name;
 

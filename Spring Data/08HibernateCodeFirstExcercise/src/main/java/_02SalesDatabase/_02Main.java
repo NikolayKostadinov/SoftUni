@@ -7,12 +7,11 @@ import _02SalesDatabase.entities.StoreLocation;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Persistence;
-import java.math.BigDecimal;
 
-public class Main {
+public class _02Main {
     public static void main(String[] args) {
         EntityManager dbManager =
-                Persistence.createEntityManagerFactory("salesDb")
+                Persistence.createEntityManagerFactory("codeFirstDb")
                         .createEntityManager();
 
 

@@ -6,7 +6,7 @@ import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "patients")
+@Table(name = "_04_patients")
 public class Patient extends BaseEntity<Integer> {
     private String firstName;
     private String lastName;

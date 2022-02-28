@@ -7,7 +7,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "prescriptions")
+@Table(name = "_04_prescriptions")
 public class PrescriptionRow extends BaseEntity<Integer> {
 
     private Medicament medicament;

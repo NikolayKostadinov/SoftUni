@@ -9,7 +9,7 @@ import javax.persistence.Table;
 import java.util.Set;
 
 @Entity
-@Table(name="customers")
+@Table(name="_02_customers")
 public class Customer extends BaseEntity<Integer> {
     private String name;
 
