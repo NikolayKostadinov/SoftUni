@@ -20,12 +20,11 @@ public class EmployeesFromDepartmentImpl extends BaseServiceImpl {
 
     @Override
     public void execute() {
-        //TODO: If JOIN clause was omitted there will be n+1 query problem!!!
         TypedQuery<EmployeeWithSallaryModel> query =
                 this.entityManager.createQuery(
-                        "SELECT NEW com.manhattan.models.EmployeeWithSallaryModel(e.firstName, e.lastName, d.name, e.salary) " +
-                                "FROM Employee e JOIN e.department d " +
-                                "WHERE d.name = :departmentName " +
+                        "SELECT NEW com.manhattan.models.EmployeeWithSallaryModel(e.firstName, e.lastName, e.department.name, e.salary) " +
+                                "FROM Employee e " +
+                                "WHERE e.department.name = :departmentName " +
                                 "ORDER BY e.salary, e.id", EmployeeWithSallaryModel.class);
 
         String departmentName = "Research and Development";

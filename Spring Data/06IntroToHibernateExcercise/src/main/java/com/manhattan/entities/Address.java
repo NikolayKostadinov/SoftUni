@@ -41,7 +41,7 @@ public class Address {
         this.town = town;
     }
 
-    @OneToMany(mappedBy = "address", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "address")
     public Set<Employee> getEmployees() {
         return employees;
     }

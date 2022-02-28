@@ -1,8 +1,6 @@
 package com.manhattan.services.implementations;
 
-import com.manhattan.models.EmployeeWithSallaryModel;
 import com.manhattan.models.ProjectModel;
-import com.manhattan.services.interfaces.Service;
 
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;

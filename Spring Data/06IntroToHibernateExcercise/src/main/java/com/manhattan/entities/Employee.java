@@ -2,6 +2,7 @@ package com.manhattan.entities;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
+import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.util.Set;
 
@@ -78,7 +79,7 @@ public class Employee {
         this.department = department;
     }
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name = "manager_id", referencedColumnName = "employee_id")
     public Employee getManager() {
         return manager;
@@ -106,7 +107,7 @@ public class Employee {
         this.salary = salary;
     }
 
-    @ManyToOne(cascade = {CascadeType.ALL})
+    @ManyToOne
     @JoinColumn(name = "address_id", referencedColumnName = "address_id")
     public Address getAddress() {
         return address;

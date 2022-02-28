@@ -1,12 +1,10 @@
 package com.manhattan.services.implementations;
 
-import com.manhattan.common.Utilities;
 import com.manhattan.entities.Address;
+import com.manhattan.entities.Employee;
 import com.manhattan.entities.Town;
-import com.manhattan.services.interfaces.Service;
 
 import javax.persistence.EntityManager;
-
 import java.io.IOException;
 import java.util.List;
 
@@ -23,35 +21,46 @@ public class RemoveTownsServiceImpl extends BaseServiceImpl {
     public void execute() {
         try {
             String townName = readStringFromConsole("Enter town name: ");
-            Town town = getTownByName(townName);
-            this.entityManager.getTransaction().begin();
-            int deletedAddresses = deleteAddressesByTownId(town.getId());
-            this.entityManager.remove(town);
-            this.entityManager.getTransaction().commit();
+            List<Address> addresses = getAddressesByTownName(townName);
 
-            printResultMessage(String.format("%d address in %s deleted", deletedAddresses, townName));
+            this.entityManager.getTransaction().begin();
+
+            for (Address address : addresses) {
+                for (Employee employee : address.getEmployees()) {
+                    employee.setAddress(null);
+                }
+                this.entityManager.remove(address);
+            }
+
+            Town town = getTownByTownName(townName);
+
+            this.entityManager.remove(town);
+
+            if (addresses.size() == 1) {
+               printResultMessage(String.format("1 address in %s deleted%n", townName));
+            } else {
+                printResultMessage(String.format("%d addresses in %s deleted%n", addresses.size(), townName));
+            }
+
+            this.entityManager.getTransaction().commit();
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    private int deleteAddressesByTownId(int townId) {
-        List<Address> addresses = this.entityManager.createQuery(
-                        "SELECT a FROM Address a " +
-                                "WHERE a.town.id = :townId ", Address.class)
-                .setParameter("townId", townId)
-                .getResultList();
-        int addressesCount = addresses.size();
-            addresses.forEach(entityManager::remove);
-        return addressesCount;
+    private Town getTownByTownName(String townName) {
+        return this.entityManager.createQuery(
+                        "SELECT t FROM Town t WHERE t.name = :townName", Town.class)
+                .setParameter("townName", townName)
+                .getSingleResult();
     }
 
-    private Town getTownByName(String townName) {
-        return this.entityManager.createQuery(
-                        "SELECT t " +
-                                "FROM Town t " +
-                                "WHERE t.name = :townName ", Town.class)
+    private List<Address> getAddressesByTownName(String townName) {
+        return this.entityManager.createQuery
+                        ("SELECT a FROM Address a WHERE a.town.name = :townName", Address.class)
                 .setParameter("townName", townName)
-                .getResultStream().findFirst().orElse(null);
+                .getResultList();
     }
+
+
 }

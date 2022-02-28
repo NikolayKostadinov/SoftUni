@@ -25,12 +25,13 @@ public class GetEmployeeWithProjectServiceImpl extends BaseServiceImpl {
             int employeeId = readIntFromConsole("Enter employee's ID: ");
             Employee employee = this.entityManager.find(Employee.class, employeeId);
             printResultMessage(
-                    String.format("%s %s - %s%n",
+                    String.format("%s %s - %s",
                             employee.getFirstName(), employee.getLastName(), employee.getJobTitle()));
 
             printResultMessage(employee.getProjects()
                                         .stream()
                                         .map(Project::getName)
+                                        .sorted(String::compareTo)
                                         .collect(Collectors.joining(System.lineSeparator())));
         } catch (IOException e) {
             printRedMessage(e.getMessage());

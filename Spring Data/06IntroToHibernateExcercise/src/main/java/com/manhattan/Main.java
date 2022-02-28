@@ -15,6 +15,7 @@ public class Main {
         ServiceFactory factory = new ServiceFactoryImpl(entityManager);
         Runnable engine = new Engine(factory);
 
+
         engine.run();
 
         entityManager.close();

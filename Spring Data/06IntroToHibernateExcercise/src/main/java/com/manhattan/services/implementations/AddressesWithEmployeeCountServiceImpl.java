@@ -24,11 +24,11 @@ public class AddressesWithEmployeeCountServiceImpl extends BaseServiceImpl {
 
     @Override
     public void execute() {
-        //TODO: JOIN solves n+1 query problem!!!
+
         TypedQuery<AddressModel> query = this.entityManager.createQuery(
-                "SELECT NEW com.manhattan.models.AddressModel(a.text, t.name, e.size)" +
-                        "FROM Address a JOIN a.employees e JOIN a.town t " +
-                        "ORDER BY e.size DESC", AddressModel.class);
+                "SELECT NEW com.manhattan.models.AddressModel(a.text, a.town.name, a.employees.size)" +
+                        "FROM Address a " +
+                        "ORDER BY a.employees.size DESC", AddressModel.class);
 
         query.setMaxResults(RESULTS_LIMIT);
         List<AddressModel> addresses = query.getResultList();

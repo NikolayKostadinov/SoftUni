@@ -21,14 +21,13 @@ public class EmployeesMaximumSalariesServiceImpl extends BaseServiceImpl {
 
     @Override
     public void execute() {
-        //todo: remove Join
         printResultMessage(
                 this.entityManager
                         .createQuery(
-                        "SELECT NEW com.manhattan.models.DepartmentMaxSalaryModel(d.name, MAX(e.salary)) " +
-                                "FROM Department d JOIN d.employees e " +
-                                "GROUP BY d.id " +
-                                "HAVING MAX(e.salary) NOT BETWEEN :minSalary AND :maxSalary",
+                                "SELECT NEW com.manhattan.models.DepartmentMaxSalaryModel(e.department.name, MAX(e.salary)) " +
+                                        "FROM Employee e " +
+                                        "GROUP BY e.department.id " +
+                                        "HAVING MAX(e.salary) NOT BETWEEN :minSalary AND :maxSalary",
                                 DepartmentMaxSalaryModel.class)
                         .setParameter("minSalary", BigDecimal.valueOf(30000))
                         .setParameter("maxSalary", BigDecimal.valueOf(70000))

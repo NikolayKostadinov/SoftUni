@@ -2,6 +2,7 @@ package com.manhattan.services.implementations;
 
 import com.manhattan.entities.Address;
 import com.manhattan.entities.Employee;
+import com.manhattan.entities.Town;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
@@ -34,7 +35,7 @@ public class АddingNewAddressАndUpdatingEmployeeServiceImpl extends BaseServic
             if (employee != null) {
                 EntityTransaction transaction = this.entityManager.getTransaction();
                 transaction.begin();
-                    Address address = createAddress("Vitoshka 15");
+                    Address address = createAddress("Vitoshka 15", "Sofia");
                     employee.setAddress(address);
                 transaction.commit();
                 printResultMessage(
@@ -48,9 +49,16 @@ public class АddingNewAddressАndUpdatingEmployeeServiceImpl extends BaseServic
         }
     }
 
-    private Address createAddress(String addressText) {
+    private Address createAddress(String addressText, String townName) {
+        Town town = entityManager.createQuery("SELECT t FROM Town t WHERE t.name =: townName", Town.class)
+                .setParameter("townName", townName)
+                .getResultStream()
+                .findFirst()
+                .orElse(null);
+
         Address address = new Address();
         address.setText(addressText);
+        address.setTown(town);
         this.entityManager.persist(address);
         return address;
     }

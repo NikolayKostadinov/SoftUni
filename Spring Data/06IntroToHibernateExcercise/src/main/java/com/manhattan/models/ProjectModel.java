@@ -1,10 +1,10 @@
 package com.manhattan.models;
 
-import java.text.SimpleDateFormat;
-import java.time.LocalDate;
+import java.time.Clock;
 import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.ZoneOffset;
 import java.time.format.DateTimeFormatter;
-import java.time.format.DateTimeFormatterBuilder;
 
 public class ProjectModel {
     private String name;
@@ -29,12 +29,18 @@ public class ProjectModel {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
         stringBuilder.append("Project name: ").append(this.name).append(System.lineSeparator());
         stringBuilder.append("\tProject Description: ")
-                .append(this.description).append(System.lineSeparator());
+                .append(String.format("%s...", this.description.substring(0, 35))).append(System.lineSeparator());
         stringBuilder.append("\tProject Start Date: ")
-                .append(this.startDate == null ? "null" : this.startDate.format(formatter)).append(System.lineSeparator());
+                .append(this.startDate == null ? "null" :
+                        convertToUtc(this.startDate, Clock.systemDefaultZone().getZone()).format(formatter))
+                .append(System.lineSeparator());
         stringBuilder.append("\tProject End Date: ")
-                .append(this.endDate == null ? "null" :this.endDate.format(formatter));
-
+                .append(this.endDate == null ? "null" :
+                        convertToUtc(this.endDate, Clock.systemDefaultZone().getZone()).format(formatter));
         return stringBuilder.toString();
+    }
+
+    LocalDateTime convertToUtc(LocalDateTime time, ZoneId zone) {
+        return time.atZone(zone).withZoneSameInstant(ZoneOffset.UTC).toLocalDateTime();
     }
 }
