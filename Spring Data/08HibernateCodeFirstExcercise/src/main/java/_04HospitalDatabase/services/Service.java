@@ -7,5 +7,6 @@ import java.util.List;
 
 public interface Service<T, TModel> {
     T create() throws ValidationException, IOException;
+
     List<TModel> getAll();
 }

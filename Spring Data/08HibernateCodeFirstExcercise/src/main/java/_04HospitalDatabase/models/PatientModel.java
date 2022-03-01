@@ -1,7 +1,6 @@
 package _04HospitalDatabase.models;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 
 public class PatientModel {
 

@@ -6,6 +6,7 @@ import _04HospitalDatabase.exceptions.ValidationException;
 import _04HospitalDatabase.models.PatientModel;
 
 import javax.persistence.EntityManager;
+import javax.persistence.Query;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -28,13 +29,14 @@ public class PatientRepositoryImpl extends BaseRepository implements Repository<
         return this.getEm()
                 .createQuery(
                         "SELECT NEW _04HospitalDatabase.models.PatientModel(p.id, p.firstName, p.lastName, " +
-                                "p.address.id, p.address.text, p.address.town.name, p.email, p.dateОfBirth, p.hasInsurance) " +
+                                "p.address.id, p.address.text, p.address.town.name, " +
+                                "p.email, p.dateОfBirth, p.hasInsurance) " +
                                 "FROM Patient p ", PatientModel.class).getResultList();
     }
 
     @Override
     public Patient persist(PatientModel patient) throws ValidationException {
-        Address address = this.getEm().find(Address.class, patient.getId());
+        Address address = this.getEm().find(Address.class, patient.getAddressId());
         validate(patient, address);
         Patient dbPatient = new Patient(patient.getId(), patient.getFirstName(),
                 patient.getLastName(), address, patient.getEmail(),

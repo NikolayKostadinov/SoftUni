@@ -15,6 +15,15 @@ public class Medicament extends BaseEntity<Integer> {
 
     private Set<PrescriptionRow> prescriptionRowSet;
 
+    public Medicament(Integer id, String name) {
+        this.setId(id);
+        this.name = name;
+    }
+
+    public Medicament() {
+
+    }
+
     @Column(name="name", nullable = false)
     public String getName() {
         return name;

@@ -23,6 +23,10 @@ public class Address extends BaseEntity<Integer> {
 
     private Set<Patient> patients;
 
+    public Address() {
+        
+    }
+
     public String getText() {
         return text;
     }

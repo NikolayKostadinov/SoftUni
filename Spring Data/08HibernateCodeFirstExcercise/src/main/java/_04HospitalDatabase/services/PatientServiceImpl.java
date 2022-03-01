@@ -15,14 +15,22 @@ import java.util.stream.Collectors;
 
 import static _04HospitalDatabase.common.Utilities.*;
 
-public class PatientService implements Service<Patient, PatientModel> {
+public class PatientServiceImpl implements Service<Patient, PatientModel> {
     private PatientRepositoryImpl repository;
     private AddressRepositoryImpl addressRepository;
+
+    public PatientServiceImpl(PatientRepositoryImpl repository, AddressRepositoryImpl addressRepository) {
+        this.repository = repository;
+        this.addressRepository = addressRepository;
+    }
 
     @Override
     public Patient create() throws ValidationException, IOException {
         String firstName = readStringFromConsole("Enter first name: ");
         String lastName = readStringFromConsole("Enter last name: ");
+        printMessage("");
+        printMessage("Choose from addresses");
+        printMessage("---------------------");
         printMessage(this.addressRepository.all()
                 .stream()
                 .map(AddressModel::toString)
@@ -30,7 +38,7 @@ public class PatientService implements Service<Patient, PatientModel> {
         int addressId = readIntFromConsole("Enter address Id: ");
         String email = readStringFromConsole("Enter email: ");
         LocalDate dateOfBirth = LocalDate.parse(readStringFromConsole("Enter birth day /yyyy-mm-dd/: "),
-                DateTimeFormatter.ofPattern("yyyy-mm-dd"));
+                DateTimeFormatter.ofPattern("yyyy-MM-dd"));
         boolean hasInsurance = readStringFromConsole("Has insurance (Y/N): ").toLowerCase().equals("y");
 
         return this.repository.persist(new PatientModel(firstName, lastName, addressId, email, dateOfBirth, hasInsurance));
@@ -38,6 +46,6 @@ public class PatientService implements Service<Patient, PatientModel> {
 
     @Override
     public List<PatientModel> getAll() {
-        return null;
+        return this.repository.all();
     }
 }

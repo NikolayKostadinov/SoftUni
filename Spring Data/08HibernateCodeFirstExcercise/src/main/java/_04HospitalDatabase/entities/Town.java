@@ -14,7 +14,7 @@ public class Town extends BaseEntity<Integer> {
     private String name;
     private Set<Address> address;
 
-    public Town(int id, String name) {
+    public Town(Integer id, String name) {
         this.setId(id);
         this.name = name;
     }

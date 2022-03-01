@@ -37,7 +37,7 @@ public class Patient extends BaseEntity<Integer> {
 
     public Patient(int id, String firstName, String lastName, Address address,
                    String email, LocalDate dateОfBirth, byte[] picture, Boolean hasInsurance) {
-        this.setId(id);
+        this.setId(id == 0 ? null : 0);
         this.firstName = firstName;
         this.lastName = lastName;
         this.address = address;
