@@ -7,33 +7,21 @@ import _02SalesDatabase.entities.StoreLocation;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Persistence;
+import java.math.BigDecimal;
 
 public class _02Main {
     public static void main(String[] args) {
         EntityManager dbManager =
-                Persistence.createEntityManagerFactory("codeFirstDb")
+                Persistence.createEntityManagerFactory("salesDb")
                         .createEntityManager();
 
 
         dbManager.getTransaction().begin();
 
-        Product product = new Product();
-        product.setName("Socks");
-
-        Customer customer = new Customer();
-        customer.setName("Baj Ivan");
-        customer.setEmail("bay_ivan@test.com");
-        customer.setCreditCardNumber("1234567890");
-
-        StoreLocation storeLocation = new StoreLocation();
-        storeLocation.setLocationName("Pazara");
-
-
-
-        Sale sale = new Sale();
-        sale.setProduct(product);
-        sale.setCustomer(customer);
-        sale.setStoreLocation(storeLocation);
+        Product product = new Product("Socks", 5, BigDecimal.valueOf(1.20));
+        Customer customer = new Customer("Baj Ivan", "bay_ivan@test.com", "1234567890");
+        StoreLocation storeLocation = new StoreLocation("Pazara");
+        Sale sale = new Sale(product, customer, storeLocation);
 
         dbManager.persist(sale);
 

@@ -9,13 +9,23 @@ import javax.persistence.Table;
 import java.util.Set;
 
 @Entity
-@Table(name="_02_customers")
+@Table(name="customers")
 public class Customer extends BaseEntity<Integer> {
     private String name;
 
     private String email;
 
     private String creditCardNumber;
+
+    public Customer() {
+    }
+
+    public Customer(String name, String email, String creditCardNumber) {
+        this.name = name;
+        this.email = email;
+        this.creditCardNumber = creditCardNumber;
+    }
+
 
     private Set<Sale> sales;
 

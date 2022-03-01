@@ -5,7 +5,7 @@ import java.math.BigDecimal;
 import java.util.Set;
 
 @Entity
-@Table(name = "_03_teachers")
+@Table(name = "teachers")
 public class Teacher extends Person{
     private String email;
     private BigDecimal salaryPerHour;

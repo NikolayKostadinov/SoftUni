@@ -9,10 +9,18 @@ import javax.persistence.Table;
 import java.util.Set;
 
 @Entity
-@Table(name="_04_towns")
+@Table(name="towns")
 public class Town extends BaseEntity<Integer> {
     private String name;
     private Set<Address> address;
+
+    public Town(int id, String name) {
+        this.setId(id);
+        this.name = name;
+    }
+
+    public Town() {
+    }
 
     @Column(name = "name", length = 50, nullable = false)
     public String getName() {

@@ -6,7 +6,7 @@ import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
-@Table(name = "_02_sales")
+@Table(name = "sales")
 public class Sale extends BaseEntity<Integer> {
 
     private Product product;
@@ -19,6 +19,13 @@ public class Sale extends BaseEntity<Integer> {
 
     public Sale() {
         this(LocalDate.now());
+    }
+
+    public Sale(Product product, Customer customer, StoreLocation storeLocation) {
+        this();
+        this.product = product;
+        this.customer = customer;
+        this.storeLocation = storeLocation;
     }
 
     public Sale(LocalDate date) {
@@ -45,6 +52,7 @@ public class Sale extends BaseEntity<Integer> {
     }
 
     @ManyToOne(cascade = CascadeType.PERSIST, optional = false)
+    @JoinColumn(name = "store_location_id", referencedColumnName = "id")
     public StoreLocation getStoreLocation() {
         return storeLocation;
     }

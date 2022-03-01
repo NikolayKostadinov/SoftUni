@@ -10,13 +10,22 @@ import java.math.BigDecimal;
 import java.util.Set;
 
 @Entity
-@Table(name = "_02_products")
+@Table(name = "products")
 public class Product extends BaseEntity<Integer> {
     private String name;
 
     private int quantity;
 
     private BigDecimal price;
+
+    public Product() {
+    }
+
+    public Product(String name, int quantity, BigDecimal price) {
+        this.name = name;
+        this.quantity = quantity;
+        this.price = price;
+    }
 
     @OneToMany(mappedBy = "product")
     public Set<Sale> getSales() {

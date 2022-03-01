@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.Set;
 
 @Entity
-@Table(name = "_03_students")
+@Table(name = "students")
 public class Student extends Person {
 
     private double averageGrade;

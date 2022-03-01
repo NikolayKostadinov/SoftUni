@@ -9,11 +9,17 @@ import javax.persistence.Table;
 import java.util.Set;
 
 @Entity
-@Table(name="_04_addresses")
+@Table(name = "addresses")
 public class Address extends BaseEntity<Integer> {
     private String text;
 
     private Town town;
+
+    public Address(int id, String text, Town town) {
+        this.setId(id);
+        this.text = text;
+        this.town = town;
+    }
 
     private Set<Patient> patients;
 

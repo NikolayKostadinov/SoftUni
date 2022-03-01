@@ -5,7 +5,7 @@ import Common.BaseEntity;
 import javax.persistence.*;
 
 @Entity()
-@Table(name = "_03_persons")
+@Table(name = "persons")
 @Inheritance(strategy = InheritanceType.JOINED)
 public abstract class Person extends BaseEntity<Integer> {
 
@@ -33,7 +33,7 @@ public abstract class Person extends BaseEntity<Integer> {
         this.lastName = last_name;
     }
 
-    @Column(name = "phone_number")
+    @Column(name = "phone_number", unique = true)
     public String getPhoneNumber() {
         return phoneNumber;
     }

@@ -6,7 +6,9 @@ import javax.persistence.Persistence;
 public class _03Main {
     public static void main(String[] args) {
         EntityManager dbManager =
-                Persistence.createEntityManagerFactory("codeFirstDb")
+                Persistence.createEntityManagerFactory("universityDb")
                         .createEntityManager();
+
+        dbManager.close();
     }
 }

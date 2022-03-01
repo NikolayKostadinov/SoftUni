@@ -2,12 +2,14 @@ package _01GringottsDatabase.entities;
 
 import Common.BaseEntity;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name="_01_wizard_deposits")
+@Table(name = "wizard_deposits")
 public class WizardDeposit extends BaseEntity<Integer> {
 
     private String firstName;
@@ -35,7 +37,7 @@ public class WizardDeposit extends BaseEntity<Integer> {
 
     private Boolean depositExpired;
 
-    @Column(name="first_name", length = 50)
+    @Column(name = "first_name", length = 50)
     public String getFirstName() {
         return firstName;
     }
@@ -44,7 +46,7 @@ public class WizardDeposit extends BaseEntity<Integer> {
         this.firstName = firstName;
     }
 
-    @Column(name="last_name", length = 60, nullable = false)
+    @Column(name = "last_name", length = 60, nullable = false)
     public String getLastName() {
         return lastName;
     }
@@ -71,7 +73,7 @@ public class WizardDeposit extends BaseEntity<Integer> {
         this.age = age;
     }
 
-    @Column(name="magic_wand_creator" ,length = 100)
+    @Column(name = "magic_wand_creator", length = 100)
     public String getMagicWandCreator() {
         return magicWandCreator;
     }
@@ -89,7 +91,7 @@ public class WizardDeposit extends BaseEntity<Integer> {
         this.magicWandSize = magic_wand_size;
     }
 
-    @Column(name="deposit_group", length = 20)
+    @Column(name = "deposit_group", length = 20)
     public String getDepositGroup() {
         return depositGroup;
     }
@@ -98,7 +100,7 @@ public class WizardDeposit extends BaseEntity<Integer> {
         this.depositGroup = deposit_group;
     }
 
-    @Column(name="deposit_start_date")
+    @Column(name = "deposit_start_date", nullable = false)
     public LocalDateTime getDepositStartDate() {
         return depositStartDate;
     }
@@ -107,7 +109,7 @@ public class WizardDeposit extends BaseEntity<Integer> {
         this.depositStartDate = deposit_start_date;
     }
 
-    @Column(name="deposit_amount")
+    @Column(name = "deposit_amount", nullable = false)
     public BigDecimal getDepositAmount() {
         return depositAmount;
     }
@@ -116,7 +118,7 @@ public class WizardDeposit extends BaseEntity<Integer> {
         this.depositAmount = deposit_amount;
     }
 
-    @Column(name="deposit_interest")
+    @Column(name = "deposit_interest", nullable = false)
     public BigDecimal getDepositInterest() {
         return depositInterest;
     }
@@ -125,7 +127,7 @@ public class WizardDeposit extends BaseEntity<Integer> {
         this.depositInterest = deposit_interest;
     }
 
-    @Column(name="deposit_charge")
+    @Column(name = "deposit_charge", nullable = false)
     public BigDecimal getDepositCharge() {
         return depositCharge;
     }
@@ -134,7 +136,7 @@ public class WizardDeposit extends BaseEntity<Integer> {
         this.depositCharge = deposit_charge;
     }
 
-    @Column(name = "deposit_expiration_date")
+    @Column(name = "deposit_expiration_date", nullable = false)
     public LocalDateTime getDepositExpirationDate() {
         return depositExpirationDate;
     }
@@ -143,7 +145,7 @@ public class WizardDeposit extends BaseEntity<Integer> {
         this.depositExpirationDate = deposit_expiration_date;
     }
 
-    @Column(name="is_deposit_expired")
+    @Column(name = "is_deposit_expired", nullable = false)
     public Boolean getDepositExpired() {
         return depositExpired;
     }
