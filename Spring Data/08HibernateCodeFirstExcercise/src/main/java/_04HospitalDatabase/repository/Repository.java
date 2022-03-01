@@ -6,7 +6,6 @@ import _04HospitalDatabase.exceptions.ValidationException;
 import java.util.List;
 
 public interface Repository<T, TModel, Tid> {
-    boolean exists(Tid id);
 
     List<TModel> all();
 

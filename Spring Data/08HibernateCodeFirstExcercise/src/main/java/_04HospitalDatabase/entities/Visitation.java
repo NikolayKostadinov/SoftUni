@@ -6,7 +6,7 @@ import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name="visitations")
+@Table(name = "visitations")
 public class Visitation extends BaseEntity<Integer> {
 
     private LocalDateTime date;
@@ -17,7 +17,18 @@ public class Visitation extends BaseEntity<Integer> {
 
     private Diagnose diagnose;
 
-    @Column(name="date", nullable = false)
+    public Visitation() {
+    }
+
+    public Visitation(int id, LocalDateTime date, String comments, Patient patient, Diagnose diagnose) {
+        this.setId(id == 0 ? null : id);
+        this.date = date;
+        this.comments = comments;
+        this.patient = patient;
+        this.diagnose = diagnose;
+    }
+
+    @Column(name = "date", nullable = false)
     public LocalDateTime getDate() {
         return date;
     }
@@ -26,7 +37,7 @@ public class Visitation extends BaseEntity<Integer> {
         this.date = date;
     }
 
-    @Column(name="comments", columnDefinition = "TEXT")
+    @Column(name = "comments", columnDefinition = "TEXT")
     public String getComments() {
         return comments;
     }

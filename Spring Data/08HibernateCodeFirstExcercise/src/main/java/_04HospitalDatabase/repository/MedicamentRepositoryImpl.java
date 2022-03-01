@@ -19,11 +19,6 @@ public class MedicamentRepositoryImpl extends BaseRepository implements Reposito
     }
 
     @Override
-    public boolean exists(Integer id) {
-        return this.getEm().find(Town.class, id) != null;
-    }
-
-    @Override
     public List<MedicamentModel> all() {
         return this.getEm()
                 .createQuery("SELECT NEW _04HospitalDatabase.models.MedicamentModel(m.id, m.name) " +

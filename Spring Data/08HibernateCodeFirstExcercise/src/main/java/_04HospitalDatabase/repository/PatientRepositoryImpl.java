@@ -20,11 +20,6 @@ public class PatientRepositoryImpl extends BaseRepository implements Repository<
     }
 
     @Override
-    public boolean exists(Integer id) {
-        return false;
-    }
-
-    @Override
     public List<PatientModel> all() {
         return this.getEm()
                 .createQuery(

@@ -10,14 +10,9 @@ import java.util.List;
 import static _04HospitalDatabase.common.ErrorMessages.FIELD_IN_ENTITY_CANNOT_BE_LESS_THAN_1;
 import static _04HospitalDatabase.common.ErrorMessages.FIELD_IN_ENTITY_IS_REQUIRED;
 
-public class TownRepositoryImpl extends BaseRepository implements Repository<Town, TownModel, Integer> {
+    public class TownRepositoryImpl extends BaseRepository implements Repository<Town, TownModel, Integer> {
     public TownRepositoryImpl(EntityManager em) {
         super(em);
-    }
-
-    @Override
-    public boolean exists(Integer id) {
-        return this.getEm().find(Town.class, id) != null;
     }
 
     @Override

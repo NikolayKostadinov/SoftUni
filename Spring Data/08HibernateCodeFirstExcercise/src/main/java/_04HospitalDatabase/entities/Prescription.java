@@ -13,6 +13,20 @@ public class Prescription extends BaseEntity<Integer> {
 
     private Diagnose diagnose;
 
+    public Prescription(Set<PrescriptionRow> rows, Diagnose diagnose) {
+        this(rows, diagnose);
+    }
+
+    public Prescription(Integer id, Set<PrescriptionRow> rows, Diagnose diagnose) {
+        this.setId(id == 0 ? null : id);
+        this.rows = rows;
+        this.diagnose = diagnose;
+    }
+
+    public Prescription() {
+
+    }
+
     @OneToMany(mappedBy = "prescription")
     public Set<PrescriptionRow> getRows() {
         return rows;
