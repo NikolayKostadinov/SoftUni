@@ -14,7 +14,7 @@ public class Prescription extends BaseEntity<Integer> {
     private Diagnose diagnose;
 
     public Prescription(Set<PrescriptionRow> rows, Diagnose diagnose) {
-        this(rows, diagnose);
+        this(null, rows, diagnose);
     }
 
     public Prescription(Integer id, Set<PrescriptionRow> rows, Diagnose diagnose) {

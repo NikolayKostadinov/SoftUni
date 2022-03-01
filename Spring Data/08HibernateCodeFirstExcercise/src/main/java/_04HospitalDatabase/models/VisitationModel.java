@@ -47,4 +47,6 @@ public class VisitationModel {
     public Diagnose getDiagnose() {
         return diagnose;
     }
+
+    //todo: implement toString
 }
