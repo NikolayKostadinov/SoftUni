@@ -55,7 +55,7 @@ public class Visitation extends BaseEntity<Integer> {
         this.patient = patient;
     }
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "diagnose_id", referencedColumnName = "id", unique = true)
     public Diagnose getDiagnose() {
         return diagnose;

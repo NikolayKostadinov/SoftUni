@@ -17,11 +17,6 @@ public class AddressRepositoryImpl extends BaseRepository implements Repository<
     }
 
     @Override
-    public boolean exists(Integer id) {
-        return this.getEm().find(Address.class, id) != null;
-    }
-
-    @Override
     public List<AddressModel> all() {
         return this.getEm()
                 .createQuery("SELECT NEW _04HospitalDatabase.models.AddressModel(a.id, a.text) " +

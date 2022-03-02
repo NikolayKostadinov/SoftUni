@@ -19,7 +19,7 @@ public class VisitationRepositoryImpl extends BaseRepository implements Reposito
     public List<VisitationModel> all() {
         return this.getEm().createQuery(
                 "SELECT NEW _04HospitalDatabase.models" +
-                        ".VisitationModel(v.date, v.comments, v.patient, v.diagnose)" +
+                        ".VisitationModel(v.id, v.date, v.comments, v.patient, v.diagnose)" +
                         "FROM Visitation v", VisitationModel.class).getResultList();
     }
 
@@ -29,6 +29,7 @@ public class VisitationRepositoryImpl extends BaseRepository implements Reposito
         Visitation dbVisitation = new Visitation(visitation.getId(),
                 visitation.getDate(), visitation.getComments(), visitation.getPatient(), visitation.getDiagnose());
         this.getEm().getTransaction().begin();
+        this.getEm().persist(dbVisitation);
         this.getEm().getTransaction().commit();
         return dbVisitation;
     }

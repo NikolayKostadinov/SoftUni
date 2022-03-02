@@ -45,5 +45,16 @@ D:/SoftUni/JAVA/Spring Data/08HibernateCodeFirstExcercise/src/main/resources/MET
       <jdbc-url>jdbc:mysql://localhost:3306</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
+    <data-source source="LOCAL" name="billsPaymentDB/Hibernate" uuid="93c3eb34-3a85-4168-974b-a0d6b59d2801">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>Hibernate
+
+D:/SoftUni/2021/SoftUni-JAVA/Spring Data/08HibernateCodeFirstExcercise/src/main/resources/META-INF/persistence.xml</remarks>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://localhost:3306/05_bills_payment_db?createDatabaseIfNotExist=true&amp;useSSL=false&amp;serverTimezone=UTC</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
   </component>
 </project>

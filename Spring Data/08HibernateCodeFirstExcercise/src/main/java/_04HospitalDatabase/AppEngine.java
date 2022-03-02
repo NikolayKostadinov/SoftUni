@@ -7,6 +7,7 @@ import _04HospitalDatabase.services.ServiceFactory;
 
 import javax.persistence.EntityManager;
 import java.io.IOException;
+import java.time.format.DateTimeParseException;
 import java.util.stream.Collectors;
 
 import static _04HospitalDatabase.common.Utilities.printMessage;
@@ -44,14 +45,14 @@ public class AppEngine implements Runnable {
                 printMainMenu();
                 operation = Utilities.readIntFromConsole("Choose operation: ");
 
-            } catch (ValidationException | IOException e) {
+            } catch (ValidationException | DateTimeParseException | NumberFormatException | IOException e) {
                 printRedMessage(e.getMessage());
             }
         }
     }
 
     private void printMainMenu() {
-        StringBuilder stringBuilder = new StringBuilder();
+        StringBuilder stringBuilder = new StringBuilder().append(System.lineSeparator());
         stringBuilder.append("Operations menu").append(System.lineSeparator());
         stringBuilder.append("----------------").append(System.lineSeparator());
         stringBuilder.append("1. Create visitation").append(System.lineSeparator());

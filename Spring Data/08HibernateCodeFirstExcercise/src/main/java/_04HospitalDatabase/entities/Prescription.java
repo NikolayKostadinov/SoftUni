@@ -13,8 +13,12 @@ public class Prescription extends BaseEntity<Integer> {
 
     private Diagnose diagnose;
 
+    public Prescription(Set<PrescriptionRow> rows) {
+        this(0, rows, null);
+    }
+
     public Prescription(Set<PrescriptionRow> rows, Diagnose diagnose) {
-        this(null, rows, diagnose);
+        this(0, rows, diagnose);
     }
 
     public Prescription(Integer id, Set<PrescriptionRow> rows, Diagnose diagnose) {
@@ -27,7 +31,7 @@ public class Prescription extends BaseEntity<Integer> {
 
     }
 
-    @OneToMany(mappedBy = "prescription")
+    @OneToMany(mappedBy = "prescription", cascade = CascadeType.PERSIST)
     public Set<PrescriptionRow> getRows() {
         return rows;
     }

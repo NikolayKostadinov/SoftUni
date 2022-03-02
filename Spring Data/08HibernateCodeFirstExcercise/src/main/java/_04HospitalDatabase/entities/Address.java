@@ -14,17 +14,16 @@ public class Address extends BaseEntity<Integer> {
     private String text;
 
     private Town town;
+    private Set<Patient> patients;
 
     public Address(int id, String text, Town town) {
-        this.setId(id);
+        this.setId(id == 0 ? null : id);
         this.text = text;
         this.town = town;
     }
 
-    private Set<Patient> patients;
-
     public Address() {
-        
+
     }
 
     public String getText() {

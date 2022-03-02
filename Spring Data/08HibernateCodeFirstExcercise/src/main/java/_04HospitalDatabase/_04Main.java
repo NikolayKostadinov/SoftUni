@@ -5,7 +5,10 @@ import net.bytebuddy.build.Plugin;
 import javax.persistence.EntityManager;
 import javax.persistence.Persistence;
 
-public class _04Main {
+/**
+ * Please apply .\seed\seed_db.sql to ensure test data!!!
+ */
+ public class _04Main {
     public static void main(String[] args) {
         EntityManager dbManager =
                 Persistence.createEntityManagerFactory("hospitalDb")

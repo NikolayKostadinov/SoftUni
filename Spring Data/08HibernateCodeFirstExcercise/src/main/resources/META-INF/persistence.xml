@@ -79,4 +79,22 @@
             <property name="hibernate.format_sql" value="false"/>
         </properties>
     </persistence-unit>
+    <persistence-unit name="billsPaymentDB">
+        <class>_05BillsPaymentSystem.entities.User</class>
+        <class>_05BillsPaymentSystem.entities.BillingDetail</class>
+        <class>_05BillsPaymentSystem.entities.CreditCard</class>
+        <class>_05BillsPaymentSystem.entities.BankAccount</class>
+        <exclude-unlisted-classes>true</exclude-unlisted-classes>
+        <properties>
+            <property name="hibernate.connection.url"
+                      value="jdbc:mysql://localhost:3306/05_bills_payment_db?createDatabaseIfNotExist=true&amp;useSSL=false&amp;serverTimezone=UTC"/>
+            <property name="hibernate.connection.driver_class" value="com.mysql.cj.jdbc.Driver"/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+            <property name="hibernate.connection.username" value="root"/>
+            <property name="hibernate.connection.password" value=""/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect"/>
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="true"/>
+        </properties>
+    </persistence-unit>
 </persistence>

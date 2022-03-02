@@ -16,6 +16,16 @@ public class Diagnose extends BaseEntity<Integer> {
 
     private Prescription prescription;
 
+    public Diagnose(String name, String comments, Prescription prescription) {
+        this.name = name;
+        this.comments = comments;
+        this.prescription = prescription;
+    }
+
+    public Diagnose() {
+
+    }
+
     @Column(name = "name", nullable = false)
     public String getName() {
         return name;
@@ -43,7 +53,7 @@ public class Diagnose extends BaseEntity<Integer> {
         this.visitation = visitation;
     }
 
-    @OneToOne(mappedBy = "diagnose")
+    @OneToOne(mappedBy = "diagnose", cascade = CascadeType.PERSIST)
     public Prescription getPrescription() {
         return prescription;
     }
