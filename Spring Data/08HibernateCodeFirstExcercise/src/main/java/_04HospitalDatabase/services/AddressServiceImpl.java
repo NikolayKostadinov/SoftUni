@@ -1,10 +1,12 @@
 package _04HospitalDatabase.services;
 
 import _04HospitalDatabase.entities.Address;
+import _04HospitalDatabase.entities.Town;
 import _04HospitalDatabase.exceptions.ValidationException;
 import _04HospitalDatabase.models.AddressModel;
 import _04HospitalDatabase.models.TownModel;
 import _04HospitalDatabase.repository.AddressRepositoryImpl;
+import _04HospitalDatabase.repository.Repository;
 import _04HospitalDatabase.repository.TownRepositoryImpl;
 
 import java.io.IOException;
@@ -14,10 +16,11 @@ import java.util.stream.Collectors;
 import static _04HospitalDatabase.common.Utilities.*;
 
 public class AddressServiceImpl implements Service<Address, AddressModel>{
-    private AddressRepositoryImpl repository;
-    private TownRepositoryImpl townRepository;
+    private Repository<Address, AddressModel, Integer> repository;
+    private Repository<Town, TownModel, Integer> townRepository;
 
-    public AddressServiceImpl(AddressRepositoryImpl repository, TownRepositoryImpl townRepository) {
+    public AddressServiceImpl(Repository<Address, AddressModel, Integer> repository,
+                              Repository<Town, TownModel, Integer> townRepository) {
         this.repository = repository;
         this.townRepository = townRepository;
     }

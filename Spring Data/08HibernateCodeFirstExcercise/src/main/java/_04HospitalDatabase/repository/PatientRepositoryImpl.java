@@ -20,6 +20,11 @@ public class PatientRepositoryImpl extends BaseRepository implements Repository<
     }
 
     @Override
+    public Patient findById(Integer id) {
+        return this.getEm().find(Patient.class, id);
+    }
+
+    @Override
     public List<PatientModel> all() {
         return this.getEm()
                 .createQuery(

@@ -19,6 +19,11 @@ public class MedicamentRepositoryImpl extends BaseRepository implements Reposito
     }
 
     @Override
+    public Medicament findById(Integer id) {
+        return this.getEm().find(Medicament.class, id);
+    }
+
+    @Override
     public List<MedicamentModel> all() {
         return this.getEm()
                 .createQuery("SELECT NEW _04HospitalDatabase.models.MedicamentModel(m.id, m.name) " +

@@ -18,7 +18,8 @@ public class ServiceFactory {
         AddressRepositoryImpl addressRepository = new AddressRepositoryImpl(em);
         PatientRepositoryImpl patientRepository = new PatientRepositoryImpl(em);
         MedicamentRepositoryImpl medicamentRepository = new MedicamentRepositoryImpl(em);
-        this.visitationService = new VisitationServiceImpl(new VisitationRepositoryImpl(em), patientRepository, medicamentRepository, em);
+        VisitationRepositoryImpl visitationRepository = new VisitationRepositoryImpl(em);
+        this.visitationService = new VisitationServiceImpl(visitationRepository, patientRepository, medicamentRepository);
         this.townService = new TownServiceImpl(townRepository);
         this.addressService = new AddressServiceImpl(addressRepository, townRepository);
         this.patientService = new PatientServiceImpl(patientRepository, addressRepository);

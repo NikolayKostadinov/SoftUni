@@ -19,6 +19,11 @@ public class PrescriptionRepositoryImpl extends BaseRepository implements Reposi
     }
 
     @Override
+    public Prescription findById(Integer id) {
+        return this.getEm().find(Prescription.class, id);
+    }
+
+    @Override
     public List<PrescriptionModel> all() {
         return this.getEm()
                 .createQuery("SELECT NEW _04HospitalDatabase.models.PrescriptionModel(p.id, p.rows, p.diagnose) " +

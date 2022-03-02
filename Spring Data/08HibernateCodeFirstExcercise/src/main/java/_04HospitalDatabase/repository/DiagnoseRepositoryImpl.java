@@ -1,5 +1,6 @@
 package _04HospitalDatabase.repository;
 
+import _04HospitalDatabase.entities.Address;
 import _04HospitalDatabase.entities.Diagnose;
 import _04HospitalDatabase.entities.Visitation;
 import _04HospitalDatabase.exceptions.ValidationException;
@@ -14,6 +15,11 @@ import static _04HospitalDatabase.common.ErrorMessages.*;
 public class DiagnoseRepositoryImpl extends BaseRepository implements Repository<Diagnose, DiagnoseModel, Integer>{
     public DiagnoseRepositoryImpl(EntityManager em) {
         super(em);
+    }
+
+    @Override
+    public Diagnose findById(Integer id) {
+        return this.getEm().find(Diagnose.class, id);
     }
 
     @Override

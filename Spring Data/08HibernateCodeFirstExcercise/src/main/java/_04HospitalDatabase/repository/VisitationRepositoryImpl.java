@@ -16,11 +16,17 @@ public class VisitationRepositoryImpl extends BaseRepository implements Reposito
     }
 
     @Override
+    public Visitation findById(Integer id) {
+        return this.getEm().find(Visitation.class, id);
+    }
+
+    @Override
     public List<VisitationModel> all() {
         return this.getEm().createQuery(
                 "SELECT NEW _04HospitalDatabase.models" +
                         ".VisitationModel(v.id, v.date, v.comments, v.patient, v.diagnose)" +
-                        "FROM Visitation v", VisitationModel.class).getResultList();
+                        "FROM Visitation v " +
+                        "ORDER BY v.id", VisitationModel.class).getResultList();
     }
 
     @Override

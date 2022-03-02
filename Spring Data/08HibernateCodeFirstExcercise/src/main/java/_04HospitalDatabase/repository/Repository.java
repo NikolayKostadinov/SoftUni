@@ -7,6 +7,8 @@ import java.util.List;
 
 public interface Repository<T, TModel, Tid> {
 
+    T findById(Tid id);
+
     List<TModel> all();
 
     T persist(TModel entity) throws ValidationException;

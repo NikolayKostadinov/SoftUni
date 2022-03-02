@@ -15,7 +15,12 @@ import static _04HospitalDatabase.common.ErrorMessages.FIELD_IN_ENTITY_IS_REQUIR
         super(em);
     }
 
-    @Override
+        @Override
+        public Town findById(Integer id) {
+            return this.getEm().find(Town.class, id);
+        }
+
+        @Override
     public List<TownModel> all() {
         return this.getEm()
                 .createQuery("SELECT NEW _04HospitalDatabase.models.TownModel(t.id, t.name) " +

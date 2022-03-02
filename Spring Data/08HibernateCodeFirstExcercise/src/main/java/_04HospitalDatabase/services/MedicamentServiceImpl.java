@@ -6,6 +6,7 @@ import _04HospitalDatabase.exceptions.ValidationException;
 import _04HospitalDatabase.models.MedicamentModel;
 import _04HospitalDatabase.models.TownModel;
 import _04HospitalDatabase.repository.MedicamentRepositoryImpl;
+import _04HospitalDatabase.repository.Repository;
 
 import java.io.IOException;
 import java.util.List;
@@ -13,9 +14,9 @@ import java.util.List;
 import static _04HospitalDatabase.common.Utilities.readStringFromConsole;
 
 public class MedicamentServiceImpl implements Service<Medicament, MedicamentModel> {
-    private final MedicamentRepositoryImpl repository;
+    private final Repository<Medicament, MedicamentModel, Integer> repository;
 
-    public MedicamentServiceImpl(MedicamentRepositoryImpl repository) {
+    public MedicamentServiceImpl(Repository<Medicament, MedicamentModel, Integer> repository) {
         this.repository = repository;
     }
 

@@ -7,6 +7,7 @@ import _04HospitalDatabase.models.PatientModel;
 import _04HospitalDatabase.models.VisitationModel;
 import _04HospitalDatabase.repository.MedicamentRepositoryImpl;
 import _04HospitalDatabase.repository.PatientRepositoryImpl;
+import _04HospitalDatabase.repository.Repository;
 import _04HospitalDatabase.repository.VisitationRepositoryImpl;
 
 import javax.persistence.EntityManager;
@@ -21,17 +22,16 @@ import java.util.stream.Collectors;
 import static _04HospitalDatabase.common.Utilities.*;
 
 public class VisitationServiceImpl implements Service<Visitation, VisitationModel> {
-    private final VisitationRepositoryImpl repository;
-    private final PatientRepositoryImpl patientRepository;
-    private final MedicamentRepositoryImpl medicamentRepository;
-    private final EntityManager em;
+    private final Repository<Visitation, VisitationModel, Integer> repository;
+    private final Repository<Patient, PatientModel, Integer> patientRepository;
+    private final  Repository<Medicament, MedicamentModel, Integer> medicamentRepository;
 
-    public VisitationServiceImpl(VisitationRepositoryImpl repository, PatientRepositoryImpl patientRepository,
-                                 MedicamentRepositoryImpl medicamentRepository, EntityManager em) {
+    public VisitationServiceImpl(Repository<Visitation, VisitationModel, Integer> repository,
+                                 Repository<Patient, PatientModel, Integer> patientRepository,
+                                 Repository<Medicament, MedicamentModel, Integer> medicamentRepository) {
         this.repository = repository;
         this.patientRepository = patientRepository;
         this.medicamentRepository = medicamentRepository;
-        this.em = em;
     }
 
     @Override
@@ -50,7 +50,7 @@ public class VisitationServiceImpl implements Service<Visitation, VisitationMode
     private Patient getPatient() throws IOException {
         printPatientsList();
         int patientId = readIntFromConsole("Enter patient number: ");
-        Patient patient = em.find(Patient.class, patientId);
+        Patient patient = patientRepository.findById(patientId);
         return patient;
     }
 
@@ -69,7 +69,7 @@ public class VisitationServiceImpl implements Service<Visitation, VisitationMode
         int medicamentId = readIntFromConsole("Enter medicament Id: ");
         Set<PrescriptionRow> rows = new HashSet<>();
         while (medicamentId > 0){
-            Medicament medicament = this.em.find(Medicament.class, medicamentId);
+            Medicament medicament = medicamentRepository.findById(medicamentId);
             int timesPerDay = readIntFromConsole("Enter times per day: ");
             int quantityPerConsumption = readIntFromConsole("Enter quantity per consumption: ");
             rows.add(new PrescriptionRow(medicament, timesPerDay, quantityPerConsumption, prescription));
