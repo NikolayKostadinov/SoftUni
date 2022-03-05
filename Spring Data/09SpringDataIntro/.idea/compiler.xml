@@ -7,14 +7,17 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="SpringDataIntro" />
+        <module name="09SpringDataIntro" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="09SpringDataIntro" target="11" />
       <module name="SpringDataIntro" target="11" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="09SpringDataIntro" options="-parameters" />
       <module name="SpringDataIntro" options="-parameters" />
     </option>
   </component>

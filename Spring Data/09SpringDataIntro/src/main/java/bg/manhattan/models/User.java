@@ -23,9 +23,8 @@ public class User {
         this.accounts = new HashSet<>();
     }
 
-    public User(int id, String username, int age) {
+    public User(String username, int age) {
         this();
-        this.id = id;
         this.username = username;
         this.age = age;
     }

@@ -36,15 +36,14 @@ public class ReversedList<E> implements Iterable<E> {
         return (E) this.elements[this.size - index - 1];
     }
 
-    @SuppressWarnings("unchecked")
     public void removeAt(int index) {
         //ToDo: reverse order of the remove
-        index = size - index - 1;
+        //index = size - index - 1;
         this.checkIndex(index);
-        if (size - index >= 0) {
+        elements[index] = null;
+        if (size >= 0) {
             System.arraycopy(elements, index + 1, elements, index, size - index);
         }
-        elements[size - 1] = null;
         this.size--;
         ensureCapacity();
     }
