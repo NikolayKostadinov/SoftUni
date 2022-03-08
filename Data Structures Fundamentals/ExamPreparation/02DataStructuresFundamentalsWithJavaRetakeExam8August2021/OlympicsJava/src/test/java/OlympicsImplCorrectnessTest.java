@@ -1,3 +1,7 @@
+import entities.Competition;
+import entities.Competitor;
+import implementations.OlympicsImpl;
+import interfaces.Olympics;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
