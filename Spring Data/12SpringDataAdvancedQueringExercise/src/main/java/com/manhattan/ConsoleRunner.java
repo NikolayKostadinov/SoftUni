@@ -34,8 +34,8 @@ public class ConsoleRunner implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-//        printInfoMessage("Seeding...");
-//        this.seedService.seedAll();
+        printInfoMessage("Seeding...");
+        this.seedService.seedAll();
 
         printMenu();
         int problemNumber = readIntFromConsole("Enter problem number: ");
