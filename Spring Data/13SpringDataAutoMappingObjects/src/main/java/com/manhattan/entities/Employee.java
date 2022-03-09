@@ -25,7 +25,7 @@ public class Employee {
 
     private String address;
 
-    @Column(name="on_holiday")
+    @Column(name = "on_holiday")
     private boolean isOnHoliday;
 
     @ManyToOne
@@ -35,20 +35,32 @@ public class Employee {
     @OneToMany(mappedBy = "manager", fetch = FetchType.EAGER)
     private Set<Employee> subordinates;
 
-    public Employee getManager() {
-        return manager;
-    }
-
     public Employee() {
         this.subordinates = new HashSet<>();
     }
 
     public Employee(String firstName, String lastName, BigDecimal salary, LocalDate birthday, String address) {
+        this(0, firstName, lastName, salary, birthday, address, null);
+    }
+
+    public Employee(int id, String firstName, String lastName, BigDecimal salary, LocalDate birthday, String address,
+                    Employee manager) {
+        this();
+        this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.salary = salary;
         this.birthday = birthday;
         this.address = address;
+        this.manager = manager;
+    }
+
+    public Employee getManager() {
+        return manager;
+    }
+
+    public void setManager(Employee manager) {
+        this.manager = manager;
     }
 
     public int getId() {
@@ -105,10 +117,6 @@ public class Employee {
 
     public void setOnHoliday(boolean onHoliday) {
         isOnHoliday = onHoliday;
-    }
-
-    public void setManager(Employee manager) {
-        this.manager = manager;
     }
 
     public Set<Employee> getSubordinates() {
