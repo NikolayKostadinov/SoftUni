@@ -49,7 +49,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public String logout() {
-        if (this.currentUser == null){
+        if (this.currentUser == null) {
             throw new ValidationException(List.of(new ErrorMessage("Cannot log out. No user was logged in.")));
         }
         String message = String.format("User %s successfully logged out", this.currentUser.getFullName());
@@ -57,15 +57,31 @@ public class UserServiceImpl implements UserService {
         return message;
     }
 
+    @Override
+    public boolean isAdminLogged() {
+        boolean isAdmin = false;
+        if (this.currentUser != null) {
+            isAdmin = this.currentUser.getIsAdministrator();
+        }
+        return isAdmin;
+    }
+
+    @Override
+    public User getCurrentUser() {
+        if (this.currentUser == null)
+            throw new ValidationException(List.of(new ErrorMessage("No user logged in.")));
+        return this.currentUser;
+    }
+
 
     private void makeUserAdminIfIsFirst(User user) {
-        if (this.repository.count() == 0){
+        if (this.repository.count() == 0) {
             user.setIsAdministrator(true);
         }
     }
 
     private void validatePasswordsEquality(UserRegisterDto model) {
-        if (!model.getPassword().equals(model.getConfirmPassword())){
+        if (!model.getPassword().equals(model.getConfirmPassword())) {
             throw new ValidationException(List.of(new ErrorMessage("Password and confirm password must be same")));
         }
     }

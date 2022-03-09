@@ -3,6 +3,7 @@ package com.manhattan.services.implementations;
 import com.manhattan.models.dtos.GameAddDto;
 import com.manhattan.models.dtos.UserLoginDto;
 import com.manhattan.models.dtos.UserRegisterDto;
+import com.manhattan.models.entities.Game;
 import com.manhattan.services.interfaces.AppEngine;
 import com.manhattan.services.interfaces.ConsoleService;
 import com.manhattan.services.interfaces.GameService;
@@ -14,6 +15,8 @@ import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 import java.math.BigDecimal;
+import java.util.Arrays;
+import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
@@ -39,6 +42,11 @@ public class AppEngineImpl implements AppEngine {
                     case "LoginUser" -> console.printInfoMessage(loginUser(commands));
                     case "Logout" -> console.printInfoMessage(logout());
                     case "AddGame" -> console.printInfoMessage(addGame(commands));
+                    case "EditGame" -> console.printInfoMessage(editGame(commands));
+                    case "DeleteGame" -> console.printInfoMessage(deleteGame(Integer.parseInt(commands[1])));
+                    case "AllGames" -> console.printInfoMessage(allGames());
+                    case "DetailGame" -> console.printInfoMessage(gameDetails(commands[1]));
+                    case "OwnedGames" -> console.printInfoMessage(ownedGames());
                     default -> console.printErrorMessage("Invalid command!");
                 }
             } catch (ValidationException ve) {
@@ -47,13 +55,49 @@ public class AppEngineImpl implements AppEngine {
         }
     }
 
+    private String ownedGames() {
+        return this.userService.getCurrentUser()
+                .getGames().stream()
+                .map(Game::getTitle)
+                .collect(Collectors.joining(System.lineSeparator()));
+    }
+
+    private String gameDetails(String title) {
+        return this.gameService.getGameDetails(title);
+    }
+
+    private String allGames() {
+        return this.gameService.getAll();
+    }
+
+    private String deleteGame(int id) {
+        return this.gameService.deleteGame(id);
+    }
+
+    private String editGame(String[] commands) {
+        int id = Integer.parseInt(commands[1]);
+        return this.gameService.editGame(id, Arrays.copyOfRange(commands, 2, commands.length));
+    }
+
     private String addGame(String[] commands) {
-        GameAddDto gameAddDto = new GameAddDto(commands[1],
+        ensureAdmin();
+        GameAddDto gameAddDto = getGameAddDto(commands);
+
+        return this.gameService.add(gameAddDto);
+    }
+
+    private GameAddDto getGameAddDto(String[] commands) {
+        return new GameAddDto(commands[1],
                 BigDecimal.valueOf(Double.parseDouble(commands[2])),
                 BigDecimal.valueOf(Double.parseDouble(commands[3])),
                 commands[4], commands[5], commands[6], commands[7]);
+    }
 
-        return this.gameService.add(gameAddDto);
+    private void ensureAdmin() {
+        if (!this.userService.isAdminLogged()) {
+            throw new ValidationException(
+                    List.of(new ErrorMessage("Operation can be performed only by Administrator")));
+        }
     }
 
     private String logout() {

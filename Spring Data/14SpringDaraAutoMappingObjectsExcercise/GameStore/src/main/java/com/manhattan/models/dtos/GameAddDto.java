@@ -1,5 +1,6 @@
 package com.manhattan.models.dtos;
 
+import javax.validation.constraints.DecimalMin;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
@@ -33,6 +34,9 @@ public class GameAddDto {
         this.releaseDate = releaseDate;
     }
 
+    public GameAddDto() {
+    }
+
     @Pattern(regexp = "^[A-Z]+(.){2,99}$", message = "Invalid title")
     public String getTitle() {
         return title;
@@ -42,7 +46,7 @@ public class GameAddDto {
         this.title = title;
     }
 
-    @Size(min = 11, max = 11)
+    @Size(min = 11, max = 11, message = "Invalid trailer key.")
     public String getTrailerUrl() {
         return trailerUrl;
     }
@@ -51,7 +55,7 @@ public class GameAddDto {
         this.trailerUrl = trailerUrl;
     }
 
-    @Pattern(regexp = "^[http:\\/\\/| https:\\/\\/ ]+[\\w\\.\\d\\/]*$", message = "Invalid Thumbnail URL ")
+    @Pattern(regexp = "^(http:\\/\\/|https:\\/\\/)+(.)*$", message = "Invalid Thumbnail URL")
     public String getImageThumbnailUrl() {
         return imageThumbnailUrl;
     }
@@ -60,7 +64,7 @@ public class GameAddDto {
         this.imageThumbnailUrl = imageThumbnailUrl;
     }
 
-    @Min(0)
+    @DecimalMin(value = "0.0", message = "Invalid size. Must be greater than 0.")
     public BigDecimal getSize() {
         return size;
     }
@@ -69,7 +73,7 @@ public class GameAddDto {
         this.size = size;
     }
 
-    @Min(0)
+    @DecimalMin(value = "0.0", message = "Invalid price. Must be greater than 0.")
     public BigDecimal getPrice() {
         return price;
     }
@@ -78,7 +82,7 @@ public class GameAddDto {
         this.price = price;
     }
 
-    @Size(min = 20)
+    @Size(min = 20, message = "Invalid description length.")
     public String getDescription() {
         return description;
     }

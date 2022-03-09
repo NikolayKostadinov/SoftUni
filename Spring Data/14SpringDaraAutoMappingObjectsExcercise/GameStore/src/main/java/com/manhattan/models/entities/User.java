@@ -19,7 +19,7 @@ public class User {
     @Column(name = "full_name", nullable = false)
     String fullName;
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     private Set<Game> games;
 
     @Column(name="is_admin")
