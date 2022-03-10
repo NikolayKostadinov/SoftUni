@@ -2,7 +2,10 @@ package com.manhattan.services.interfaces;
 
 import com.manhattan.models.dtos.UserLoginDto;
 import com.manhattan.models.dtos.UserRegisterDto;
+import com.manhattan.models.entities.Game;
 import com.manhattan.models.entities.User;
+
+import java.util.Set;
 
 public interface UserService {
 
@@ -15,4 +18,6 @@ public interface UserService {
     boolean isAdminLogged();
 
     User getCurrentUser();
+
+    String addGamesToUser(Set<Game> games);
 }

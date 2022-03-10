@@ -76,4 +76,12 @@ public class User {
     public void setIsAdministrator(boolean administrator) {
         isAdministrator = administrator;
     }
+
+    public boolean isAdministrator() {
+        return isAdministrator;
+    }
+
+    public void setAdministrator(boolean administrator) {
+        isAdministrator = administrator;
+    }
 }

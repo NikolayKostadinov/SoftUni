@@ -4,19 +4,19 @@ import com.manhattan.models.dtos.GameAddDto;
 import com.manhattan.models.dtos.UserLoginDto;
 import com.manhattan.models.dtos.UserRegisterDto;
 import com.manhattan.models.entities.Game;
-import com.manhattan.services.interfaces.AppEngine;
-import com.manhattan.services.interfaces.ConsoleService;
-import com.manhattan.services.interfaces.GameService;
-import com.manhattan.services.interfaces.UserService;
+import com.manhattan.models.entities.User;
+import com.manhattan.services.interfaces.*;
 import org.modelmapper.ValidationException;
 import org.modelmapper.spi.ErrorMessage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 @Service
@@ -24,12 +24,14 @@ public class AppEngineImpl implements AppEngine {
     private final ConsoleService console;
     private final UserService userService;
     private final GameService gameService;
+    private final OrderService orderService;
 
     @Autowired
-    public AppEngineImpl(ConsoleService console, UserService userService, GameService gameService) {
+    public AppEngineImpl(ConsoleService console, UserService userService, GameService gameService, OrderService orderService) {
         this.console = console;
         this.userService = userService;
         this.gameService = gameService;
+        this.orderService = orderService;
     }
 
     @Override
@@ -47,6 +49,9 @@ public class AppEngineImpl implements AppEngine {
                     case "AllGames" -> console.printInfoMessage(allGames());
                     case "DetailGame" -> console.printInfoMessage(gameDetails(commands[1]));
                     case "OwnedGames" -> console.printInfoMessage(ownedGames());
+                    case "AddItem" -> console.printInfoMessage(addItemToShoppingCard(commands[1]));
+                    case "RemoveItem" -> console.printInfoMessage(removeItemFromShoppingCard(commands[1]));
+                    case "BuyItem" -> console.printInfoMessage(buyItems());
                     default -> console.printErrorMessage("Invalid command!");
                 }
             } catch (ValidationException ve) {
@@ -55,9 +60,27 @@ public class AppEngineImpl implements AppEngine {
         }
     }
 
+    @Transactional
+    private String buyItems() {
+        Set<Game> boughtGames = this.orderService.buyItems(this.userService.getCurrentUser());
+        return this.userService.addGamesToUser(boughtGames);
+    }
+
+    private String removeItemFromShoppingCard(String gameTitle) {
+        User currentUser = this.userService.getCurrentUser();
+        Game game = this.gameService.getGame(gameTitle);
+        return this.orderService.removeFromOrder(game, currentUser);
+    }
+
+    private String addItemToShoppingCard(String gameTitle) {
+        User currentUser = this.userService.getCurrentUser();
+        Game game = this.gameService.getGame(gameTitle);
+        return this.orderService.addToOrder(game, currentUser);
+    }
+
     private String ownedGames() {
         return this.userService.getCurrentUser()
-                .getGames().stream()
+                    .getGames().stream()
                 .map(Game::getTitle)
                 .collect(Collectors.joining(System.lineSeparator()));
     }

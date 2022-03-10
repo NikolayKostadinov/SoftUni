@@ -71,6 +71,10 @@ public class GameServiceImpl implements GameService {
         return this.modelMapper.map(game, GameDetailsDto.class).toString();
     }
 
+    @Override
+    public Game getGame(String gameTitle) {
+        return this.getGameIfExists(gameTitle);
+    }
 
 
     private void updateGameProperties(Game game, String[] values) {

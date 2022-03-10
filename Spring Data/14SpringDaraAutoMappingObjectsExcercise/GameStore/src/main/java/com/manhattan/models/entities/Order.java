@@ -15,11 +15,19 @@ public class Order {
     @JoinColumn(name = "buyer_id")
     private User buyer;
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     private Set<Game> games;
+
+    private OrderStatus orderStatus;
 
     public Order() {
         this.games = new HashSet<>();
+        this.orderStatus = OrderStatus.OPEN;
+    }
+
+    public Order(User buyer) {
+        this();
+        this.buyer = buyer;
     }
 
     public int getId() {
@@ -44,5 +52,13 @@ public class Order {
 
     public void setGames(Set<Game> games) {
         this.games = games;
+    }
+
+    public OrderStatus getOrderStatus() {
+        return orderStatus;
+    }
+
+    public void setOrderStatus(OrderStatus orderStatus) {
+        this.orderStatus = orderStatus;
     }
 }

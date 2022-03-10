@@ -2,6 +2,7 @@ package com.manhattan.services.implementations;
 
 import com.manhattan.models.dtos.UserLoginDto;
 import com.manhattan.models.dtos.UserRegisterDto;
+import com.manhattan.models.entities.Game;
 import com.manhattan.models.entities.User;
 import com.manhattan.repositories.UserRepository;
 import com.manhattan.services.interfaces.UserService;
@@ -12,6 +13,8 @@ import org.modelmapper.spi.ErrorMessage;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -68,11 +71,33 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User getCurrentUser() {
-        if (this.currentUser == null)
-            throw new ValidationException(List.of(new ErrorMessage("No user logged in.")));
+        ensureUserLoggedIn();
         return this.currentUser;
     }
 
+    @Override
+    public String addGamesToUser(Set<Game> games) {
+        ensureUserLoggedIn();
+        addGames(games);
+        this.repository.saveAndFlush(currentUser);
+        return String.format("Successfully bought games: %s",
+                (games.isEmpty() ? "" : getGameTitles(games)));
+    }
+
+    private String getGameTitles(Set<Game> games) {
+        return System.lineSeparator() + games.stream()
+                .map(g -> String.format(" -%s", g.getTitle()))
+                .collect(Collectors.joining(System.lineSeparator()));
+    }
+
+    private void addGames(Set<Game> games) {
+        this.currentUser.getGames().addAll(games);
+    }
+
+    private void ensureUserLoggedIn() {
+        if (this.currentUser == null)
+            throw new ValidationException(List.of(new ErrorMessage("No user logged in.")));
+    }
 
     private void makeUserAdminIfIsFirst(User user) {
         if (this.repository.count() == 0) {
