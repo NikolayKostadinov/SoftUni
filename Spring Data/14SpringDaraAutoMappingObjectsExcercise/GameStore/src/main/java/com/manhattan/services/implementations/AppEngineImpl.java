@@ -38,7 +38,7 @@ public class AppEngineImpl implements AppEngine {
     public void run() throws IOException {
         while (true) {
             try {
-                String[] commands = console.readStringFromConsole("Enter your command: ").split("\\|");
+                String[] commands = console.readStringFromConsole("Enter your command (or Exit): ").split("\\|");
                 switch (commands[0]) {
                     case "RegisterUser" -> console.printInfoMessage(registerUser(commands));
                     case "LoginUser" -> console.printInfoMessage(loginUser(commands));
@@ -52,6 +52,10 @@ public class AppEngineImpl implements AppEngine {
                     case "AddItem" -> console.printInfoMessage(addItemToShoppingCard(commands[1]));
                     case "RemoveItem" -> console.printInfoMessage(removeItemFromShoppingCard(commands[1]));
                     case "BuyItem" -> console.printInfoMessage(buyItems());
+                    case "Exit" -> {
+                        console.printSuccessMessage("Buy buy!!!");
+                        return;
+                    }
                     default -> console.printErrorMessage("Invalid command!");
                 }
             } catch (ValidationException ve) {
@@ -61,7 +65,7 @@ public class AppEngineImpl implements AppEngine {
     }
 
     @Transactional
-    private String buyItems() {
+    String buyItems() {
         Set<Game> boughtGames = this.orderService.buyItems(this.userService.getCurrentUser());
         return this.userService.addGamesToUser(boughtGames);
     }

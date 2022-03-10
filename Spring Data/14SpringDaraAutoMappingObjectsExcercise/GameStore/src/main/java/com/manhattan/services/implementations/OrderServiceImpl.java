@@ -58,7 +58,7 @@ public class OrderServiceImpl implements OrderService {
     private void ensureUserDontHaveGame(User user, Game game) {
         if (user.getGames().contains(game)) {
             throw new ValidationException(
-                    List.of(new ErrorMessage(String.format("You already gave the game '%s'", game.getTitle()))));
+                    List.of(new ErrorMessage(String.format("You already have the game '%s'", game.getTitle()))));
         }
     }
 
