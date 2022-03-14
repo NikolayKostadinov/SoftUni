@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="88521e9b-bbce-4e55-bb83-ebd46ce3923b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../../../Spring Data/16JSON-Processing-Exercise/src/main/java/com/manhattan/ConsoleRunner.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Spring Data/16JSON-Processing-Exercise/src/main/java/com/manhattan/config/GsonConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Spring Data/16JSON-Processing-Exercise/src/main/java/com/manhattan/config/ModelMapperConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Spring Data/16JSON-Processing-Exercise/src/main/java/com/manhattan/models/dtos/CategoriesByProductsDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Spring Data/16JSON-Processing-Exercise/src/main/java/com/manhattan/models/dtos/CategoryJsonReadDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Spring Data/16JSON-Processing-Exercise/src/main/java/com/manhattan/models/dtos/ProductDetailsDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Spring Data/16JSON-Processing-Exercise/src/main/java/com/manhattan/models/dtos/ProductJsonReadDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Spring Data/16JSON-Processing-Exercise/src/main/java/com/manhattan/models/dtos/ProductSoldDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Spring Data/16JSON-Processing-Exercise/src/main/java/com/manhattan/models/dtos/ProductWithBuyerDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Spring Data/16JSON-Processing-Exercise/src/main/java/com/manhattan/models/dtos/ProductsInRangeDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Spring Data/16JSON-Processing-Exercise/src/main/java/com/manhattan/models/dtos/UserAndSoldProductsDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Spring Data/16JSON-Processing-Exercise/src/main/java/com/manhattan/models/dtos/UserJsonReadDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Spring Data/16JSON-Processing-Exercise/src/main/java/com/manhattan/models/dtos/UserSoldDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Spring Data/16JSON-Processing-Exercise/src/main/java/com/manhattan/models/dtos/UsersAndProductsDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Spring Data/16JSON-Processing-Exercise/src/main/java/com/manhattan/models/entities/BaseEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Spring Data/16JSON-Processing-Exercise/src/main/java/com/manhattan/models/entities/Category.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Spring Data/16JSON-Processing-Exercise/src/main/java/com/manhattan/models/entities/Product.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Spring Data/16JSON-Processing-Exercise/src/main/java/com/manhattan/models/entities/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Spring Data/16JSON-Processing-Exercise/src/main/java/com/manhattan/repositories/CategoryRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Spring Data/16JSON-Processing-Exercise/src/main/java/com/manhattan/repositories/ProductRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Spring Data/16JSON-Processing-Exercise/src/main/java/com/manhattan/repositories/UserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Spring Data/16JSON-Processing-Exercise/src/main/java/com/manhattan/services/implementations/CategoryServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Spring Data/16JSON-Processing-Exercise/src/main/java/com/manhattan/services/implementations/FileServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Spring Data/16JSON-Processing-Exercise/src/main/java/com/manhattan/services/implementations/ProductServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Spring Data/16JSON-Processing-Exercise/src/main/java/com/manhattan/services/implementations/SeedServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Spring Data/16JSON-Processing-Exercise/src/main/java/com/manhattan/services/implementations/UserServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Spring Data/16JSON-Processing-Exercise/src/main/java/com/manhattan/services/interfaces/CategoryService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Spring Data/16JSON-Processing-Exercise/src/main/java/com/manhattan/services/interfaces/FileService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Spring Data/16JSON-Processing-Exercise/src/main/java/com/manhattan/services/interfaces/ProductService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Spring Data/16JSON-Processing-Exercise/src/main/java/com/manhattan/services/interfaces/SeedService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Spring Data/16JSON-Processing-Exercise/src/main/java/com/manhattan/services/interfaces/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Spring Data/16JSON-Processing-Exercise/src/main/java/com/manhattan/utils/CommonConstants.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Spring Data/16JSON-Processing-Exercise/src/main/java/com/manhattan/utils/ValidationsUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Spring Data/16JSON-Processing-Exercise/src/main/java/com/manhattan/utils/ValidationsUtilImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Spring Data/16JSON-Processing-Exercise/src/main/resources/files/cars.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Spring Data/16JSON-Processing-Exercise/src/main/resources/files/categories.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Spring Data/16JSON-Processing-Exercise/src/main/resources/files/customers.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Spring Data/16JSON-Processing-Exercise/src/main/resources/files/parts.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Spring Data/16JSON-Processing-Exercise/src/main/resources/files/products.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Spring Data/16JSON-Processing-Exercise/src/main/resources/files/suppliers.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Spring Data/16JSON-Processing-Exercise/src/main/resources/files/users.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../04DataStructuresTreesRepresentationAndTraversalExercise/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../04DataStructuresTreesRepresentationAndTraversalExercise/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Spring Data/16JSON-Processing-Exercise/doc/09. JSON-Processing-Exercises.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Spring Data/16JSON-Processing-Exercise/doc/09. JSON-Processing-Exercises.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Spring Data/16JSON-Processing-Exercise/files/cars.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Spring Data/16JSON-Processing-Exercise/files/categories.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Spring Data/16JSON-Processing-Exercise/files/customers.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Spring Data/16JSON-Processing-Exercise/files/parts.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Spring Data/16JSON-Processing-Exercise/files/products.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Spring Data/16JSON-Processing-Exercise/files/suppliers.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Spring Data/16JSON-Processing-Exercise/files/users.json" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="26NSi0PpnVzygABn716FebiMPfd" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../03Data Structures Fundamentals with Java Exam - 05 Apr 2020" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="88521e9b-bbce-4e55-bb83-ebd46ce3923b" name="Changes" comment="" />
+      <created>1647262676241</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1647262676241</updated>
+      <workItem from="1647262677393" duration="325000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
