@@ -3,70 +3,62 @@ package core;
 import model.Task;
 import shared.Scheduler;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ProcessScheduler implements Scheduler {
-    Map<Integer, Node> nodeMap;
-    private Node head;
-    private Node tail;
+    private Node first;
+    private Node last;
     private int size;
-
-    private static class Node {
-        private Task element;
-        private Node prev;
-        private Node next;
-
-        public Node(Task value) {
-            this.element = value;
-        }
-    }
-
-    public ProcessScheduler() {
-        this.nodeMap = new TreeMap<>();
-    }
 
     @Override
     public void add(Task task) {
-        Node newNode = new Node(task);
-        if (this.head == null) {
-            this.head = newNode;
+        if (this.first == null) {
+            this.first = new Node(task);
+            this.last = first;
         } else {
-            this.tail.next = newNode;
+            attachAfter(last, task);
         }
-        this.tail = newNode;
         this.size++;
-        this.nodeMap.put(task.getId(), newNode);
+    }
+
+    private void attachAfter(Node destination, Task task) {
+        Node node = new Node(task);
+        if (destination == last) {
+            last = node;
+        } else {
+            node.next = destination.next;
+        }
+
+        destination.next = node;
     }
 
     @Override
     public Task process() {
-        Task element = this.head.element;
-        if (this.size == 1) {
-            this.head = null;
-            this.tail = null;
-        } else {
-            Node next = this.head.next;
-            this.head.next = null;
-            this.head = next;
-        }
-        this.size--;
-        this.nodeMap.remove(element.getId());
-
-        return element;
+        if (size == 0) return null;
+        Task task = peek();
+        remove(task.getId());
+        return task;
     }
 
     @Override
     public Task peek() {
-        if (this.head != null) {
-            return this.head.element;
-        } else {
-            return null;
+        Task task = null;
+        if (size > 0) {
+            task = this.first.task;
         }
+
+        return task;
     }
 
     @Override
     public Boolean contains(Task task) {
-        return this.nodeMap.containsKey(task.getId());
+        for (Node node = first; node != null; node = node.next) {
+            if (node.task.getId() == task.getId()) {
+                return true;
+            }
+        }
+        return false;
     }
 
     @Override
@@ -81,97 +73,121 @@ public class ProcessScheduler implements Scheduler {
 
     @Override
     public Boolean remove(int id) {
-        ensureExists(id);
-        Node node = this.nodeMap.remove(id);
-        if (node.next != null) {
-            node.next.prev = node.prev;
-        }
-        if (node.prev != null) {
-            node.prev.next = node.next;
+        NodeAndPrev result = getNodeAndPrevByTaskId(id);
+
+        if (result.node == first) {
+            first = result.node.next;
+        } else {
+            result.prev.next = result.node.next;
+            if (result.node == last) {
+                last = result.prev;
+            }
         }
         size--;
         return true;
     }
 
-    private void ensureExists(int id) {
-        if (!this.nodeMap.containsKey(id))
-            throw new IllegalArgumentException();
-    }
 
     @Override
     public void insertBefore(int id, Task task) {
-
+        NodeAndPrev result = getNodeAndPrevByTaskId(id);
+        if (result.node == first) {
+            Node node = new Node(task);
+            node.next = first;
+            first = node;
+        } else {
+            attachAfter(result.prev, task);
+        }
+        size++;
     }
 
     @Override
     public void insertAfter(int id, Task task) {
-
+        Node node = getNodeByTaskId(id);
+        attachAfter(node, task);
+        size++;
     }
 
     @Override
     public void clear() {
-        this.nodeMap.clear();
-        this.head = null;
-        this.tail = null;
+        this.first = null;
+        this.last = null;
         this.size = 0;
-
     }
 
     @Override
     public Task[] toArray() {
-        Task[] tasks = new Task[size()];
-        int ix = 0;
-        while (iterator().hasNext()){
-            tasks[ix++]= iterator().next();
-        }
-        return tasks;
+        return toList().toArray(new Task[size]);
     }
 
     @Override
     public void reschedule(Task first, Task second) {
+        Node firstNode = getNodeByTaskId(first.getId());
+        Node secondNode = getNodeByTaskId(second.getId());
 
+        firstNode.task = second;
+        secondNode.task = first;
     }
 
     @Override
     public List<Task> toList() {
         List<Task> tasks = new ArrayList<>(size);
-        while (iterator().hasNext()){
-            tasks.add(iterator().next());
+        for (Node node = first; node != null; node = node.next) {
+            tasks.add(node.task);
         }
         return tasks;
     }
 
     @Override
     public void reverse() {
-
+        List<Task> tasks = toList();
+        clear();
+        for (int i = tasks.size() - 1; i >= 0; i--) {
+            add(tasks.get(i));
+        }
     }
 
     @Override
     public Task find(int id) {
-        ensureExists(id);
-        return nodeMap.get(id).element;
+        return getNodeByTaskId(id).task;
     }
 
     @Override
     public Task find(Task task) {
-        return find(task.getId());
+        return getNodeByTaskId(task.getId()).task;
     }
 
-    public Iterator<Task> iterator() {
-        return new Iterator<Task>() {
-            private Node current = head;
+    private Node getNodeByTaskId(int id) {
+        return getNodeAndPrevByTaskId(id).node;
+    }
 
-            @Override
-            public boolean hasNext() {
-                return this.current != null;
+    private NodeAndPrev getNodeAndPrevByTaskId(int id) {
+        Node prev = null;
+        for (Node node = first; node != null; node = node.next) {
+            if (node.task.getId() == id) {
+                return new NodeAndPrev(prev, node);
             }
+            prev = node;
+        }
+        throw new IllegalArgumentException();
+    }
 
-            @Override
-            public Task next() {
-                Task element = this.current.element;
-                this.current = this.current.next;
-                return element;
-            }
-        };
+    private static class Node {
+        private Task task;
+        private Node next;
+
+        public Node(Task value) {
+            this.task = value;
+        }
+    }
+
+    private static class NodeAndPrev {
+        private Node prev;
+        private Node node;
+
+        public NodeAndPrev(Node prev, Node node) {
+            this.prev = prev;
+            this.node = node;
+        }
     }
 }

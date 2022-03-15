@@ -6,6 +6,9 @@ import org.junit.Before;
 import org.junit.Test;
 import shared.Scheduler;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.junit.Assert.*;
 
 public class ProcessSchedulerTest {
@@ -105,8 +108,7 @@ public class ProcessSchedulerTest {
     }
 
     @Test
-    public void removeWillRemoveTask()
-    {
+    public void removeWillRemoveTask() {
         Task task = this.scheduler.find(5);
         this.scheduler.remove(task);
         assertFalse(this.scheduler.contains(task));
@@ -114,8 +116,105 @@ public class ProcessSchedulerTest {
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void removeNotExistingTask()
-    {
+    public void removeNotExistingTask() {
         this.scheduler.remove(21);
     }
+
+    private List<Task> generateReverseList() {
+        List<Task> tasks = new ArrayList<>();
+        for (int i = 20; i > 0; i--) {
+            tasks.add(new ScheduledTask(i, "test_description"));
+        }
+        return tasks;
+    }
+
+    @Test
+    public void testReverse() {
+        scheduler.reverse();
+        List<Task> tasks = scheduler.toList();
+        List<Task> expected = generateReverseList();
+
+        assertEquals(expected.size(), scheduler.size());
+
+        for (int i = 0; i < expected.size(); i++) {
+            Task actualTask = tasks.get(i);
+            Task expectedTask = expected.get(i);
+            assertEquals(expectedTask.getId(), actualTask.getId());
+            assertEquals(expectedTask.getDescription(), actualTask.getDescription());
+        }
+    }
+
+    @Test
+    public void testFind() {
+        Task task = scheduler.find(2);
+        assertEquals(2, task.getId());
+        assertEquals("test_description", task.getDescription());
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testFindThrows() {
+        Task task = scheduler.find(42);
+    }
+
+    @Test
+    public void testReschedule(){
+        ProcessScheduler processScheduler = new ProcessScheduler();
+        ScheduledTask task1 = new ScheduledTask(1, "task 1");
+        ScheduledTask task2 = new ScheduledTask(2, "task 2");
+        ScheduledTask task3 = new ScheduledTask(3, "task 3");
+        processScheduler.add(task1);
+        processScheduler.add(task2);
+        processScheduler.add(task3);
+        processScheduler.reschedule(task1, task3);
+
+        Task[] tasks = processScheduler.toArray();
+
+        assertEquals(3, tasks.length);
+
+        assertEquals(task3.getDescription(),tasks[0].getDescription());
+        assertEquals(task1.getDescription(),tasks[2].getDescription());
+    }
+
+    @Test
+    public void testInsertAfterMiddle(){
+        ProcessScheduler processScheduler = new ProcessScheduler();
+        ScheduledTask task1 = new ScheduledTask(1, "task 1");
+        ScheduledTask task2 = new ScheduledTask(2, "task 2");
+        ScheduledTask task3 = new ScheduledTask(3, "task 3");
+        processScheduler.add(task1);
+        processScheduler.add(task2);
+        processScheduler.add(task3);
+
+        ScheduledTask task4 = new ScheduledTask(4, "task 4");
+        processScheduler.insertAfter(2, task4);
+
+
+        Task[] tasks = processScheduler.toArray();
+
+        assertEquals(4, processScheduler.size());
+
+        assertEquals(task4.getDescription(),tasks[2].getDescription());
+    }
+
+    @Test
+    public void testInsertBeforeMiddle(){
+        ProcessScheduler processScheduler = new ProcessScheduler();
+        ScheduledTask task1 = new ScheduledTask(1, "task 1");
+        ScheduledTask task2 = new ScheduledTask(2, "task 2");
+        ScheduledTask task3 = new ScheduledTask(3, "task 3");
+        processScheduler.add(task1);
+        processScheduler.add(task2);
+        processScheduler.add(task3);
+
+        ScheduledTask task4 = new ScheduledTask(4, "task 4");
+        processScheduler.insertBefore(2, task4);
+
+
+        Task[] tasks = processScheduler.toArray();
+
+        assertEquals(4, processScheduler.size());
+
+        assertEquals(task4.getDescription(),tasks[1].getDescription());
+    }
+
 }
