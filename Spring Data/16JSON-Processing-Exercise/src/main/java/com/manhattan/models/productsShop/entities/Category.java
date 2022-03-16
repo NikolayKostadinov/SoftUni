@@ -1,4 +1,4 @@
-package com.manhattan.models.entities;
+package com.manhattan.models.productsShop.entities;
 
 import javax.persistence.*;
 import java.util.HashSet;
@@ -7,7 +7,11 @@ import java.util.Set;
 
 @Entity
 @Table(name = "categories")
-public class Category extends BaseEntity{
+public class Category {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
 
     @Column(length = 15, nullable = false, unique = true)
     private String name;
@@ -17,6 +21,14 @@ public class Category extends BaseEntity{
 
     public Category() {
         this.products = new HashSet<>();
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 
     public String getName() {

@@ -1,8 +1,7 @@
-package com.manhattan.models.dtos;
+package com.manhattan.models.productsShop.dtos;
 
 import com.google.gson.annotations.Expose;
 
-import java.util.Collection;
 import java.util.Set;
 
 public class UserSoldDto {

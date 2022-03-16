@@ -1,15 +1,13 @@
 package com.manhattan.config;
 
-import com.manhattan.models.dtos.CategoriesByProductsDto;
-import com.manhattan.models.dtos.ProductSoldDto;
-import com.manhattan.models.dtos.ProductsInRangeDto;
-import com.manhattan.models.dtos.UserAndSoldProductsDto;
-import com.manhattan.models.entities.Category;
-import com.manhattan.models.entities.Product;
-import com.manhattan.models.entities.User;
+import com.manhattan.models.productsShop.dtos.CategoriesByProductsDto;
+import com.manhattan.models.productsShop.dtos.ProductsInRangeDto;
+import com.manhattan.models.productsShop.dtos.UserAndSoldProductsDto;
+import com.manhattan.models.productsShop.entities.Category;
+import com.manhattan.models.productsShop.entities.Product;
+import com.manhattan.models.productsShop.entities.User;
 import org.modelmapper.Converter;
 import org.modelmapper.ModelMapper;
-import org.modelmapper.Provider;
 import org.modelmapper.spi.MappingContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

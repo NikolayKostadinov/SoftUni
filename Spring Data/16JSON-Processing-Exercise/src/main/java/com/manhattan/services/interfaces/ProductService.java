@@ -1,11 +1,9 @@
 package com.manhattan.services.interfaces;
 
-import com.manhattan.models.dtos.ProductsInRangeDto;
-import com.manhattan.models.entities.Category;
-import com.manhattan.models.entities.Product;
+import com.manhattan.models.productsShop.dtos.ProductsInRangeDto;
+import com.manhattan.models.productsShop.entities.Product;
 
 import java.math.BigDecimal;
-import java.util.List;
 
 public interface ProductService {
     void saveAll(Iterable<Product> collect);

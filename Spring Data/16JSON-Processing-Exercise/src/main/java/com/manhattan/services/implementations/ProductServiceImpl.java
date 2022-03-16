@@ -1,8 +1,7 @@
 package com.manhattan.services.implementations;
 
-import com.manhattan.models.dtos.ProductsInRangeDto;
-import com.manhattan.models.entities.Category;
-import com.manhattan.models.entities.Product;
+import com.manhattan.models.productsShop.dtos.ProductsInRangeDto;
+import com.manhattan.models.productsShop.entities.Product;
 import com.manhattan.repositories.ProductRepository;
 import com.manhattan.services.interfaces.ProductService;
 import org.modelmapper.ModelMapper;
@@ -10,8 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
-import java.util.Arrays;
-import java.util.List;
 import java.util.Set;
 
 @Service
