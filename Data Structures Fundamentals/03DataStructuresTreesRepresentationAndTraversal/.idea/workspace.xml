@@ -5,153 +5,51 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="198d23dd-9c2c-4a87-a7e8-b7a0756b63d9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../../Spring Data/01 Database Apps Introduction Exercise/01 Database Apps Introduction Exercise.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. ArrayList_Skeleton/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. ArrayList_Skeleton/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. ArrayList_Skeleton/.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. ArrayList_Skeleton/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. ArrayList_Skeleton/.idea/runConfigurations.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. ArrayList_Skeleton/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. ArrayList_Skeleton/Dodumentation/01. ArrayList_Lab-Problem-Description (1).docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. ArrayList_Skeleton/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. ArrayList_Skeleton/src/main/java.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. ArrayList_Skeleton/src/main/java/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. ArrayList_Skeleton/src/main/java/implementations/ArrayList.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. ArrayList_Skeleton/src/main/java/implementations/Queue.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. ArrayList_Skeleton/src/main/java/implementations/SinglyLinkedList.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. ArrayList_Skeleton/src/main/java/implementations/Stack.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. ArrayList_Skeleton/src/main/java/interfaces/AbstractQueue.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. ArrayList_Skeleton/src/main/java/interfaces/AbstractStack.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. ArrayList_Skeleton/src/main/java/interfaces/LinkedList.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. ArrayList_Skeleton/src/main/java/interfaces/List.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. ArrayList_Skeleton/src/test/java/benchmark/BenchmarkTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. ArrayList_Skeleton/src/test/java/implementations/ArrayListTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. ArrayList_Skeleton/src/test/java/implementations/QueueTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. ArrayList_Skeleton/src/test/java/implementations/SinglyLinkedListTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. ArrayList_Skeleton/src/test/java/implementations/StackTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. ArrayList_Skeleton/target/classes/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. ArrayList_Skeleton/target/classes/implementations/ArrayList$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. ArrayList_Skeleton/target/classes/implementations/ArrayList.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. ArrayList_Skeleton/target/classes/implementations/Queue.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. ArrayList_Skeleton/target/classes/implementations/SinglyLinkedList$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. ArrayList_Skeleton/target/classes/implementations/SinglyLinkedList$Node.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. ArrayList_Skeleton/target/classes/implementations/SinglyLinkedList.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. ArrayList_Skeleton/target/classes/implementations/Stack.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. ArrayList_Skeleton/target/classes/interfaces/AbstractQueue.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. ArrayList_Skeleton/target/classes/interfaces/AbstractStack.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. ArrayList_Skeleton/target/classes/interfaces/LinkedList.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. ArrayList_Skeleton/target/classes/interfaces/List.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. ArrayList_Skeleton/target/generated-test-sources/test-annotations/benchmark/generated/BenchmarkTests_jmhType.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. ArrayList_Skeleton/target/generated-test-sources/test-annotations/benchmark/generated/BenchmarkTests_jmhType_B1.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. ArrayList_Skeleton/target/generated-test-sources/test-annotations/benchmark/generated/BenchmarkTests_jmhType_B2.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. ArrayList_Skeleton/target/generated-test-sources/test-annotations/benchmark/generated/BenchmarkTests_jmhType_B3.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. ArrayList_Skeleton/target/generated-test-sources/test-annotations/benchmark/generated/BenchmarkTests_testAddInArrayList_jmhTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. ArrayList_Skeleton/target/generated-test-sources/test-annotations/benchmark/generated/BenchmarkTests_testAddInQueue_jmhTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. ArrayList_Skeleton/target/generated-test-sources/test-annotations/benchmark/generated/BenchmarkTests_testAddInSinglyLinkedListAddFirst_jmhTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. ArrayList_Skeleton/target/generated-test-sources/test-annotations/benchmark/generated/BenchmarkTests_testAddInSinglyLinkedListAddLast_jmhTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. ArrayList_Skeleton/target/generated-test-sources/test-annotations/benchmark/generated/BenchmarkTests_testAddInStack_jmhTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. ArrayList_Skeleton/target/generated-test-sources/test-annotations/benchmark/generated/BenchmarkTests_testQueuePoll_jmhTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. ArrayList_Skeleton/target/generated-test-sources/test-annotations/benchmark/generated/BenchmarkTests_testRemoveAtFrontArrayList_jmhTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. ArrayList_Skeleton/target/generated-test-sources/test-annotations/benchmark/generated/BenchmarkTests_testSinglyLinkedListRemoveFirst_jmhTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. ArrayList_Skeleton/target/generated-test-sources/test-annotations/benchmark/generated/BenchmarkTests_testSinglyLinkedListRemoveLast_jmhTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. ArrayList_Skeleton/target/generated-test-sources/test-annotations/benchmark/generated/BenchmarkTests_testStackPop_jmhTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. ArrayList_Skeleton/target/test-classes/META-INF/BenchmarkList" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. ArrayList_Skeleton/target/test-classes/META-INF/CompilerHints" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. ArrayList_Skeleton/target/test-classes/benchmark/BenchmarkTests.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. ArrayList_Skeleton/target/test-classes/benchmark/generated/BenchmarkTests_jmhType.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. ArrayList_Skeleton/target/test-classes/benchmark/generated/BenchmarkTests_jmhType_B1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. ArrayList_Skeleton/target/test-classes/benchmark/generated/BenchmarkTests_jmhType_B2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. ArrayList_Skeleton/target/test-classes/benchmark/generated/BenchmarkTests_jmhType_B3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. ArrayList_Skeleton/target/test-classes/benchmark/generated/BenchmarkTests_testAddInArrayList_jmhTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. ArrayList_Skeleton/target/test-classes/benchmark/generated/BenchmarkTests_testAddInQueue_jmhTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. ArrayList_Skeleton/target/test-classes/benchmark/generated/BenchmarkTests_testAddInSinglyLinkedListAddFirst_jmhTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. ArrayList_Skeleton/target/test-classes/benchmark/generated/BenchmarkTests_testAddInSinglyLinkedListAddLast_jmhTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. ArrayList_Skeleton/target/test-classes/benchmark/generated/BenchmarkTests_testAddInStack_jmhTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. ArrayList_Skeleton/target/test-classes/benchmark/generated/BenchmarkTests_testQueuePoll_jmhTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. ArrayList_Skeleton/target/test-classes/benchmark/generated/BenchmarkTests_testRemoveAtFrontArrayList_jmhTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. ArrayList_Skeleton/target/test-classes/benchmark/generated/BenchmarkTests_testSinglyLinkedListRemoveFirst_jmhTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. ArrayList_Skeleton/target/test-classes/benchmark/generated/BenchmarkTests_testSinglyLinkedListRemoveLast_jmhTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. ArrayList_Skeleton/target/test-classes/benchmark/generated/BenchmarkTests_testStackPop_jmhTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. ArrayList_Skeleton/target/test-classes/implementations/ArrayListTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. ArrayList_Skeleton/target/test-classes/implementations/QueueTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. ArrayList_Skeleton/target/test-classes/implementations/SinglyLinkedListTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. ArrayList_Skeleton/target/test-classes/implementations/StackTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. Faster Queue_Skeleton/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. Faster Queue_Skeleton/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. Faster Queue_Skeleton/.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. Faster Queue_Skeleton/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. Faster Queue_Skeleton/.idea/runConfigurations.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. Faster Queue_Skeleton/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. Faster Queue_Skeleton/doc/01. Faster Queue_Exercise-Problem-Description.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. Faster Queue_Skeleton/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. Faster Queue_Skeleton/src/main/java.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. Faster Queue_Skeleton/src/main/java/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. Faster Queue_Skeleton/src/main/java/Test.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. Faster Queue_Skeleton/src/main/java/implementations/ArrayDeque.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. Faster Queue_Skeleton/src/main/java/implementations/BalancedParentheses.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. Faster Queue_Skeleton/src/main/java/implementations/DoublyLinkedList.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. Faster Queue_Skeleton/src/main/java/implementations/Queue.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. Faster Queue_Skeleton/src/main/java/implementations/ReversedList.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. Faster Queue_Skeleton/src/main/java/interfaces/AbstractQueue.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. Faster Queue_Skeleton/src/main/java/interfaces/Deque.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. Faster Queue_Skeleton/src/main/java/interfaces/LinkedList.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. Faster Queue_Skeleton/src/main/java/interfaces/Solvable.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. Faster Queue_Skeleton/src/test/java/benchmark/DoublyLinkedListBenchmarkTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. Faster Queue_Skeleton/src/test/java/benchmark/QueueBenchmarkTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. Faster Queue_Skeleton/src/test/java/implementations/BalancedParenthesesTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. Faster Queue_Skeleton/src/test/java/implementations/DoublyLinkedListTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. Faster Queue_Skeleton/src/test/java/implementations/QueueTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. Faster Queue_Skeleton/target/classes/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. Faster Queue_Skeleton/target/classes/Test.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. Faster Queue_Skeleton/target/classes/implementations/ArrayDeque$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. Faster Queue_Skeleton/target/classes/implementations/ArrayDeque.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. Faster Queue_Skeleton/target/classes/implementations/BalancedParentheses.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. Faster Queue_Skeleton/target/classes/implementations/DoublyLinkedList$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. Faster Queue_Skeleton/target/classes/implementations/DoublyLinkedList$Node.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. Faster Queue_Skeleton/target/classes/implementations/DoublyLinkedList.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. Faster Queue_Skeleton/target/classes/implementations/Queue$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. Faster Queue_Skeleton/target/classes/implementations/Queue$Node.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. Faster Queue_Skeleton/target/classes/implementations/Queue.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. Faster Queue_Skeleton/target/classes/implementations/ReversedList$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. Faster Queue_Skeleton/target/classes/implementations/ReversedList.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. Faster Queue_Skeleton/target/classes/interfaces/AbstractQueue.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. Faster Queue_Skeleton/target/classes/interfaces/Deque.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. Faster Queue_Skeleton/target/classes/interfaces/LinkedList.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. Faster Queue_Skeleton/target/classes/interfaces/Solvable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. Faster Queue_Skeleton/target/generated-test-sources/test-annotations/benchmark/generated/DoublyLinkedListBenchmarkTest_jmhType.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. Faster Queue_Skeleton/target/generated-test-sources/test-annotations/benchmark/generated/DoublyLinkedListBenchmarkTest_jmhType_B1.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. Faster Queue_Skeleton/target/generated-test-sources/test-annotations/benchmark/generated/DoublyLinkedListBenchmarkTest_jmhType_B2.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. Faster Queue_Skeleton/target/generated-test-sources/test-annotations/benchmark/generated/DoublyLinkedListBenchmarkTest_jmhType_B3.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. Faster Queue_Skeleton/target/generated-test-sources/test-annotations/benchmark/generated/DoublyLinkedListBenchmarkTest_testAddFirst_jmhTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. Faster Queue_Skeleton/target/generated-test-sources/test-annotations/benchmark/generated/DoublyLinkedListBenchmarkTest_testAddLast_jmhTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. Faster Queue_Skeleton/target/generated-test-sources/test-annotations/benchmark/generated/DoublyLinkedListBenchmarkTest_testRemoveFirst_jmhTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. Faster Queue_Skeleton/target/generated-test-sources/test-annotations/benchmark/generated/DoublyLinkedListBenchmarkTest_testRemoveLast_jmhTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. Faster Queue_Skeleton/target/generated-test-sources/test-annotations/benchmark/generated/QueueBenchmarkTest_jmhType.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. Faster Queue_Skeleton/target/generated-test-sources/test-annotations/benchmark/generated/QueueBenchmarkTest_jmhType_B1.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. Faster Queue_Skeleton/target/generated-test-sources/test-annotations/benchmark/generated/QueueBenchmarkTest_jmhType_B2.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. Faster Queue_Skeleton/target/generated-test-sources/test-annotations/benchmark/generated/QueueBenchmarkTest_jmhType_B3.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. Faster Queue_Skeleton/target/generated-test-sources/test-annotations/benchmark/generated/QueueBenchmarkTest_testAddInQueue_jmhTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. Faster Queue_Skeleton/target/test-classes/META-INF/BenchmarkList" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. Faster Queue_Skeleton/target/test-classes/META-INF/CompilerHints" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. Faster Queue_Skeleton/target/test-classes/benchmark/DoublyLinkedListBenchmarkTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. Faster Queue_Skeleton/target/test-classes/benchmark/QueueBenchmarkTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. Faster Queue_Skeleton/target/test-classes/benchmark/generated/DoublyLinkedListBenchmarkTest_jmhType.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. Faster Queue_Skeleton/target/test-classes/benchmark/generated/DoublyLinkedListBenchmarkTest_jmhType_B1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. Faster Queue_Skeleton/target/test-classes/benchmark/generated/DoublyLinkedListBenchmarkTest_jmhType_B2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. Faster Queue_Skeleton/target/test-classes/benchmark/generated/DoublyLinkedListBenchmarkTest_jmhType_B3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. Faster Queue_Skeleton/target/test-classes/benchmark/generated/DoublyLinkedListBenchmarkTest_testAddFirst_jmhTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. Faster Queue_Skeleton/target/test-classes/benchmark/generated/DoublyLinkedListBenchmarkTest_testAddLast_jmhTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. Faster Queue_Skeleton/target/test-classes/benchmark/generated/DoublyLinkedListBenchmarkTest_testRemoveFirst_jmhTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. Faster Queue_Skeleton/target/test-classes/benchmark/generated/DoublyLinkedListBenchmarkTest_testRemoveLast_jmhTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. Faster Queue_Skeleton/target/test-classes/benchmark/generated/QueueBenchmarkTest_jmhType.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. Faster Queue_Skeleton/target/test-classes/benchmark/generated/QueueBenchmarkTest_jmhType_B1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. Faster Queue_Skeleton/target/test-classes/benchmark/generated/QueueBenchmarkTest_jmhType_B2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. Faster Queue_Skeleton/target/test-classes/benchmark/generated/QueueBenchmarkTest_jmhType_B3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. Faster Queue_Skeleton/target/test-classes/benchmark/generated/QueueBenchmarkTest_testAddInQueue_jmhTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. Faster Queue_Skeleton/target/test-classes/implementations/BalancedParenthesesTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. Faster Queue_Skeleton/target/test-classes/implementations/DoublyLinkedListTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01. LinearDataStructures/01. Faster Queue_Skeleton/target/test-classes/implementations/QueueTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Spring Data/01 Database Apps Introduction Exercise/IntroJDBCHomework/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Spring Data/01 Database Apps Introduction Exercise/IntroJDBCHomework/src/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ExamPreparation/02Data Structures Fundamentals with Java Exam - 1 August 2021/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ExamPreparation/02Data Structures Fundamentals with Java Exam - 1 August 2021/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ExamPreparation/02Data Structures Fundamentals with Java Exam - 1 August 2021/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ExamPreparation/02Data Structures Fundamentals with Java Exam - 1 August 2021/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ExamPreparation/02Data Structures Fundamentals with Java Exam - 1 August 2021/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ExamPreparation/02Data Structures Fundamentals with Java Exam - 1 August 2021/doc/01. Shop_Problem-Description.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ExamPreparation/02Data Structures Fundamentals with Java Exam - 1 August 2021/src/main/java.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ExamPreparation/02DataStructuresFundamentalsWithJavaRetakeExam8August2021/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ExamPreparation/02DataStructuresFundamentalsWithJavaRetakeExam8August2021/.idea/02DataStructuresFundamentalsWithJavaRetakeExam8August2021.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ExamPreparation/02DataStructuresFundamentalsWithJavaRetakeExam8August2021/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ExamPreparation/02DataStructuresFundamentalsWithJavaRetakeExam8August2021/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ExamPreparation/02DataStructuresFundamentalsWithJavaRetakeExam8August2021/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ExamPreparation/02DataStructuresFundamentalsWithJavaRetakeExam8August2021/01. Olympics - Correctness_Skeleton(Java).zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ExamPreparation/02DataStructuresFundamentalsWithJavaRetakeExam8August2021/OlympicsJava/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ExamPreparation/02DataStructuresFundamentalsWithJavaRetakeExam8August2021/OlympicsJava/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ExamPreparation/02DataStructuresFundamentalsWithJavaRetakeExam8August2021/OlympicsJava/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ExamPreparation/02DataStructuresFundamentalsWithJavaRetakeExam8August2021/OlympicsJava/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ExamPreparation/02DataStructuresFundamentalsWithJavaRetakeExam8August2021/OlympicsJava/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ExamPreparation/02DataStructuresFundamentalsWithJavaRetakeExam8August2021/OlympicsJava/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ExamPreparation/02DataStructuresFundamentalsWithJavaRetakeExam8August2021/OlympicsJava/doc/01. Olympics - Correctness_Problem Description.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ExamPreparation/02DataStructuresFundamentalsWithJavaRetakeExam8August2021/OlympicsJava/doc/~$. Olympics - Correctness_Problem Description.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ExamPreparation/02DataStructuresFundamentalsWithJavaRetakeExam8August2021/OlympicsJava/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ExamPreparation/02DataStructuresFundamentalsWithJavaRetakeExam8August2021/OlympicsJava/src/main/java.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ExamPreparation/02DataStructuresFundamentalsWithJavaRetakeExam8August2021/OlympicsJava/src/main/java/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ExamPreparation/02DataStructuresFundamentalsWithJavaRetakeExam8August2021/OlympicsJava/src/main/java/entities/Competition.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ExamPreparation/02DataStructuresFundamentalsWithJavaRetakeExam8August2021/OlympicsJava/src/main/java/entities/Competitor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ExamPreparation/02DataStructuresFundamentalsWithJavaRetakeExam8August2021/OlympicsJava/src/main/java/implementations/BinarySearchTree.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ExamPreparation/02DataStructuresFundamentalsWithJavaRetakeExam8August2021/OlympicsJava/src/main/java/implementations/OlympicsImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ExamPreparation/02DataStructuresFundamentalsWithJavaRetakeExam8August2021/OlympicsJava/src/main/java/interfaces/AbstractBinarySearchTree.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ExamPreparation/02DataStructuresFundamentalsWithJavaRetakeExam8August2021/OlympicsJava/src/main/java/interfaces/Olympics.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ExamPreparation/02DataStructuresFundamentalsWithJavaRetakeExam8August2021/OlympicsJava/src/test/java/OlympicsImplCorrectnessTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ExamPreparation/02DataStructuresFundamentalsWithJavaRetakeExam8August2021/OlympicsJava/src/test/java/OlympicsImplPerformanceTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ExamPreparation/02DataStructuresFundamentalsWithJavaRetakeExam8August2021/OlympicsJava/target/classes/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ExamPreparation/02DataStructuresFundamentalsWithJavaRetakeExam8August2021/OlympicsJava/target/classes/entities/Competition.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ExamPreparation/02DataStructuresFundamentalsWithJavaRetakeExam8August2021/OlympicsJava/target/classes/entities/Competitor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ExamPreparation/02DataStructuresFundamentalsWithJavaRetakeExam8August2021/OlympicsJava/target/classes/implementations/BinarySearchTree.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ExamPreparation/02DataStructuresFundamentalsWithJavaRetakeExam8August2021/OlympicsJava/target/classes/implementations/OlympicsImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ExamPreparation/02DataStructuresFundamentalsWithJavaRetakeExam8August2021/OlympicsJava/target/classes/interfaces/AbstractBinarySearchTree$Node.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ExamPreparation/02DataStructuresFundamentalsWithJavaRetakeExam8August2021/OlympicsJava/target/classes/interfaces/AbstractBinarySearchTree.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ExamPreparation/02DataStructuresFundamentalsWithJavaRetakeExam8August2021/OlympicsJava/target/classes/interfaces/Olympics.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ExamPreparation/02DataStructuresFundamentalsWithJavaRetakeExam8August2021/OlympicsJava/target/test-classes/OlympicsImplCorrectnessTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ExamPreparation/02DataStructuresFundamentalsWithJavaRetakeExam8August2021/OlympicsJava/target/test-classes/OlympicsImplPerformanceTest$InputGenerator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ExamPreparation/02DataStructuresFundamentalsWithJavaRetakeExam8August2021/OlympicsJava/target/test-classes/OlympicsImplPerformanceTest.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -179,7 +77,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../04DataStructuresTreesRepresentationAndTraversalExercise" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunManager" selected="JUnit.TreeTest">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -286,6 +184,7 @@
       <workItem from="1645015518785" duration="1463000" />
       <workItem from="1645079546076" duration="12698000" />
       <workItem from="1645094515531" duration="145000" />
+      <workItem from="1647427226046" duration="3990000" />
     </task>
     <servers />
   </component>
