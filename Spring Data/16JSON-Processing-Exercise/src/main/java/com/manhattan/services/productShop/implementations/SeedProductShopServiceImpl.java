@@ -1,4 +1,4 @@
-package com.manhattan.services.implementations;
+package com.manhattan.services.productShop.implementations;
 
 import com.manhattan.models.productsShop.dtos.CategoryJsonReadDto;
 import com.manhattan.models.productsShop.dtos.ProductJsonReadDto;
@@ -6,7 +6,8 @@ import com.manhattan.models.productsShop.dtos.UserJsonReadDto;
 import com.manhattan.models.productsShop.entities.Category;
 import com.manhattan.models.productsShop.entities.Product;
 import com.manhattan.models.productsShop.entities.User;
-import com.manhattan.services.interfaces.*;
+import com.manhattan.services.common.FileService;
+import com.manhattan.services.productShop.interfaces.*;
 import com.manhattan.utils.ValidationsUtil;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
@@ -19,7 +20,7 @@ import java.util.stream.Collectors;
 import static com.manhattan.utils.CommonConstants.*;
 
 @Service
-public class SeedServiceImpl implements SeedService {
+public class SeedProductShopServiceImpl implements SeedProductShopService {
     private final FileService fileService;
     private final ValidationsUtil validator;
     private final ModelMapper modelMapper;
@@ -27,12 +28,12 @@ public class SeedServiceImpl implements SeedService {
     private final UserService userService;
     private final CategoryService categoryService;
 
-    public SeedServiceImpl(FileService fileService,
-                           ValidationsUtil validator,
-                           ModelMapper modelMapper,
-                           ProductService productService,
-                           UserService userService,
-                           CategoryService categoryService) {
+    public SeedProductShopServiceImpl(FileService fileService,
+                                      ValidationsUtil validator,
+                                      ModelMapper modelMapper,
+                                      ProductService productService,
+                                      UserService userService,
+                                      CategoryService categoryService) {
         this.fileService = fileService;
         this.validator = validator;
         this.modelMapper = modelMapper;

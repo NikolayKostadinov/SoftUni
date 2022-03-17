@@ -3,7 +3,13 @@ package com.manhattan;
 import com.manhattan.models.productsShop.dtos.CategoriesByProductsDto;
 import com.manhattan.models.productsShop.dtos.UserSoldDto;
 import com.manhattan.models.productsShop.dtos.UsersAndProductsDto;
-import com.manhattan.services.interfaces.*;
+import com.manhattan.services.carDealer.interfaces.SeedCarDealerService;
+import com.manhattan.services.carDealer.interfaces.SupplierService;
+import com.manhattan.services.common.FileService;
+import com.manhattan.services.productShop.interfaces.CategoryService;
+import com.manhattan.services.productShop.interfaces.ProductService;
+import com.manhattan.services.productShop.interfaces.SeedProductShopService;
+import com.manhattan.services.productShop.interfaces.UserService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -18,21 +24,31 @@ public class ConsoleRunner implements CommandLineRunner {
     private final UserService userService;
     private final ProductService productService;
     private final CategoryService categoryService;
-    private final SeedService seedService;
+    private final SeedProductShopService seedProductShopService;
+    private final SeedCarDealerService seedCarDealerService;
     private final FileService fileService;
+    private final SupplierService supplierService;
 
-    public ConsoleRunner(UserService userService, ProductService productService, CategoryService categoryService, SeedService seedService, FileService fileService) {
+    public ConsoleRunner(UserService userService,
+                         ProductService productService,
+                         CategoryService categoryService,
+                         SeedProductShopService seedService,
+                         SeedCarDealerService seedCarDealerService,
+                         FileService fileService,
+                         SupplierService supplierService) {
         this.userService = userService;
         this.productService = productService;
         this.categoryService = categoryService;
-        this.seedService = seedService;
+        this.seedProductShopService = seedService;
+        this.seedCarDealerService = seedCarDealerService;
         this.fileService = fileService;
+        this.supplierService = supplierService;
     }
 
     @Override
     public void run(String... args) throws Exception {
         // 2.	Seed the Database
-        seedData();
+        seedProductShopData();
 
         // 3.	Query and Export Data
         // Query 1 – Products in Range
@@ -47,7 +63,14 @@ public class ConsoleRunner implements CommandLineRunner {
         // Query 4 – Users and Products
         usersAndProducts();
 
+        // 5. Car Dealer Import Data
+        seedCarDealerData();
 
+    }
+
+    private void seedCarDealerData() throws IOException {
+        if (this.supplierService.hasNoRecords())
+            this.seedCarDealerService.seed();
     }
 
     private void usersAndProducts() throws IOException {
@@ -71,8 +94,8 @@ public class ConsoleRunner implements CommandLineRunner {
                         .getNotBoughtProductsWithPriceInRange(BigDecimal.valueOf(500), BigDecimal.valueOf(1000)));
     }
 
-    private void seedData() throws IOException {
+    private void seedProductShopData() throws IOException {
         if (this.productService.hasNoRecords())
-            this.seedService.seed();
+            this.seedProductShopService.seed();
     }
 }

@@ -1,9 +1,9 @@
-package com.manhattan.services.implementations;
+package com.manhattan.services.productShop.implementations;
 
 import com.manhattan.models.productsShop.dtos.CategoriesByProductsDto;
 import com.manhattan.models.productsShop.entities.Category;
-import com.manhattan.repositories.CategoryRepository;
-import com.manhattan.services.interfaces.CategoryService;
+import com.manhattan.repositories.productShop.CategoryRepository;
+import com.manhattan.services.productShop.interfaces.CategoryService;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 

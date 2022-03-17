@@ -1,83 +1,123 @@
 [
   {
-    "name": "Perrigo Benzoyl Peroxide",
-    "price": "873,24",
-    "seller": "Doris Cook"
-  },
-  {
-    "name": "Myristica Argentum Sinus Relief",
-    "price": "904,52",
-    "seller": "Cunningham"
-  },
-  {
     "name": "Ranitidine",
     "price": "926,64",
-    "seller": "Kathy Gilbert"
-  },
-  {
-    "name": "RESCRIPTOR",
-    "price": "850,52",
-    "seller": "Doris Cook"
-  },
-  {
-    "name": "IOPE SUPER VITAL",
-    "price": "824,68",
-    "seller": "Patricia Cooper"
+    "seller": "Schmidt"
   },
   {
     "name": "NEO-POLY-BAC HYDRO",
     "price": "967,32",
-    "seller": "Diana Harvey"
-  },
-  {
-    "name": "Dawn Ultra Antibacterial Hand",
-    "price": "969,86",
-    "seller": "Chris Mitchell"
-  },
-  {
-    "name": "Homeopathic Rheumatism",
-    "price": "967,08",
-    "seller": "Billy Parker"
-  },
-  {
-    "name": "pain relief",
-    "price": "938,23",
-    "seller": "Billy Parker"
-  },
-  {
-    "name": "Metformin Hydrochloride",
-    "price": "953,99",
-    "seller": "Thomas Snyder"
-  },
-  {
-    "name": "Glipizide and Metformin Hydrochloride",
-    "price": "953,60",
-    "seller": "Thomas Snyder"
-  },
-  {
-    "name": "EPZICOM",
-    "price": "895,65",
-    "seller": "Fred Barnes"
-  },
-  {
-    "name": "Moore Medical Sinus Pain and Pressure Relief",
-    "price": "855,39",
-    "seller": "Benjamin Henry"
-  },
-  {
-    "name": "Azithromycin",
-    "price": "813,87",
-    "seller": "Nicole Harris"
-  },
-  {
-    "name": "Smooth texture Orange flavor",
-    "price": "976,65",
-    "seller": "Emily Parker"
+    "seller": "Eugene Stewart"
   },
   {
     "name": "Aquafresh",
     "price": "849,93",
-    "seller": "Betty Ward"
+    "seller": "Nicole Harris"
+  },
+  {
+    "name": "Perrigo Benzoyl Peroxide",
+    "price": "873,24",
+    "seller": "Wanda Harris"
+  },
+  {
+    "name": "Retin-A MICRO",
+    "price": "995,98",
+    "seller": "Sandra Riley"
+  },
+  {
+    "name": "Megestrol Acetate",
+    "price": "976,15",
+    "seller": "Jonathan Rodriguez"
+  },
+  {
+    "name": "Glipizide and Metformin Hydrochloride",
+    "price": "953,60",
+    "seller": "Bonnie Fox"
+  },
+  {
+    "name": "EPZICOM",
+    "price": "895,65",
+    "seller": "Sandra Riley"
+  },
+  {
+    "name": "Azithromycin",
+    "price": "813,87",
+    "seller": "Stewart"
+  },
+  {
+    "name": "Clarins Paris Skin Illusion - 114 cappuccino",
+    "price": "811,42",
+    "seller": "Fred Allen"
+  },
+  {
+    "name": "Levothyroxine Sodium",
+    "price": "885,86",
+    "seller": "Stewart"
+  },
+  {
+    "name": "ESIKA",
+    "price": "879,37",
+    "seller": "Christine Gomez"
+  },
+  {
+    "name": "Clearskin",
+    "price": "968,59",
+    "seller": "Jennifer Riley"
+  },
+  {
+    "name": "IOPE SUPER VITAL",
+    "price": "824,68",
+    "seller": "Eugene Stewart"
+  },
+  {
+    "name": "Meloxicam",
+    "price": "809,18",
+    "seller": "Patricia Fuller"
+  },
+  {
+    "name": "Shopko Lip Treatment",
+    "price": "861,42",
+    "seller": "Thomas Snyder"
+  },
+  {
+    "name": "Aspirin",
+    "price": "925,45",
+    "seller": "Diana Harvey"
+  },
+  {
+    "name": "Care One Hemorrhoidal",
+    "price": "932,18",
+    "seller": "Fred Barnes"
+  },
+  {
+    "name": "Naproxen",
+    "price": "807,22",
+    "seller": "Arthur Reynolds"
+  },
+  {
+    "name": "LV-FX",
+    "price": "820,87",
+    "seller": "Diana Harvey"
+  },
+  {
+    "name": "Smooth texture Orange flavor",
+    "price": "976,65",
+    "seller": "Chris Mitchell"
+  },
+  {
+    "name": "Moore Medical Sinus Pain and Pressure Relief",
+    "price": "855,39",
+    "seller": "Arthur Reynolds"
+  },
+  {
+    "name": "RESCRIPTOR",
+    "price": "850,52",
+    "seller": "Chris Mitchell"
+  },
+  {
+    "name": "Myristica Argentum Sinus Relief",
+    "price": "904,52",
+    "seller": "Carl Daniels"
   },
   {
     "name": "Spironolactone",
@@ -85,63 +125,23 @@
     "seller": "Schmidt"
   },
   {
-    "name": "Megestrol Acetate",
-    "price": "976,15",
-    "seller": "Fox"
-  },
-  {
-    "name": "Clarins Paris Skin Illusion - 114 cappuccino",
-    "price": "811,42",
-    "seller": "Jeremy Woods"
-  },
-  {
-    "name": "Care One Hemorrhoidal",
-    "price": "932,18",
-    "seller": "Patrick King"
-  },
-  {
-    "name": "Retin-A MICRO",
-    "price": "995,98",
-    "seller": "Sarah Day"
-  },
-  {
-    "name": "Meloxicam",
-    "price": "809,18",
-    "seller": "Moreno"
-  },
-  {
-    "name": "ESIKA",
-    "price": "879,37",
-    "seller": "Patricia Fuller"
-  },
-  {
-    "name": "Aspirin",
-    "price": "925,45",
-    "seller": "Jean Henry"
-  },
-  {
-    "name": "Levothyroxine Sodium",
-    "price": "885,86",
-    "seller": "Moreno"
-  },
-  {
-    "name": "Shopko Lip Treatment",
-    "price": "861,42",
-    "seller": "Gloria Alexander"
-  },
-  {
-    "name": "LV-FX",
-    "price": "820,87",
-    "seller": "Thomas Snyder"
-  },
-  {
-    "name": "Clearskin",
-    "price": "968,59",
-    "seller": "Cunningham"
-  },
-  {
-    "name": "Naproxen",
-    "price": "807,22",
+    "name": "Metformin Hydrochloride",
+    "price": "953,99",
     "seller": "Patricia Cooper"
+  },
+  {
+    "name": "Homeopathic Rheumatism",
+    "price": "967,08",
+    "seller": "Jennifer Riley"
+  },
+  {
+    "name": "pain relief",
+    "price": "938,23",
+    "seller": "Amanda Frazier"
+  },
+  {
+    "name": "Dawn Ultra Antibacterial Hand",
+    "price": "969,86",
+    "seller": "Betty Lawson"
   }
 ]

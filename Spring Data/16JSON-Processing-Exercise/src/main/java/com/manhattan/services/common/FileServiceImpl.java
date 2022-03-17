@@ -1,8 +1,8 @@
-package com.manhattan.services.implementations;
+package com.manhattan.services.common;
 
 import com.google.gson.Gson;
 import com.google.gson.stream.JsonReader;
-import com.manhattan.services.interfaces.FileService;
+import com.manhattan.services.common.FileService;
 import org.springframework.stereotype.Service;
 
 import java.io.*;

@@ -20,7 +20,7 @@ public class Car {
     @Column(name = "travelled_distance", nullable = false)
     private long travelledDistance;
 
-    @ManyToMany(mappedBy = "cars")
+    @ManyToMany(mappedBy = "cars",cascade = CascadeType.PERSIST)
     private Set<Part> parts;
 
     @OneToMany(mappedBy = "car", cascade = CascadeType.PERSIST)
@@ -61,5 +61,21 @@ public class Car {
 
     public void setTravelledDistance(long travelledDistance) {
         this.travelledDistance = travelledDistance;
+    }
+
+    public Set<Part> getParts() {
+        return parts;
+    }
+
+    public void setParts(Set<Part> parts) {
+        this.parts = parts;
+    }
+
+    public Set<Sale> getSales() {
+        return sales;
+    }
+
+    public void setSales(Set<Sale> sales) {
+        this.sales = sales;
     }
 }

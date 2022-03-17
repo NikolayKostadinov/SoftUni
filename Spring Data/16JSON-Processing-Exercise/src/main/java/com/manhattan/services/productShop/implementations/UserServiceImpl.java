@@ -1,11 +1,11 @@
-package com.manhattan.services.implementations;
+package com.manhattan.services.productShop.implementations;
 
 import com.manhattan.models.productsShop.dtos.UserAndSoldProductsDto;
 import com.manhattan.models.productsShop.dtos.UserSoldDto;
 import com.manhattan.models.productsShop.dtos.UsersAndProductsDto;
 import com.manhattan.models.productsShop.entities.User;
-import com.manhattan.repositories.UserRepository;
-import com.manhattan.services.interfaces.UserService;
+import com.manhattan.repositories.productShop.UserRepository;
+import com.manhattan.services.productShop.interfaces.UserService;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 

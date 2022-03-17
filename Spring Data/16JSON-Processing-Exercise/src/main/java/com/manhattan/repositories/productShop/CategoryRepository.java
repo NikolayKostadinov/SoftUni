@@ -1,4 +1,4 @@
-package com.manhattan.repositories;
+package com.manhattan.repositories.productShop;
 
 import com.manhattan.models.productsShop.entities.Category;
 import org.springframework.data.jpa.repository.JpaRepository;

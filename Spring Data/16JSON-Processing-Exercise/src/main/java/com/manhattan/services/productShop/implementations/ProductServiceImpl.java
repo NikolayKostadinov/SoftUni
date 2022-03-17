@@ -1,9 +1,9 @@
-package com.manhattan.services.implementations;
+package com.manhattan.services.productShop.implementations;
 
 import com.manhattan.models.productsShop.dtos.ProductsInRangeDto;
 import com.manhattan.models.productsShop.entities.Product;
-import com.manhattan.repositories.ProductRepository;
-import com.manhattan.services.interfaces.ProductService;
+import com.manhattan.repositories.productShop.ProductRepository;
+import com.manhattan.services.productShop.interfaces.ProductService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

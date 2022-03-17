@@ -1,4 +1,4 @@
-package com.manhattan.services.interfaces;
+package com.manhattan.services.common;
 
 import java.io.IOException;
 

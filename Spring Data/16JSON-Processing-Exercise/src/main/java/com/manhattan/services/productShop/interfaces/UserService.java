@@ -1,4 +1,4 @@
-package com.manhattan.services.interfaces;
+package com.manhattan.services.productShop.interfaces;
 
 import com.manhattan.models.productsShop.dtos.UserSoldDto;
 import com.manhattan.models.productsShop.dtos.UsersAndProductsDto;
