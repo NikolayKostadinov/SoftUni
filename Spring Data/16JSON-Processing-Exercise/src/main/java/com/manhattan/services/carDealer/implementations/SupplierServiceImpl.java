@@ -19,7 +19,7 @@ public class SupplierServiceImpl implements SupplierService {
 
     @Override
     public void saveAll(Iterable<Supplier> suppliers) {
-        this.repository.saveAll(suppliers);
+        this.repository.saveAllAndFlush(suppliers);
     }
 
     @Override

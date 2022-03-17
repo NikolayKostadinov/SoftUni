@@ -20,7 +20,7 @@ public class Car {
     @Column(name = "travelled_distance", nullable = false)
     private long travelledDistance;
 
-    @ManyToMany(mappedBy = "cars",cascade = CascadeType.PERSIST)
+    @ManyToMany(fetch = FetchType.EAGER)
     private Set<Part> parts;
 
     @OneToMany(mappedBy = "car", cascade = CascadeType.PERSIST)

@@ -48,7 +48,8 @@ public class CategoryServiceImpl implements CategoryService {
     @Override
     public List<CategoriesByProductsDto> getCategoriesOrderByNumberOfProducts() {
         return this.repository.findAllOrderByProductCount()
-                .stream().map(cat->mapper.map(cat, CategoriesByProductsDto.class))
+                .stream()
+                .map(cat->mapper.map(cat, CategoriesByProductsDto.class))
                 .collect(Collectors.toList());
     }
 }

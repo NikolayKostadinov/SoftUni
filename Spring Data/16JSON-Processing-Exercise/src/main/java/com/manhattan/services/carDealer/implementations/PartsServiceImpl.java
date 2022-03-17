@@ -18,7 +18,7 @@ public class PartsServiceImpl implements PartsService {
 
     @Override
     public void saveAll(Iterable<Part> parts) {
-        this.repository.saveAll(parts);
+        this.repository.saveAllAndFlush(parts);
     }
 
     @Override
