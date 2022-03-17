@@ -33,7 +33,29 @@ public class MessagingSystemTest {
         for (Message message : this.messages) {
             this.system.add(message);
         }
-        var t = this.system;
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void addExistMustThrow() {
+        this.system.add(new TextMessage(4, "test_text"));
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void getByWeightNotExistMustThrow() {
+        this.system.getByWeight(42);
+    }
+
+    @Test
+    public void getByWeightShouldWorkCorrectly() {
+        Message expected = new TextMessage(11, "test_text");
+        Message actual = this.system.getByWeight(11);
+
+        assertEquals(expected, actual);
+
+        expected = new TextMessage(19, "test_text");
+        actual = this.system.getByWeight(19);
+
+        assertEquals(expected, actual);
     }
 
     @Test
@@ -85,6 +107,20 @@ public class MessagingSystemTest {
     }
 
     @Test
+    public void testGetLightestShouldReturnCorrect() {
+        Message lightest = this.system.getLightest();
+        assertNotNull(lightest);
+        assertEquals(4, lightest.getWeight());
+    }
+
+    @Test
+    public void testGetHeaviestShouldReturnCorrect() {
+        Message heaviest = this.system.getHeaviest();
+        assertNotNull(heaviest);
+        assertEquals(19, heaviest.getWeight());
+    }
+
+    @Test
     public void testGetPreOrderShouldReturnCorrectSequence() {
         List<Message> preOrder = this.system.getPreOrder();
 
@@ -110,12 +146,6 @@ public class MessagingSystemTest {
         }
     }
 
-    @Test
-    public void testGetLightestShouldReturnCorrect() {
-        Message lightest = this.system.getLightest();
-        assertNotNull(lightest);
-        assertEquals(4, lightest.getWeight());
-    }
 
     @Test(expected = IllegalStateException.class)
     public void testGetLightestShouldReturnCorrectMany() {
@@ -143,12 +173,6 @@ public class MessagingSystemTest {
         this.system.deleteHeaviest();
     }
 
-    @Test
-    public void testGetHeaviestShouldReturnCorrect() {
-        Message heaviest = this.system.getHeaviest();
-        assertNotNull(heaviest);
-        assertEquals(19, heaviest.getWeight());
-    }
 
     @Test(expected = IllegalArgumentException.class)
     public void testAddExistMustThrowException() {
@@ -199,7 +223,7 @@ public class MessagingSystemTest {
         Message[] actual = this.system.getOrderedByWeight().toArray(new Message[this.system.size()]);
         assertEquals(expected.length, actual.length);
         for (int i = 0; i < expected.length; i++) {
-           assertEquals(expected[i], actual[i].getWeight());
+            assertEquals(expected[i], actual[i].getWeight());
         }
     }
 
@@ -219,7 +243,4 @@ public class MessagingSystemTest {
         List<Message> orderedByWeight = messagingSystem.getOrderedByWeight();
         assertEquals(0, orderedByWeight.size());
     }
-
-
-
 }

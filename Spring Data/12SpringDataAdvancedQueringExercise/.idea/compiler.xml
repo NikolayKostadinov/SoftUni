@@ -7,14 +7,17 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="BookshopSystem" />
+        <module name="12SpringDataAdvancedQueringExercise" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="12SpringDataAdvancedQueringExercise" target="16" />
       <module name="BookshopSystem" target="16" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="12SpringDataAdvancedQueringExercise" options="-parameters" />
       <module name="BookshopSystem" options="-parameters" />
     </option>
   </component>
