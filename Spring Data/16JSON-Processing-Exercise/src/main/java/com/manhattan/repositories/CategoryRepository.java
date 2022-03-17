@@ -1,6 +1,6 @@
 package com.manhattan.repositories;
 
-import com.manhattan.models.entities.Category;
+import com.manhattan.models.productsShop.entities.Category;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;

@@ -1,16 +1,16 @@
-package com.manhattan.models.dtos;
+package com.manhattan.models.productsShop.dtos;
 
 import com.google.gson.annotations.Expose;
 
-import javax.validation.constraints.Size;
-
-public class UserJsonReadDto {
+public class UserAndSoldProductsDto {
     @Expose
     private String firstName;
     @Expose
     private String lastName;
     @Expose
-    private Integer age;
+    private int age;
+    @Expose
+    private ProductSoldDto soldProducts;
 
     public String getFirstName() {
         return firstName;
@@ -20,7 +20,6 @@ public class UserJsonReadDto {
         this.firstName = firstName;
     }
 
-    @Size(min = 3)
     public String getLastName() {
         return lastName;
     }
@@ -29,11 +28,19 @@ public class UserJsonReadDto {
         this.lastName = lastName;
     }
 
-    public Integer getAge() {
+    public int getAge() {
         return age;
     }
 
-    public void setAge(Integer age) {
+    public void setAge(int age) {
         this.age = age;
+    }
+
+    public ProductSoldDto getSoldProducts() {
+        return soldProducts;
+    }
+
+    public void setSoldProducts(ProductSoldDto soldProducts) {
+        this.soldProducts = soldProducts;
     }
 }

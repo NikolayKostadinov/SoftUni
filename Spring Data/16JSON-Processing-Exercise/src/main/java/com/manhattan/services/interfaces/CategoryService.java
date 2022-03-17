@@ -1,7 +1,7 @@
 package com.manhattan.services.interfaces;
 
-import com.manhattan.models.dtos.CategoriesByProductsDto;
-import com.manhattan.models.entities.Category;
+import com.manhattan.models.productsShop.dtos.CategoriesByProductsDto;
+import com.manhattan.models.productsShop.entities.Category;
 
 import java.util.List;
 import java.util.Set;

@@ -1,4 +1,4 @@
-package com.manhattan.models.entities;
+package com.manhattan.models.productsShop.entities;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -7,7 +7,11 @@ import java.util.Set;
 
 @Entity
 @Table( name = "products")
-public class Product extends BaseEntity {
+public class Product {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
 
     private String name;
 
@@ -26,6 +30,14 @@ public class Product extends BaseEntity {
 
     public Product() {
         this.categories = new HashSet<>();
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 
     public String getName() {

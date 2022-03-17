@@ -1,9 +1,9 @@
 package com.manhattan.services.implementations;
 
-import com.manhattan.models.dtos.UserAndSoldProductsDto;
-import com.manhattan.models.dtos.UserSoldDto;
-import com.manhattan.models.dtos.UsersAndProductsDto;
-import com.manhattan.models.entities.User;
+import com.manhattan.models.productsShop.dtos.UserAndSoldProductsDto;
+import com.manhattan.models.productsShop.dtos.UserSoldDto;
+import com.manhattan.models.productsShop.dtos.UsersAndProductsDto;
+import com.manhattan.models.productsShop.entities.User;
 import com.manhattan.repositories.UserRepository;
 import com.manhattan.services.interfaces.UserService;
 import org.modelmapper.ModelMapper;

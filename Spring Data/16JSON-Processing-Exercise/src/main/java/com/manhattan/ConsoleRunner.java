@@ -1,10 +1,8 @@
 package com.manhattan;
 
-import com.manhattan.models.dtos.CategoriesByProductsDto;
-import com.manhattan.models.dtos.UserSoldDto;
-import com.manhattan.models.dtos.UsersAndProductsDto;
-import com.manhattan.models.entities.Category;
-import com.manhattan.models.entities.User;
+import com.manhattan.models.productsShop.dtos.CategoriesByProductsDto;
+import com.manhattan.models.productsShop.dtos.UserSoldDto;
+import com.manhattan.models.productsShop.dtos.UsersAndProductsDto;
 import com.manhattan.services.interfaces.*;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;

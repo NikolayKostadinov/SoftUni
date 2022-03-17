@@ -1,7 +1,7 @@
 package com.manhattan.services.implementations;
 
-import com.manhattan.models.dtos.CategoriesByProductsDto;
-import com.manhattan.models.entities.Category;
+import com.manhattan.models.productsShop.dtos.CategoriesByProductsDto;
+import com.manhattan.models.productsShop.entities.Category;
 import com.manhattan.repositories.CategoryRepository;
 import com.manhattan.services.interfaces.CategoryService;
 import org.modelmapper.ModelMapper;

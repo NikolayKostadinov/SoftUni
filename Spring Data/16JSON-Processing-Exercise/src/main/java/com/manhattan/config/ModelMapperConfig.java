@@ -1,24 +1,20 @@
 package com.manhattan.config;
 
-import com.manhattan.models.dtos.CategoriesByProductsDto;
-import com.manhattan.models.dtos.ProductsInRangeDto;
-import com.manhattan.models.dtos.UserAndSoldProductsDto;
-import com.manhattan.models.entities.Category;
-import com.manhattan.models.entities.Product;
-import com.manhattan.models.entities.User;
+import com.manhattan.models.productsShop.dtos.CategoriesByProductsDto;
+import com.manhattan.models.productsShop.dtos.ProductsInRangeDto;
+import com.manhattan.models.productsShop.dtos.UserAndSoldProductsDto;
+import com.manhattan.models.productsShop.entities.Category;
+import com.manhattan.models.productsShop.entities.Product;
+import com.manhattan.models.productsShop.entities.User;
 import org.modelmapper.Converter;
 import org.modelmapper.ModelMapper;
-import org.modelmapper.Provider;
 import org.modelmapper.spi.MappingContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 @Configuration
 public class ModelMapperConfig {
@@ -58,10 +54,14 @@ public class ModelMapperConfig {
         Converter<User, Integer> toSoldProductsCount =
                 ctx -> Math.toIntExact(ctx.getSource() == null || ctx.getSource().getSoldProducts() == null ? 0L :
                         ctx.getSource().getSoldProducts().size());
-//        mapper.createTypeMap(User.class, UserAndSoldProductsDto.class)
-//                .addMappings(mpr -> {
-//                    mpr.map(User::getSoldProducts, (dest, v) -> dest.getSoldProducts().setProducts(v));
-//                });
+
+        Converter<Set<Product>, Integer> toProductCount =
+                ctx -> Math.toIntExact(ctx.getSource() == null ? 0L :
+                        ctx.getSource().size());
+
+        mapper.createTypeMap(User.class, UserAndSoldProductsDto.class)
+                .addMappings(mpr -> mpr.using(toProductCount).<Integer>map(src -> src.getSoldProducts(),
+                        (dest, v) -> dest.getSoldProducts().setCount(v)));
         return mapper;
     }
 
@@ -76,7 +76,7 @@ public class ModelMapperConfig {
     private BigDecimal average(Collection<Product> products, RoundingMode roundingMode) {
         BigDecimal sum = sum(products);
         long count = count(products);
-        return sum.divide(new BigDecimal(count),roundingMode);
+        return sum.divide(new BigDecimal(count), roundingMode);
     }
 
     private long count(Collection<Product> products) {

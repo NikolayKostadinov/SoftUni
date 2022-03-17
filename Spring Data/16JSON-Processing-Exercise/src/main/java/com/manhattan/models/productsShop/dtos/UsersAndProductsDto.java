@@ -1,4 +1,4 @@
-package com.manhattan.models.dtos;
+package com.manhattan.models.productsShop.dtos;
 
 import com.google.gson.annotations.Expose;
 

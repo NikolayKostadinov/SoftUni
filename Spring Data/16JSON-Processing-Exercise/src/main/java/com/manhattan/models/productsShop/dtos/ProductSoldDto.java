@@ -1,7 +1,6 @@
-package com.manhattan.models.dtos;
+package com.manhattan.models.productsShop.dtos;
 
 import com.google.gson.annotations.Expose;
-import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
@@ -16,12 +15,16 @@ public class ProductSoldDto {
         return count;
     }
 
+    public void setCount(int count) {
+        this.count = count;
+    }
+
     public List<ProductDetailsDto> getProducts() {
         return products;
     }
 
     public void setProducts(List<ProductDetailsDto> products) {
         this.products = products;
-        this.count = products.size();
+        //this.count = products.size();
     }
 }

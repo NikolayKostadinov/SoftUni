@@ -1,14 +1,11 @@
 package com.manhattan.services.implementations;
 
-import com.manhattan.models.dtos.CategoryJsonReadDto;
-import com.manhattan.models.dtos.ProductJsonReadDto;
-import com.manhattan.models.dtos.UserJsonReadDto;
-import com.manhattan.models.entities.Category;
-import com.manhattan.models.entities.Product;
-import com.manhattan.models.entities.User;
-import com.manhattan.repositories.CategoryRepository;
-import com.manhattan.repositories.ProductRepository;
-import com.manhattan.repositories.UserRepository;
+import com.manhattan.models.productsShop.dtos.CategoryJsonReadDto;
+import com.manhattan.models.productsShop.dtos.ProductJsonReadDto;
+import com.manhattan.models.productsShop.dtos.UserJsonReadDto;
+import com.manhattan.models.productsShop.entities.Category;
+import com.manhattan.models.productsShop.entities.Product;
+import com.manhattan.models.productsShop.entities.User;
 import com.manhattan.services.interfaces.*;
 import com.manhattan.utils.ValidationsUtil;
 import org.modelmapper.ModelMapper;

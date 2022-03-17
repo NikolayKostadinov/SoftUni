@@ -1,6 +1,6 @@
 package com.manhattan.repositories;
 
-import com.manhattan.models.entities.Product;
+import com.manhattan.models.productsShop.entities.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

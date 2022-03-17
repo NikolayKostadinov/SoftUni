@@ -1,16 +1,20 @@
-package com.manhattan.models.entities;
+package com.manhattan.models.productsShop.entities;
 
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-@Table(name="users")
-public class User extends BaseEntity{
-    @Column(name="first_name")
+@Table(name = "users")
+public class User {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
+
+    @Column(name = "first_name")
     private String firstName;
 
-    @Column(name="last_name", nullable = false)
+    @Column(name = "last_name", nullable = false)
     private String lastName;
 
     private Integer age;
@@ -24,6 +28,14 @@ public class User extends BaseEntity{
     public User() {
         this.soldProducts = new HashSet<>();
         this.friends = new HashSet<>();
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 
     public String getFirstName() {
