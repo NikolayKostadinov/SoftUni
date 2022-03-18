@@ -9,11 +9,11 @@ import java.util.List;
 import static org.junit.Assert.*;
 
 public class PriorityQueueTest {
-    private PriorityQueue<Integer> queue;
+    private BiPriorityQueue<Integer> queue;
 
     @Before
     public void setUp() {
-        this.queue = new PriorityQueue<>();
+        this.queue = new BiPriorityQueue<>();
         List<Integer> elements = new ArrayList<>(List.of(15, 25, 6, 9, 5, 8, 17, 16));
         for (Integer element : elements) {
             this.queue.add(element);
@@ -22,7 +22,7 @@ public class PriorityQueueTest {
 
     @Test
     public void testPollSingleElement() {
-        PriorityQueue<Integer> priorityQueue = new PriorityQueue<>();
+        BiPriorityQueue<Integer> priorityQueue = new BiPriorityQueue<>();
         priorityQueue.add(13);
         assertEquals(Integer.valueOf(13), priorityQueue.poll());
     }

@@ -1,6 +1,5 @@
 package implementations;
 
-import interfaces.Heap;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -9,11 +8,11 @@ import java.util.*;
 import static org.junit.Assert.*;
 
 public class MaxHeapTest {
-    private Heap<Integer> maxHeap;
+    private interfaces.Heap<Integer> maxHeap;
 
     @Before
     public void setUp() {
-        this.maxHeap = new MaxHeap<>();
+        this.maxHeap = new Heap<>();
         List<Integer> elements = new ArrayList<>(List.of(15, 25, 6, 9, 5, 8, 17, 16));
         for (Integer element : elements) {
             this.maxHeap.add(element);
@@ -22,17 +21,10 @@ public class MaxHeapTest {
 
     @Test
     public void testHeapifyUpAddOne() {
-        Heap<Integer> integerHeap = new MaxHeap<>();
+        interfaces.Heap<Integer> integerHeap = new Heap<>();
         integerHeap.add(13);
         assertEquals(Integer.valueOf(13), integerHeap.peek());
     }
-
-    @Test
-    public void testHeapRoot(){
-        this.maxHeap.add(100);
-        assertEquals(Integer.valueOf(100), this.maxHeap.peek());
-    }
-
 
     @Test
     public void testHeapifyUpAddMany() {

@@ -3,20 +3,18 @@ package implementations;
 import interfaces.AbstractBinaryTree;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.function.Consumer;
-import java.util.stream.Collectors;
 
 public class BinaryTree<E> implements AbstractBinaryTree<E> {
+    BinaryTree<E> left;
+    BinaryTree<E> right;
     private E key;
-    private final BinaryTree<E> leftChild;
-    private final BinaryTree<E> rightChild;
 
     public BinaryTree(E key, BinaryTree<E> left, BinaryTree<E> right) {
         this.key = key;
-        this.leftChild = left;
-        this.rightChild = right;
+        this.left = left;
+        this.right = right;
     }
 
     @Override
@@ -25,97 +23,88 @@ public class BinaryTree<E> implements AbstractBinaryTree<E> {
     }
 
     @Override
-    public AbstractBinaryTree<E> getLeftChild() {
-        return this.leftChild;
-    }
-
-    @Override
-    public AbstractBinaryTree<E> getRightChild() {
-        return this.rightChild;
-    }
-
-    @Override
     public void setKey(E key) {
         this.key = key;
     }
 
     @Override
+    public AbstractBinaryTree<E> getLeft() {
+        return this.left;
+    }
+
+    @Override
+    public AbstractBinaryTree<E> getRight() {
+        return this.right;
+    }
+
+    @Override
     public String asIndentedPreOrder(int indent) {
         StringBuilder sb = new StringBuilder();
-        sb.append(repeat(indent, " ")).append(this.key);
-        if (this.leftChild != null) {
-            sb.append(System.lineSeparator()).append(this.leftChild.asIndentedPreOrder(indent + 2));
+        sb.append(getIndent(indent)).append(key);
+        if (left != null) {
+            sb.append(System.lineSeparator()).append(left.asIndentedPreOrder(indent + 2));
         }
-        if (this.rightChild != null) {
-            sb.append(System.lineSeparator()).append(this.rightChild.asIndentedPreOrder(indent + 2));
+        if (right != null) {
+            sb.append(System.lineSeparator()).append(right.asIndentedPreOrder(indent + 2));
         }
-
         return sb.toString();
+    }
+
+    private String getIndent(int indent) {
+        StringBuilder indt = new StringBuilder();
+        for (int i = 0; i < indent; i++) {
+            indt.append(" ");
+        }
+        return indt.toString();
     }
 
     @Override
     public List<AbstractBinaryTree<E>> preOrder() {
-        return preOrder(this);
+        List<AbstractBinaryTree<E>> nodes = new ArrayList<>();
+        preOrder(this, nodes);
+        return nodes;
     }
 
-    private List<AbstractBinaryTree<E>> preOrder(BinaryTree<E> node) {
-        List<AbstractBinaryTree<E>> result = new ArrayList<>();
-        if (node != null) {
-            result.add(node);
-            result.addAll(preOrder(node.leftChild));
-            result.addAll(preOrder(node.rightChild));
-        }
-
-        return result;
+    //Tree Copy
+    private void preOrder(AbstractBinaryTree<E> node, List<AbstractBinaryTree<E>> nodes) {
+        if (node == null) return;
+        nodes.add(node);
+        preOrder(node.getLeft(), nodes);
+        preOrder(node.getRight(), nodes);
     }
 
     @Override
     public List<AbstractBinaryTree<E>> inOrder() {
-        return inOrder(this);
+        List<AbstractBinaryTree<E>> nodes = new ArrayList<>();
+        inOrder(this, nodes);
+        return nodes;
     }
 
-    private List<AbstractBinaryTree<E>> inOrder(BinaryTree<E> node) {
-        List<AbstractBinaryTree<E>> result = new ArrayList<>();
-        if (node != null) {
-            result.addAll(inOrder(node.leftChild));
-            result.add(node);
-            result.addAll(inOrder(node.rightChild));
-        }
-
-        return result;
+    // Sorted elements
+    private void inOrder(AbstractBinaryTree<E> node, List<AbstractBinaryTree<E>> nodes) {
+        if (node == null) return;
+        inOrder(node.getLeft(), nodes);
+        nodes.add(node);
+        inOrder(node.getRight(), nodes);
     }
 
     @Override
     public List<AbstractBinaryTree<E>> postOrder() {
-        return postOrder(this);
+        List<AbstractBinaryTree<E>> nodes = new ArrayList<>();
+        postOrder(this, nodes);
+        return nodes;
     }
 
-    private List<AbstractBinaryTree<E>> postOrder(BinaryTree<E> node) {
-        List<AbstractBinaryTree<E>> result = new ArrayList<>();
-        if (node != null) {
-            result.addAll(postOrder(node.leftChild));
-            result.addAll(postOrder(node.rightChild));
-            result.add(node);
-        }
-
-        return result;
+    // HeapifyUp
+    private void postOrder(AbstractBinaryTree<E> node, List<AbstractBinaryTree<E>> nodes) {
+        if (node == null) return;
+        postOrder(node.getLeft(), nodes);
+        postOrder(node.getRight(), nodes);
+        nodes.add(node);
     }
 
     @Override
     public void forEachInOrder(Consumer<E> consumer) {
-        if (this.leftChild != null){
-            this.leftChild.forEachInOrder(consumer);
-        }
-        consumer.accept(this.getKey());
-        if (this.rightChild != null){
-            this.rightChild.forEachInOrder(consumer);
-        }
-    }
-
-    private String repeat(int indent, String str) {
-        String[] repeated = new String[indent];
-        return Arrays.stream(repeated)
-                .map(x -> x = str)
-                .collect(Collectors.joining(""));
+        inOrder().forEach(x -> consumer.accept(x.getKey()));
     }
 }

@@ -4,74 +4,77 @@ import interfaces.AbstractBinarySearchTree;
 
 public class BinarySearchTree<E extends Comparable<E>> implements AbstractBinarySearchTree<E> {
     private Node<E> root;
-    private Node<E> leftChild;
-    private Node<E> rightChild;
 
     public BinarySearchTree() {
     }
 
-    public BinarySearchTree(Node<E> root) {
-        this.copy(root);
+    public BinarySearchTree(Node<E> node) {
+        copy(node);
     }
 
     private void copy(Node<E> node) {
-        if (node == null) return;
-        this.insert(node.value);
-        this.copy(node.leftChild);
-        this.copy(node.rightChild);
+        if (node != null) {
+            this.insert(node.value);
+            copy(node.leftChild);
+            copy(node.rightChild);
+        }
     }
 
     @Override
     public void insert(E element) {
-        if (getRoot() == null) {
-            this.root = new Node<>(element);
+        if (root == null) {
+            root = new Node<>(element);
+            return;
         } else {
-            Node<E> current = this.root;
-            Node<E> prev = current;
-            while (current != null) {
-                prev = current;
-                if (less(element, current.value)){
-                    current = current.leftChild;
-                } else if(greater(element, current.value)){
-                    current = current.rightChild;
+            Node<E> node = root;
+            Node<E> parent = root;
+            Node<E> newNode = new Node<>(element);
+            while (node != null) {
+                parent = node;
+                if (less(newNode, node)) {
+                    node = node.leftChild;
+                } else if (greater(newNode, node)) {
+                    node = node.rightChild;
                 } else {
-                    return;
+                    break;
                 }
             }
 
-            if (less(element, prev.value)){
-                prev.leftChild = new Node<>(element);
-            } else if (greater(element, prev.value)){
-                prev.rightChild = new Node<>(element);
+            if (less(newNode, parent)) {
+                parent.leftChild = newNode;
+            } else if (greater(newNode, parent)) {
+                parent.rightChild = newNode;
             }
         }
     }
 
     @Override
     public boolean contains(E element) {
-        Node<E> current = this.root;
-        while (current != null){
-            if (less(element, current.value)){
-                current = current.leftChild;
-            } else if(greater(element, current.value)){
-                current = current.rightChild;
+        Node<E> node = this.root;
+        while (node != null) {
+            Node<E> newNode = new Node<>(element);
+            if (less(newNode, node)) {
+                node = node.leftChild;
+            } else if (greater(newNode, node)) {
+                node = node.rightChild;
             } else {
-               break;
+                return true;
             }
         }
-        return current != null;
+        return false;
     }
 
     @Override
     public AbstractBinarySearchTree<E> search(E element) {
-        Node<E> current = this.root;
-        while (current != null){
-            if (less(element, current.value)){
-                current = current.leftChild;
-            } else if(greater(element, current.value)){
-                current = current.rightChild;
+        Node<E> node = this.root;
+        while (node != null) {
+            Node<E> newNode = new Node<>(element);
+            if (less(newNode, node)) {
+                node = node.leftChild;
+            } else if (greater(newNode, node)) {
+                node = node.rightChild;
             } else {
-                return new BinarySearchTree<>(current);
+                return new BinarySearchTree<>(node);
             }
         }
         return null;
@@ -84,12 +87,12 @@ public class BinarySearchTree<E extends Comparable<E>> implements AbstractBinary
 
     @Override
     public Node<E> getLeft() {
-        return this.leftChild;
+        return this.root.leftChild;
     }
 
     @Override
     public Node<E> getRight() {
-        return this.rightChild;
+        return this.root.rightChild;
     }
 
     @Override
@@ -97,11 +100,11 @@ public class BinarySearchTree<E extends Comparable<E>> implements AbstractBinary
         return this.root.value;
     }
 
-    private boolean less(E first, E second) {
-        return first.compareTo(second) < 0;
+    private boolean greater(Node<E> newNode, Node<E> node) {
+        return newNode.value.compareTo(node.value) > 0;
     }
 
-    private boolean greater(E first, E second) {
-        return first.compareTo(second) > 0;
+    private boolean less(Node<E> newNode, Node<E> node) {
+        return newNode.value.compareTo(node.value) < 0;
     }
 }

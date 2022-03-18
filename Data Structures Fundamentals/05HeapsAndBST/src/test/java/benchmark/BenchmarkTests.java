@@ -1,7 +1,7 @@
 package benchmark;
 
 import implementations.BinarySearchTree;
-import implementations.PriorityQueue;
+import implementations.BiPriorityQueue;
 import org.openjdk.jmh.annotations.*;
 import org.openjdk.jmh.infra.Blackhole;
 import org.openjdk.jmh.runner.Runner;
@@ -26,7 +26,7 @@ public class BenchmarkTests {
     private long n;
 
     private ArrayList<Long> arrayList = new ArrayList<>();
-    private PriorityQueue<Long> priorityQueue = new PriorityQueue<>();
+    private BiPriorityQueue<Long> priorityQueue = new BiPriorityQueue<>();
     private BinarySearchTree<Long> binarySearchTree = new BinarySearchTree<>();
 
     private void fillArrayList(ArrayList<Long> list) {
@@ -35,7 +35,7 @@ public class BenchmarkTests {
         }
     }
 
-    private void fillPriorityQueue(PriorityQueue<Long> queue) {
+    private void fillPriorityQueue(BiPriorityQueue<Long> queue) {
         for (long i = 0; i < n; i++) {
             queue.add(i);
         }
@@ -73,7 +73,7 @@ public class BenchmarkTests {
 
     @Benchmark
     public void testAddInPriorityQueue(Blackhole blackhole) {
-        PriorityQueue<Integer> numbers = new PriorityQueue<>();
+        BiPriorityQueue<Integer> numbers = new BiPriorityQueue<>();
         for (int i = 0; i < n; i++) {
             numbers.add(i);
         }
