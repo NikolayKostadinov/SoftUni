@@ -15,5 +15,6 @@ public class CommonConstants {
     public static final String SUPPLIERS_FILE = "suppliers.json";
     public static final String PARTS_FILE = "parts.json";
     public static final String CARS_FILE = "cars.json";
+    public static final String CUSTOMERS_FILE = "customers.json";
 
 }

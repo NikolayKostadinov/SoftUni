@@ -1,5 +1,7 @@
 package com.manhattan.config;
 
+import com.manhattan.models.carDealer.dtos.CustomerJsonReadDto;
+import com.manhattan.models.carDealer.entities.Customer;
 import com.manhattan.models.productsShop.dtos.CategoriesByProductsDto;
 import com.manhattan.models.productsShop.dtos.ProductsInRangeDto;
 import com.manhattan.models.productsShop.dtos.UserAndSoldProductsDto;
@@ -14,6 +16,8 @@ import org.springframework.context.annotation.Configuration;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.*;
 
 @Configuration
@@ -62,6 +66,12 @@ public class ModelMapperConfig {
         mapper.createTypeMap(User.class, UserAndSoldProductsDto.class)
                 .addMappings(mpr -> mpr.using(toProductCount).<Integer>map(src -> src.getSoldProducts(),
                         (dest, v) -> dest.getSoldProducts().setCount(v)));
+
+        Converter<String, LocalDate> toDate =
+                ctx -> LocalDate.parse(ctx.getSource().split("T")[0]);
+
+        mapper.createTypeMap(CustomerJsonReadDto.class, Customer.class)
+                .addMappings(mpr->mpr.using(toDate).map(CustomerJsonReadDto::getBirthDate, Customer::setBirthDate));
         return mapper;
     }
 

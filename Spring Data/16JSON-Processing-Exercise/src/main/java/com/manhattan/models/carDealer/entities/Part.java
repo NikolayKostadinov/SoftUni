@@ -27,7 +27,7 @@ public class Part {
     @JoinColumn(name = "supplier_id")
     Supplier supplier;
 
-    @ManyToMany()
+    @ManyToMany(mappedBy = "parts")
     private Set<Car> cars;
 
     public Part() {

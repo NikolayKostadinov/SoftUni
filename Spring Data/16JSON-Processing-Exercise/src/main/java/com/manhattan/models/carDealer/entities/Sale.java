@@ -25,6 +25,15 @@ public class Sale {
         return customer;
     }
 
+    public Sale() {
+    }
+
+    public Sale(Car car, Customer customer, BigDecimal discountPercentage) {
+        this.car = car;
+        this.customer = customer;
+        this.discountPercentage = discountPercentage;
+    }
+
     public Car getCar() {
         return car;
     }
