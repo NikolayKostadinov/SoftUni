@@ -10,6 +10,7 @@ import com.manhattan.services.productShop.interfaces.CategoryService;
 import com.manhattan.services.productShop.interfaces.ProductService;
 import com.manhattan.services.productShop.interfaces.SeedProductShopService;
 import com.manhattan.services.productShop.interfaces.UserService;
+import com.manhattan.utils.ConsoleService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -28,6 +29,7 @@ public class ConsoleRunner implements CommandLineRunner {
     private final SeedCarDealerService seedCarDealerService;
     private final FileService fileService;
     private final SupplierService supplierService;
+    private final ConsoleService console;
 
     public ConsoleRunner(UserService userService,
                          ProductService productService,
@@ -35,7 +37,7 @@ public class ConsoleRunner implements CommandLineRunner {
                          SeedProductShopService seedService,
                          SeedCarDealerService seedCarDealerService,
                          FileService fileService,
-                         SupplierService supplierService) {
+                         SupplierService supplierService, ConsoleService console) {
         this.userService = userService;
         this.productService = productService;
         this.categoryService = categoryService;
@@ -43,27 +45,33 @@ public class ConsoleRunner implements CommandLineRunner {
         this.seedCarDealerService = seedCarDealerService;
         this.fileService = fileService;
         this.supplierService = supplierService;
+        this.console = console;
     }
 
     @Override
     public void run(String... args) throws Exception {
         // 2.	Seed the Database
+        console.printInfoMessage("Seeding ProductShop...");
         seedProductShopData();
-
         // 3.	Query and Export Data
         // Query 1 – Products in Range
+        console.printInfoMessage(String.format("Generating {%s} ...", PRODUCTS_IN_RANGE_FILE));
         saveAllProductsInRange();
 
         // Query 2 – Successfully Sold Products
+        console.printInfoMessage(String.format("Generating {%s} ...", USERS_SOLD_FILE));
         successfullySoldProducts();
 
         // Query 3 – Categories by Products Count
+        console.printInfoMessage(String.format("Generating {%s} ...", CATEGORIES_BY_PRODUCTS_FILE));
         categoriesByProductsCount();
 
         // Query 4 – Users and Products
+        console.printInfoMessage(String.format("Generating {%s} ...", USERS_AND_PRODUCTS_FILE));
         usersAndProducts();
 
         // 5. Car Dealer Import Data
+        console.printInfoMessage("Seeding CarDealer...");
         seedCarDealerData();
 
     }
@@ -75,12 +83,12 @@ public class ConsoleRunner implements CommandLineRunner {
 
     private void usersAndProducts() throws IOException {
         UsersAndProductsDto users = this.userService.getAllUsersWithMoreThanOneSoldProductsOrderByProductSoldDescThenByLastName();
-        this.fileService.writeToFile(OUTPUT_FILE_PATH + USERS_AND_PRODUCTS, users);
+        this.fileService.writeToFile(OUTPUT_FILE_PATH + USERS_AND_PRODUCTS_FILE, users);
     }
 
     private void categoriesByProductsCount() throws IOException {
         List<CategoriesByProductsDto> categories = this.categoryService.getCategoriesOrderByNumberOfProducts();
-        this.fileService.writeToFile(OUTPUT_FILE_PATH + CATEGORIES_BY_PRODUCTS, categories);
+        this.fileService.writeToFile(OUTPUT_FILE_PATH + CATEGORIES_BY_PRODUCTS_FILE, categories);
     }
 
     private void successfullySoldProducts() throws IOException {

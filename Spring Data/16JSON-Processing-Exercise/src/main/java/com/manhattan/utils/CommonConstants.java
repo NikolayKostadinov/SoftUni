@@ -9,8 +9,8 @@ public class CommonConstants {
     public static final String PRODUCTS_FILE = "products.json";
     public static final String PRODUCTS_IN_RANGE_FILE = "products-in-range.json";
     public static final String USERS_SOLD_FILE = "users-sold-products.json";
-    public static final String CATEGORIES_BY_PRODUCTS = "categories-by-products.json";
-    public static final String USERS_AND_PRODUCTS = "users-and-products.json";
+    public static final String CATEGORIES_BY_PRODUCTS_FILE = "categories-by-products.json";
+    public static final String USERS_AND_PRODUCTS_FILE = "users-and-products.json";
 
     public static final String SUPPLIERS_FILE = "suppliers.json";
     public static final String PARTS_FILE = "parts.json";

@@ -10,9 +10,16 @@ public class CategoriesByProductsDto {
     @Expose
     private long productCount;
     @Expose
-    private BigDecimal averagePrice;
+    private double averagePrice;
     @Expose
     private BigDecimal totalRevenue;
+
+    public CategoriesByProductsDto(String name, long productCount, double averagePrice, BigDecimal totalRevenue) {
+        this.name = name;
+        this.productCount = productCount;
+        this.averagePrice = averagePrice;
+        this.totalRevenue = totalRevenue;
+    }
 
     public String getName() {
         return name;
@@ -30,11 +37,11 @@ public class CategoriesByProductsDto {
         this.productCount = productCount;
     }
 
-    public BigDecimal getAveragePrice() {
+    public double getAveragePrice() {
         return averagePrice;
     }
 
-    public void setAveragePrice(BigDecimal averagePrice) {
+    public void setAveragePrice(double averagePrice) {
         this.averagePrice = averagePrice;
     }
 
