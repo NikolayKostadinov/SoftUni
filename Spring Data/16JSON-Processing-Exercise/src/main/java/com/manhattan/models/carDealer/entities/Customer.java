@@ -19,13 +19,13 @@ public class Customer {
     private LocalDate birthDate;
 
     @Column(name="is_younger_driver", nullable = false)
-    private boolean isYoungerDriver;
+    private boolean youngerDriver;
 
-    @OneToMany(mappedBy = "customer", targetEntity = Sale.class)
-    private Set<Sale> buys;
+    @OneToMany(mappedBy = "customer", targetEntity = Sale.class, fetch = FetchType.EAGER)
+    private Set<Sale> sales;
 
     public Customer() {
-        this.buys = new HashSet<>();
+        this.sales = new HashSet<>();
     }
 
     public long getId() {
@@ -52,19 +52,19 @@ public class Customer {
         this.birthDate = birthDate;
     }
 
+    public boolean getYoungerDriver() {
+        return youngerDriver;
+    }
+
     public boolean isYoungerDriver() {
-        return isYoungerDriver;
+        return youngerDriver;
     }
 
-    public void setYoungerDriver(boolean youngerDriver) {
-        isYoungerDriver = youngerDriver;
+    public Set<Sale> getSales() {
+        return sales;
     }
 
-    public Set<Sale> getBuys() {
-        return buys;
-    }
-
-    public void setBuys(Set<Sale> buys) {
-        this.buys = buys;
+    public void setSales(Set<Sale> sales) {
+        this.sales = sales;
     }
 }

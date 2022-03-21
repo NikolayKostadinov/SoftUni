@@ -1,7 +1,11 @@
 package com.manhattan.config;
 
 import com.manhattan.models.carDealer.dtos.CustomerJsonReadDto;
+import com.manhattan.models.carDealer.dtos.LocalSupplierDto;
+import com.manhattan.models.carDealer.dtos.OrderedCustomersDto;
 import com.manhattan.models.carDealer.entities.Customer;
+import com.manhattan.models.carDealer.entities.Part;
+import com.manhattan.models.carDealer.entities.Supplier;
 import com.manhattan.models.productsShop.dtos.CategoriesByProductsDto;
 import com.manhattan.models.productsShop.dtos.ProductsInRangeDto;
 import com.manhattan.models.productsShop.dtos.UserAndSoldProductsDto;
@@ -26,6 +30,28 @@ public class ModelMapperConfig {
     public ModelMapper modelMapper() {
         ModelMapper mapper = new ModelMapper();
 
+        productProductsInRangeDto(mapper);
+
+        categoryToCategoriesByProductsDto(mapper);
+
+        userToUserAndSoldProductsDto(mapper);
+
+        customerJsonReadDtoToCustomer(mapper);
+
+        customerToOrderedCustomersDto(mapper);
+
+        supplierLocalSuppliersDto(mapper);
+
+        return mapper;
+    }
+
+    private void supplierLocalSuppliersDto(ModelMapper mapper) {
+        Converter<Set<Part>, Integer> partsCount = ctx -> ctx.getSource() == null ? 0 : ctx.getSource().size();
+        mapper.createTypeMap(Supplier.class, LocalSupplierDto.class)
+                .addMappings(mpr->mpr.using(partsCount).map(Supplier::getParts, LocalSupplierDto::setPartsCount));
+    }
+
+    private void productProductsInRangeDto(ModelMapper mapper) {
         Converter<BigDecimal, String> priceToString =
                 ctx -> ctx.getSource() == null ? "0" : String.format("%.2f", ctx.getSource());
 
@@ -37,7 +63,17 @@ public class ModelMapperConfig {
                     mpr.using(priceToString).map(Product::getPrice, ProductsInRangeDto::setPrice);
                     mpr.using(toFullName).map(Product::getSeller, ProductsInRangeDto::setSeller);
                 });
+    }
 
+    private String getFullName(MappingContext<User, String> ctx) {
+        if (ctx.getSource().getFirstName() == null) {
+            return ctx.getSource().getLastName();
+        }
+
+        return String.format("%s %s", ctx.getSource().getFirstName(), ctx.getSource().getLastName());
+    }
+
+    private void categoryToCategoriesByProductsDto(ModelMapper mapper) {
         Converter<List<Product>, BigDecimal> toAvgPrice =
                 ctx -> ctx.getSource() == null ? BigDecimal.ZERO : average(ctx.getSource(), RoundingMode.HALF_UP);
 
@@ -54,33 +90,6 @@ public class ModelMapperConfig {
                     mpr.using(toAvgPrice).map(Category::getProducts, CategoriesByProductsDto::setAveragePrice);
                     mpr.using(toRevenue).map(Category::getProducts, CategoriesByProductsDto::setTotalRevenue);
                 });
-
-        Converter<User, Integer> toSoldProductsCount =
-                ctx -> Math.toIntExact(ctx.getSource() == null || ctx.getSource().getSoldProducts() == null ? 0L :
-                        ctx.getSource().getSoldProducts().size());
-
-        Converter<Set<Product>, Integer> toProductCount =
-                ctx -> Math.toIntExact(ctx.getSource() == null ? 0L :
-                        ctx.getSource().size());
-
-        mapper.createTypeMap(User.class, UserAndSoldProductsDto.class)
-                .addMappings(mpr -> mpr.using(toProductCount).<Integer>map(src -> src.getSoldProducts(),
-                        (dest, v) -> dest.getSoldProducts().setCount(v)));
-
-        Converter<String, LocalDate> toDate =
-                ctx -> LocalDate.parse(ctx.getSource().split("T")[0]);
-
-        mapper.createTypeMap(CustomerJsonReadDto.class, Customer.class)
-                .addMappings(mpr->mpr.using(toDate).map(CustomerJsonReadDto::getBirthDate, Customer::setBirthDate));
-        return mapper;
-    }
-
-    private String getFullName(MappingContext<User, String> ctx) {
-        if (ctx.getSource().getFirstName() == null) {
-            return ctx.getSource().getLastName();
-        }
-
-        return String.format("%s %s", ctx.getSource().getFirstName(), ctx.getSource().getLastName());
     }
 
     private BigDecimal average(Collection<Product> products, RoundingMode roundingMode) {
@@ -102,5 +111,29 @@ public class ModelMapperConfig {
         return sum;
     }
 
+    private void userToUserAndSoldProductsDto(ModelMapper mapper) {
+        Converter<Set<Product>, Integer> toProductCount =
+                ctx -> Math.toIntExact(ctx.getSource() == null ? 0L :
+                        ctx.getSource().size());
 
+        mapper.createTypeMap(User.class, UserAndSoldProductsDto.class)
+                .addMappings(mpr -> mpr.using(toProductCount).<Integer>map(src -> src.getSoldProducts(),
+                        (dest, v) -> dest.getSoldProducts().setCount(v)));
+    }
+
+    private void customerJsonReadDtoToCustomer(ModelMapper mapper) {
+        Converter<String, LocalDate> toDate =
+                ctx -> LocalDate.parse(ctx.getSource().split("T")[0]);
+
+        mapper.createTypeMap(CustomerJsonReadDto.class, Customer.class)
+                .addMappings(mpr -> mpr.using(toDate).map(CustomerJsonReadDto::getBirthDate, Customer::setBirthDate));
+    }
+
+    private void customerToOrderedCustomersDto(ModelMapper mapper) {
+        Converter<LocalDate, String> toDateToString =
+                ctx -> DateTimeFormatter.ISO_LOCAL_DATE_TIME.format(ctx.getSource());
+
+        mapper.createTypeMap(Customer.class, OrderedCustomersDto.class)
+                .addMapping(Customer::getBirthDate, OrderedCustomersDto::setBirthDate);
+    }
 }

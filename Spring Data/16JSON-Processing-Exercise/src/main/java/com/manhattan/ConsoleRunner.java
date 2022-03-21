@@ -1,10 +1,6 @@
 package com.manhattan;
 
-import com.manhattan.models.productsShop.dtos.CategoriesByProductsDto;
-import com.manhattan.models.productsShop.dtos.UserSoldDto;
-import com.manhattan.models.productsShop.dtos.UsersAndProductsDto;
-import com.manhattan.services.carDealer.interfaces.SeedCarDealerService;
-import com.manhattan.services.carDealer.interfaces.SupplierService;
+import com.manhattan.services.carDealer.interfaces.*;
 import com.manhattan.services.common.FileService;
 import com.manhattan.services.productShop.interfaces.CategoryService;
 import com.manhattan.services.productShop.interfaces.ProductService;
@@ -16,19 +12,23 @@ import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 import java.math.BigDecimal;
-import java.util.List;
 
 import static com.manhattan.utils.CommonConstants.*;
 
 @Component
 public class ConsoleRunner implements CommandLineRunner {
+    private final SeedProductShopService seedProductShopService;
     private final UserService userService;
     private final ProductService productService;
     private final CategoryService categoryService;
-    private final SeedProductShopService seedProductShopService;
+
     private final SeedCarDealerService seedCarDealerService;
-    private final FileService fileService;
     private final SupplierService supplierService;
+    private final CustomerService customerService;
+    private final CarService carService;
+    private final SaleService saleService;
+
+    private final FileService fileService;
     private final ConsoleService console;
 
     public ConsoleRunner(UserService userService,
@@ -36,15 +36,18 @@ public class ConsoleRunner implements CommandLineRunner {
                          CategoryService categoryService,
                          SeedProductShopService seedService,
                          SeedCarDealerService seedCarDealerService,
-                         FileService fileService,
-                         SupplierService supplierService, ConsoleService console) {
+                         SaleService saleService, FileService fileService,
+                         SupplierService supplierService, CustomerService customerService, CarService carService, ConsoleService console) {
         this.userService = userService;
         this.productService = productService;
         this.categoryService = categoryService;
         this.seedProductShopService = seedService;
         this.seedCarDealerService = seedCarDealerService;
+        this.saleService = saleService;
         this.fileService = fileService;
         this.supplierService = supplierService;
+        this.customerService = customerService;
+        this.carService = carService;
         this.console = console;
     }
 
@@ -74,6 +77,69 @@ public class ConsoleRunner implements CommandLineRunner {
         console.printInfoMessage("Seeding CarDealer...");
         seedCarDealerData();
 
+        // Query 1 – Ordered Customers
+        console.printInfoMessage(String.format("Generating {%s} ...", ORDERED_CUSTOMERS_FILE));
+        orderedCustomers();
+
+        // Query 2 – Cars from Make Toyota
+        console.printInfoMessage(String.format("Generating {%s} ...", TOYOTA_CARS_FILE));
+        carsFromMakeToyota();
+
+        // Query 3 – Local Suppliers
+        console.printInfoMessage(String.format("Generating {%s} ...", LOCAL_SUPPLIERS_FILE));
+        localSuppliers();
+
+        // Query 4 – Cars with Their List of Parts
+        console.printInfoMessage(String.format("Generating {%s} ...", CARS_AND_PARTS_FILE));
+        carsWithTheirListOfParts();
+
+        // Query 5 – Total Sales by Customer
+        console.printInfoMessage(String.format("Generating {%s} ...", CUSTOMERS_TOTAL_SALES_FILE));
+        totalSalesByCustomer();
+
+        // Query 6 – Sales with Applied Discount
+        /*Get all sales with information about the car, the customer and the price of the sale with and without discount.
+        Export the list of sales to JSON in the format provided below.*/
+        console.printInfoMessage(String.format("Generating {%s} ...", SALES_DISCOUNTS_FILE));
+        salesWithDiscount();
+
+
+    }
+
+    private void salesWithDiscount() throws IOException {
+        this.fileService
+                .writeToFile(OUTPUT_FILE_PATH + SALES_DISCOUNTS_FILE,
+                        this.saleService.getAllSalesWithDiscount());
+    }
+
+    private void totalSalesByCustomer() throws IOException {
+        this.fileService
+                .writeToFile(OUTPUT_FILE_PATH + CUSTOMERS_TOTAL_SALES_FILE,
+                        this.customerService.getAllCustomersWithTotalOfTheSales());
+    }
+
+    private void carsWithTheirListOfParts() throws IOException {
+        this.fileService
+                .writeToFile(OUTPUT_FILE_PATH + CARS_AND_PARTS_FILE,
+                        this.carService.getAllCars());
+    }
+
+    private void localSuppliers() throws IOException {
+        this.fileService
+                .writeToFile(OUTPUT_FILE_PATH + LOCAL_SUPPLIERS_FILE,
+                        this.supplierService.gatAllLocalSuppliers());
+    }
+
+    private void carsFromMakeToyota() throws IOException {
+        this.fileService
+                .writeToFile(OUTPUT_FILE_PATH + TOYOTA_CARS_FILE,
+                        this.carService.getCarsByMake("Toyota"));
+    }
+
+    private void orderedCustomers() throws IOException {
+        this.fileService
+                .writeToFile(OUTPUT_FILE_PATH + ORDERED_CUSTOMERS_FILE,
+                        this.customerService.getCustomersOrderedByBirthDateAndYoungerDrivers());
     }
 
     private void seedCarDealerData() throws IOException {
@@ -82,18 +148,21 @@ public class ConsoleRunner implements CommandLineRunner {
     }
 
     private void usersAndProducts() throws IOException {
-        UsersAndProductsDto users = this.userService.getAllUsersWithMoreThanOneSoldProductsOrderByProductSoldDescThenByLastName();
-        this.fileService.writeToFile(OUTPUT_FILE_PATH + USERS_AND_PRODUCTS_FILE, users);
+        this.fileService
+                .writeToFile(OUTPUT_FILE_PATH + USERS_AND_PRODUCTS_FILE,
+                        this.userService.getAllUsersWithMoreThanOneSoldProductsOrderByProductSoldDescThenByLastName());
     }
 
     private void categoriesByProductsCount() throws IOException {
-        List<CategoriesByProductsDto> categories = this.categoryService.getCategoriesOrderByNumberOfProducts();
-        this.fileService.writeToFile(OUTPUT_FILE_PATH + CATEGORIES_BY_PRODUCTS_FILE, categories);
+        this.fileService
+                .writeToFile(OUTPUT_FILE_PATH + CATEGORIES_BY_PRODUCTS_FILE,
+                        this.categoryService.getCategoriesOrderByNumberOfProducts());
     }
 
     private void successfullySoldProducts() throws IOException {
-        List<UserSoldDto> users = this.userService.getAllUsersWithMoreThanOneSoldProducts();
-        this.fileService.writeToFile(OUTPUT_FILE_PATH + USERS_SOLD_FILE, users);
+        this.fileService
+                .writeToFile(OUTPUT_FILE_PATH + USERS_SOLD_FILE,
+                        this.userService.getAllUsersWithMoreThanOneSoldProducts());
     }
 
     private void saveAllProductsInRange() throws IOException {
