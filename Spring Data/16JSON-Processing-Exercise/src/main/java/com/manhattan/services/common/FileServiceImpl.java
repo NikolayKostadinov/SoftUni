@@ -2,7 +2,6 @@ package com.manhattan.services.common;
 
 import com.google.gson.Gson;
 import com.google.gson.stream.JsonReader;
-import com.manhattan.services.common.FileService;
 import org.springframework.stereotype.Service;
 
 import java.io.*;
@@ -17,10 +16,7 @@ public class FileServiceImpl implements FileService {
 
     @Override
     public <T> T[] readFile(String filePath, Class<?> clazz) throws IOException {
-        try (JsonReader jsonReader =
-                     new JsonReader(
-                             new InputStreamReader(
-                                     new FileInputStream(filePath)))) {
+        try (JsonReader jsonReader = new JsonReader(new InputStreamReader(new FileInputStream(filePath)))) {
             return gson.fromJson(jsonReader, clazz);
         }
     }
